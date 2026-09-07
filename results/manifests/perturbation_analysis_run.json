@@ -1,0 +1,139 @@
+{
+  "analysis_id": "heldout_perturbation_axis",
+  "analysis_status": "complete",
+  "analysis_tier": "discovery",
+  "authoritative": true,
+  "code_version": "b953bfdb128e3c196cb95c0499a91eeff0191f60+dirty",
+  "completed_at_utc": "2026-09-07T19:39:26.510495+00:00",
+  "config": {
+    "lick_exclusion_seconds": 0.15,
+    "minimum_trials_per_session_block_condition": 5
+  },
+  "confirmation_accessed": false,
+  "confirmation_policy": "sealed; no confirmation identity or neural source was loaded",
+  "counts": {
+    "expanded_probe_rows": 5661,
+    "mice": 12,
+    "sessions": 23,
+    "unique_scored_trials": 4692,
+    "well_isolated_axis_units": 20667
+  },
+  "dandiset_id": "001051",
+  "dandiset_version": "0.260825.2232",
+  "data_access": {
+    "legacy_accessor_calls": 0,
+    "legacy_accessor_forbidden_at_runtime": true,
+    "library": "lazynwb",
+    "peak_spike_materialization": "one bounded unit batch per session",
+    "spike_batch_size_units": 32,
+    "spike_reader": "lazynwb.scan_nwb custom reader",
+    "transport": "obstore byte-range reads",
+    "version": "1.0.0.dev8"
+  },
+  "inputs": {
+    "analysis_lock": {
+      "path": "config/analysis_lock.yaml",
+      "sha256": "c1c78c89391c5656f7372ea433e63d43bf3c960ee9247639da57a45db556e30c",
+      "size_bytes": 5056
+    },
+    "axis_manifest": {
+      "path": "manifests/neural_transition_analysis_run.json",
+      "sha256": "2c0d48386e214028a390d1baefa5bfb8b1800781c9bd25334304d11f2ccab1b9",
+      "size_bytes": 6514
+    },
+    "behavior_trials": {
+      "path": "tables/behavior_trials.parquet",
+      "sha256": "29a64113baaa25f445be9165a3353c0cf2009b291c83e89e3ce41a92997bd29e",
+      "size_bytes": 2905997
+    },
+    "discovery_sources": {
+      "path": "tables/discovery_session_sources.parquet",
+      "sha256": "413690db61ed65c59917d220ac396c99e46c8a05d4e8fd2198fd884f8c2cce65",
+      "size_bytes": 5172
+    },
+    "unit_axis": {
+      "path": "tables/neural_transition_unit_qc.parquet",
+      "sha256": "c3efadf9330e34500556c50e9d2e8cc032903dcfae7a7ff6b802abe1f2610e00",
+      "size_bytes": 1483685
+    }
+  },
+  "local_sources": {
+    "scripts/14_analyze_perturbations.py": {
+      "path": "scripts/14_analyze_perturbations.py",
+      "sha256": "4de9d8b6d033b8be421ae715365d5ffaf623caeab968e8842ae51ffb38372429",
+      "size_bytes": 26268
+    },
+    "src/dg/artifacts.py": {
+      "path": "src/dg/artifacts.py",
+      "sha256": "51667f969f1b622b5bded3dcf74a2d3fc689727cb967fdc47f50c81cf1720e91",
+      "size_bytes": 4557
+    },
+    "src/dg/data.py": {
+      "path": "src/dg/data.py",
+      "sha256": "c03464112c2008922be1bf3cd21c02ed34077cae82f8988f57d54c1d1837183c",
+      "size_bytes": 24041
+    },
+    "src/dg/lazynwb_obstore.py": {
+      "path": "src/dg/lazynwb_obstore.py",
+      "sha256": "0f8463ba138eb4d948a5d6452a9ce6f5f033dffdeb47a3a8995d83a426b39aa8",
+      "size_bytes": 9972
+    },
+    "src/dg/neural_transitions.py": {
+      "path": "src/dg/neural_transitions.py",
+      "sha256": "e2c1554dc8690bdfdd9abcf03e160304a2f000324c8161aac567f209d695c1f8",
+      "size_bytes": 32877
+    },
+    "src/dg/perturbations.py": {
+      "path": "src/dg/perturbations.py",
+      "sha256": "2d4cff65502fb206d8c628a2da8d970f763a3ddc4848c84bfe8af1f4b86d7cb9",
+      "size_bytes": 14963
+    },
+    "src/dg/statistics.py": {
+      "path": "src/dg/statistics.py",
+      "sha256": "9a74766204d03f524286c1087d20c0aad2cc7415f924a7a2b9e83830462339f0",
+      "size_bytes": 21952
+    }
+  },
+  "novelty_scope": "session-designated novel identity, not a pure first-exposure effect; identity and recording day remain confounded",
+  "outputs": {
+    "environment": {
+      "path": "manifests/perturbation_environment.txt",
+      "sha256": "66499032232978480685c65ee4bc39235932733220878f25e956fa2ab9c51171",
+      "size_bytes": 385
+    },
+    "mouse_perturbation_contrasts": {
+      "path": "tables/mouse_perturbation_contrasts.csv",
+      "sha256": "43f2a89541190025c475b7b845bf44ae32a6c70c2958c7c28a502d8a8f1257e9",
+      "size_bytes": 6608
+    },
+    "mouse_perturbation_interactions": {
+      "path": "tables/mouse_perturbation_interactions.csv",
+      "sha256": "63aa77466ce94f6b05569d36b58ab89773336a264f36591d93c2f5698cac1c59",
+      "size_bytes": 5807
+    },
+    "perturbation_statistics": {
+      "path": "tables/perturbation_statistics.csv",
+      "sha256": "86290aa19d2c4a8c4c399c04d8fae63ffc4a8d91564efa063df55715077c32c6",
+      "size_bytes": 14390
+    },
+    "perturbation_trial_scores": {
+      "path": "tables/perturbation_trial_scores.parquet",
+      "sha256": "68cbc5fd352ca1765f54edf49e1aec76fdbd8e1b896e19e41cb8da7beb642325",
+      "size_bytes": 400231
+    },
+    "session_perturbation_blocks": {
+      "path": "tables/session_perturbation_blocks.csv",
+      "sha256": "870d14f477cf0853f81c0f6cb345a42161e00783090fdc277eb74f6c0d99e457",
+      "size_bytes": 60325
+    },
+    "session_perturbation_contrasts": {
+      "path": "tables/session_perturbation_contrasts.csv",
+      "sha256": "da7bd531b4899e9601d837bbe18160c8d92cdc0c730813a90df58ada1318e72f",
+      "size_bytes": 49712
+    }
+  },
+  "preliminary_vertical_slice": true,
+  "representation": "Figure 2 final E1-versus-NR familiar full-contrast axis; reduced-contrast and designated-novel trials excluded from representation fitting",
+  "run_status": "complete",
+  "started_at_utc": "2026-09-07T19:39:26.163526+00:00"
+}

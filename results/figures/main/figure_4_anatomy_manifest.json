@@ -1,0 +1,129 @@
+{
+  "analysis_id": "anatomical_axis_enrichment",
+  "analysis_manifest": {
+    "path": "manifests/anatomy_analysis_run.json",
+    "sha256": "b3aaa5e414308df0c9e06c91a362011f089fc68c9db345609677abb3b92add9e",
+    "size_bytes": 8275
+  },
+  "analysis_tier": "discovery",
+  "authoritative": true,
+  "code_version": "b953bfdb128e3c196cb95c0499a91eeff0191f60+dirty",
+  "completed_at_utc": "2026-09-07T19:45:57.296652+00:00",
+  "confirmation_accessed": false,
+  "dandiset_version": "0.260825.2232",
+  "figure_id": "Figure 4",
+  "figure_stem": "figure_4_anatomy",
+  "generated_at_utc": "2026-09-07T19:45:57.296652+00:00",
+  "generator": "scripts/11_plot_anatomy.py",
+  "generator_sha256": "f0faadacac962a7ecf44c8b78aaaf548926871e8e07aa91aa1955fb55e1e43b0",
+  "inputs": [
+    {
+      "path": "tables/anatomical_axis_unit_scores.parquet",
+      "sha256": "470afeb2e16c991f4e0e6ef41f1de536ba9f283b027257cf593ada3447763d39",
+      "size_bytes": 824456
+    },
+    {
+      "path": "tables/anatomy_region_coverage.csv",
+      "sha256": "a1845edcc81eba57131e1fa6076979d54aa609afafc32f7e34291ce04587fe48",
+      "size_bytes": 1824
+    },
+    {
+      "path": "tables/mouse_anatomical_enrichment.csv",
+      "sha256": "70298237e6e7125c11a31c00814628fd351d20bc7035a21ab102b4696e8c1249",
+      "size_bytes": 13957
+    },
+    {
+      "path": "tables/anatomy_enrichment_statistics.csv",
+      "sha256": "ea81a128fddbd7c55116a85cf725ded0f51a7aaa8d496aeefdf83a5bd1145e1a",
+      "size_bytes": 11395
+    },
+    {
+      "path": "tables/anatomy_permutation_null.parquet",
+      "sha256": "9ab71bb7940e7e0d5d712240c6c6652e9d532be208c5b4b6364151a1b9826ca6",
+      "size_bytes": 823902
+    }
+  ],
+  "local_sources": [
+    {
+      "path": "src/dg/artifacts.py",
+      "sha256": "51667f969f1b622b5bded3dcf74a2d3fc689727cb967fdc47f50c81cf1720e91",
+      "size_bytes": 4557
+    },
+    {
+      "path": "src/dg/anatomical_enrichment.py",
+      "sha256": "6790424bf2a3d3e3c95bd773d896166269466196af0d9efcc157847d6e7986fe",
+      "size_bytes": 29301
+    },
+    {
+      "path": "src/dg/figure_anatomy.py",
+      "sha256": "71fbec87adde717513beabc19890bfeac2b24b5d418e98385867befa4177410a",
+      "size_bytes": 12587
+    },
+    {
+      "path": "scripts/11_plot_anatomy.py",
+      "sha256": "f0faadacac962a7ecf44c8b78aaaf548926871e8e07aa91aa1955fb55e1e43b0",
+      "size_bytes": 19055
+    }
+  ],
+  "outputs": [
+    {
+      "path": "figures/main/figure_4_anatomy.svg",
+      "sha256": "fa7bab10e9416c48f9eefcc67e73d0ea84ef48ab0eee674e29157a2a889b91b3",
+      "size_bytes": 504474
+    },
+    {
+      "path": "figures/main/figure_4_anatomy.pdf",
+      "sha256": "4411a9bc4a0f96b3407d28938abeb39dd31603fa86e2183f8d47f309e59f175d",
+      "size_bytes": 294551
+    },
+    {
+      "path": "figures/main/figure_4_anatomy.png",
+      "sha256": "6cff4e58180b4f655ab0103b5b37bb7c784dd44fb66f42e5daf20f4b082493fe",
+      "size_bytes": 711962
+    }
+  ],
+  "panels": {
+    "A": "CCF coordinate coverage of isolation-qualified discovery units",
+    "B": "all-mouse absolute reward-state-axis loading enrichment with mouse-bootstrap confidence intervals",
+    "C": "session-preserving permutation null for the transparent screen lead"
+  },
+  "run_status": "complete",
+  "software": {
+    "matplotlib": "3.11.1",
+    "numpy": "2.5.3",
+    "polars": "1.44.1"
+  },
+  "source_data": [
+    {
+      "path": "figures/main/figure_4_anatomy_source_data/panel_a_unit_coordinates.csv",
+      "sha256": "011372a8ad39b978171b937b779d5f7081345b37da730e7e6eb3f89eda8579e5",
+      "size_bytes": 3473853
+    },
+    {
+      "path": "figures/main/figure_4_anatomy_source_data/panel_a_region_coverage.csv",
+      "sha256": "5c3d1265be1c1a8f8a981c5cacbe34b4aa967fb582b4c5264b5f498532297e5b",
+      "size_bytes": 792
+    },
+    {
+      "path": "figures/main/figure_4_anatomy_source_data/panel_b_mouse_effects.csv",
+      "sha256": "3a962b0a05d2d5aeb3511edd5a1532205e379f4b159372a17367243fb49257c1",
+      "size_bytes": 4166
+    },
+    {
+      "path": "figures/main/figure_4_anatomy_source_data/panel_b_statistics.csv",
+      "sha256": "529d2f837ee70df6b00e404e43a5f026cfe5e3b4602db96f498765ee1303405d",
+      "size_bytes": 6105
+    },
+    {
+      "path": "figures/main/figure_4_anatomy_source_data/panel_c_lead_permutation_null.csv",
+      "sha256": "e00293b59935d31cf7a2cc94eda900039b45cf83b87c8c27aaf051d6aaf6fd55",
+      "size_bytes": 520799
+    }
+  ],
+  "source_data_manifest": {
+    "path": "figures/main/figure_4_anatomy_source_data/manifest.json",
+    "sha256": "675c31646705f592065a36c9aeb8b2fa713bd8f335395b8beaee9dfbdca0e5bd",
+    "size_bytes": 1600
+  },
+  "started_at_utc": "2026-09-07T19:45:51.619621+00:00"
+}

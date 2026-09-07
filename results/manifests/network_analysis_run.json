@@ -1,0 +1,184 @@
+{
+  "analysis_id": "simultaneous_network_interaction",
+  "analysis_tier": "discovery",
+  "anatomy_source": "results/tables/neural_unit_anatomy.parquet:parent_region_acronym",
+  "authoritative": true,
+  "code_version": "b953bfdb128e3c196cb95c0499a91eeff0191f60+dirty",
+  "completed_at_utc": "2026-09-07T20:27:23.770350+00:00",
+  "confirmation_accessed": false,
+  "confirmation_policy": "sealed; no confirmation identity or neural source loaded",
+  "dandiset_id": "001051",
+  "dandiset_version": "0.260825.2232",
+  "data_access": {
+    "legacy_accessor_calls": 0,
+    "legacy_accessor_forbidden_at_runtime": true,
+    "library": "lazynwb",
+    "peak_materialization": "one bounded spike-time batch from one session",
+    "spike_batch_size_units": 32,
+    "spike_reader": "dg.lazynwb_obstore.map_indexed_numeric_column_batches",
+    "string_reader": "dg.lazynwb_obstore.read_vlen_string_column",
+    "transport": "obstore byte-range reads",
+    "version": "1.0.0.dev8"
+  },
+  "inputs": {
+    "analysis_lock": {
+      "path": "config/analysis_lock.yaml",
+      "sha256": "c1c78c89391c5656f7372ea433e63d43bf3c960ee9247639da57a45db556e30c",
+      "size_bytes": 5056
+    },
+    "behavior_trials": {
+      "path": "tables/behavior_trials.parquet",
+      "sha256": "29a64113baaa25f445be9165a3353c0cf2009b291c83e89e3ce41a92997bd29e",
+      "size_bytes": 2905997
+    },
+    "discovery_session_sources": {
+      "path": "tables/discovery_session_sources.parquet",
+      "sha256": "413690db61ed65c59917d220ac396c99e46c8a05d4e8fd2198fd884f8c2cce65",
+      "size_bytes": 5172
+    },
+    "neural_transition_manifest": {
+      "path": "manifests/neural_transition_analysis_run.json",
+      "sha256": "2c0d48386e214028a390d1baefa5bfb8b1800781c9bd25334304d11f2ccab1b9",
+      "size_bytes": 6514
+    },
+    "neural_transition_unit_qc": {
+      "path": "tables/neural_transition_unit_qc.parquet",
+      "sha256": "c3efadf9330e34500556c50e9d2e8cc032903dcfae7a7ff6b802abe1f2610e00",
+      "size_bytes": 1483685
+    },
+    "neural_unit_anatomy": {
+      "path": "tables/neural_unit_anatomy.parquet",
+      "sha256": "ee2a6c103642c0ae2356bad05622b8b631ac93e89f103286f2df1e30e50a2aec",
+      "size_bytes": 583572
+    }
+  },
+  "interpretation": "positive-lag predictive association; not causal direction or direct connectivity",
+  "limitations": "preliminary isolation-only discovery slice; D04, running, and pupil adjustment remain outstanding; region pair nomination is selection-biased",
+  "local_sources": {
+    "scripts/12_analyze_network.py": {
+      "path": "scripts/12_analyze_network.py",
+      "sha256": "db8586a96e807753ca0807b0734f307f0a306e8402913d29ee1357a5391373fd",
+      "size_bytes": 37351
+    },
+    "src/dg/artifacts.py": {
+      "path": "src/dg/artifacts.py",
+      "sha256": "51667f969f1b622b5bded3dcf74a2d3fc689727cb967fdc47f50c81cf1720e91",
+      "size_bytes": 4557
+    },
+    "src/dg/data.py": {
+      "path": "src/dg/data.py",
+      "sha256": "c03464112c2008922be1bf3cd21c02ed34077cae82f8988f57d54c1d1837183c",
+      "size_bytes": 24041
+    },
+    "src/dg/lazynwb_obstore.py": {
+      "path": "src/dg/lazynwb_obstore.py",
+      "sha256": "0f8463ba138eb4d948a5d6452a9ce6f5f033dffdeb47a3a8995d83a426b39aa8",
+      "size_bytes": 9972
+    },
+    "src/dg/network_interactions.py": {
+      "path": "src/dg/network_interactions.py",
+      "sha256": "ad85357b16062e3052a9ee29728a6a62c3ffe16af4186196a1042692f24658bc",
+      "size_bytes": 37836
+    },
+    "src/dg/statistics.py": {
+      "path": "src/dg/statistics.py",
+      "sha256": "9a74766204d03f524286c1087d20c0aad2cc7415f924a7a2b9e83830462339f0",
+      "size_bytes": 21952
+    }
+  },
+  "model": {
+    "baseline_start_seconds": -0.15,
+    "baseline_stop_seconds": 0.0,
+    "inner_folds": 3,
+    "maximum_units_per_region": 24,
+    "minimum_median_units_per_mouse": 10,
+    "minimum_pair_mice": 5,
+    "minimum_pair_sessions": 8,
+    "minimum_trials_per_block": 12,
+    "minimum_units_per_region": 8,
+    "outer_folds": 4,
+    "ranks": [
+      1,
+      2,
+      4,
+      8
+    ],
+    "ridge_alphas": [
+      0.1,
+      1.0,
+      10.0,
+      100.0
+    ],
+    "source_start_seconds": 0.0,
+    "source_stop_seconds": 0.15,
+    "target_start_seconds": 0.15,
+    "target_stop_seconds": 0.3
+  },
+  "nominated_pair": {
+    "adjusted_p_value": 1.0,
+    "estimate": 0.010213663024834795,
+    "source_region": "MB",
+    "status": "fragile",
+    "target_region": "Isocortex"
+  },
+  "outputs": {
+    "mouse_network_block_performance": {
+      "path": "tables/mouse_network_block_performance.csv",
+      "sha256": "491e80e3978bed1eb3bf0340b67d9011184b53016b2c87b420b5a358423b5f0c",
+      "size_bytes": 62882
+    },
+    "mouse_network_effects": {
+      "path": "tables/mouse_network_effects.csv",
+      "sha256": "85c999f7e30909f6a7f00019687484e76418ace2ad91e13beb06a1addee130b8",
+      "size_bytes": 37716
+    },
+    "network_environment": {
+      "path": "manifests/network_environment.txt",
+      "sha256": "73d43cd405dabc4c9618b25553a968312dd12d024b51c5f3377dfe895bbf58c8",
+      "size_bytes": 376
+    },
+    "network_pair_block_performance": {
+      "path": "tables/network_pair_block_performance.csv",
+      "sha256": "442002d8a00d008e28260a186475674262e74554d198655152027cb2eb4d1cd6",
+      "size_bytes": 874537
+    },
+    "network_pair_fold_performance": {
+      "path": "tables/network_pair_fold_performance.parquet",
+      "sha256": "4bae2e65a1a973cec1c9094e7a9a1f648f6a38827f24cb52e3a79737f4960eb4",
+      "size_bytes": 96385
+    },
+    "network_pair_screen": {
+      "path": "tables/network_pair_screen.csv",
+      "sha256": "5b2fff751a608766a99754ae7c27c60ef0af545c31b807f40c26a66d9526b298",
+      "size_bytes": 3607
+    },
+    "network_session_status": {
+      "path": "tables/network_session_status.csv",
+      "sha256": "dce48f75b9fbf2c698de1267a4d3c399b4e34cead4328f4f5ac57bec2a69e4ed",
+      "size_bytes": 44380
+    },
+    "network_statistics": {
+      "path": "tables/network_statistics.csv",
+      "sha256": "2a6702cb4739a8d32520f40d10b47265a05fac83bb2720b6a9a29c0c736631c6",
+      "size_bytes": 25106
+    },
+    "network_unit_anatomy": {
+      "path": "tables/network_unit_anatomy.parquet",
+      "sha256": "e59246aa8910ef038f51932ffd3a172a4ba1b2751f41114ed8b58fac34137994",
+      "size_bytes": 273528
+    },
+    "nominated_network_pair": {
+      "path": "models/nominated_network_models/nominated_pair.json",
+      "sha256": "b9e8d176f9fc62ed3e8051b8a7f61163051cf41f496e9dfbba1413fde6d90e04",
+      "size_bytes": 1121
+    },
+    "region_pair_coverage": {
+      "path": "tables/region_pair_coverage.csv",
+      "sha256": "508c145bcca460c18f175e66ca4527744af766fdb1a04475f2cc582e30742274",
+      "size_bytes": 3934
+    }
+  },
+  "preliminary_vertical_slice": true,
+  "run_status": "complete",
+  "started_at_utc": "2026-09-07T20:16:12.235098+00:00"
+}

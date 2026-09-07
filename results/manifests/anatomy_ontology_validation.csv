@@ -1,0 +1,9 @@
+check,status,detail
+author_payload_sha256,pass,eb7df8325ab71f52159f3f2c2720b206a934d3fb10a51edb7e362d2d37ec4ab7
+official_graph_payload_sha256,pass,b5f0d024d1df09ee18aef15093f55240f4a70b3924ee9689add612dadff80386
+official_set_payload_sha256,pass,cbb4cda7eb90cd886d9498d6e85de42d241a105cd576fd4255b5e15f921b2aba
+author_official_id_set,pass,1327 identical structure IDs
+author_official_parent_links,pass,1327 identical parent links
+author_official_structure_paths,pass,1327 identical ancestry paths
+official_major_division_membership,pass,12 members in set 687527670
+expected_candidate_mappings,pass,"HY, MB, PAL, STR"

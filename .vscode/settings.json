@@ -9,5 +9,6 @@
         "titleBar.inactiveBackground": "#5cb0a599",
         "titleBar.inactiveForeground": "#15202b99"
     },
-    "peacock.color": "#5cb0a5"
+    "peacock.color": "#5cb0a5",
+    "python.defaultInterpreterPath": "/Users/benh/github/ai-dg-paper/.venv/bin/python3"
 }

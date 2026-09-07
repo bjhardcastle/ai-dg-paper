@@ -1,0 +1,43 @@
+{
+  "aggregation": "region within session; equal sessions within mouse; equal mice",
+  "analysis_manifest": {
+    "path": "manifests/anatomy_analysis_run.json",
+    "sha256": "b3aaa5e414308df0c9e06c91a362011f089fc68c9db345609677abb3b92add9e",
+    "size_bytes": 8275
+  },
+  "figure_id": "Figure 4",
+  "files": [
+    {
+      "path": "figures/main/figure_4_anatomy_source_data/panel_a_unit_coordinates.csv",
+      "sha256": "011372a8ad39b978171b937b779d5f7081345b37da730e7e6eb3f89eda8579e5",
+      "size_bytes": 3473853
+    },
+    {
+      "path": "figures/main/figure_4_anatomy_source_data/panel_a_region_coverage.csv",
+      "sha256": "5c3d1265be1c1a8f8a981c5cacbe34b4aa967fb582b4c5264b5f498532297e5b",
+      "size_bytes": 792
+    },
+    {
+      "path": "figures/main/figure_4_anatomy_source_data/panel_b_mouse_effects.csv",
+      "sha256": "3a962b0a05d2d5aeb3511edd5a1532205e379f4b159372a17367243fb49257c1",
+      "size_bytes": 4166
+    },
+    {
+      "path": "figures/main/figure_4_anatomy_source_data/panel_b_statistics.csv",
+      "sha256": "529d2f837ee70df6b00e404e43a5f026cfe5e3b4602db96f498765ee1303405d",
+      "size_bytes": 6105
+    },
+    {
+      "path": "figures/main/figure_4_anatomy_source_data/panel_c_lead_permutation_null.csv",
+      "sha256": "e00293b59935d31cf7a2cc94eda900039b45cf83b87c8c27aaf051d6aaf6fd55",
+      "size_bytes": 520799
+    }
+  ],
+  "generated_at_utc": "2026-09-07T19:45:51.742173+00:00",
+  "inference": "mouse bootstrap CI and session-preserving anatomy-label permutation",
+  "lead_screen_region": {
+    "acronym": "STR",
+    "id": 477,
+    "name": "Striatum"
+  }
+}

@@ -1,0 +1,114 @@
+{
+  "analysis_id": "heldout_perturbation_axis",
+  "analysis_manifest": {
+    "path": "manifests/perturbation_analysis_run.json",
+    "sha256": "7a51507b448352cfc4202b234641920e099d8ef83a734fc9c598e11a19543e35",
+    "size_bytes": 5341
+  },
+  "analysis_tier": "discovery",
+  "authoritative": true,
+  "code_version": "b953bfdb128e3c196cb95c0499a91eeff0191f60+dirty",
+  "completed_at_utc": "2026-09-07T19:46:58.618184+00:00",
+  "dandiset_version": "0.260825.2232",
+  "figure_id": "Figure 6",
+  "figure_stem": "figure_6_perturbations",
+  "generated_at_utc": "2026-09-07T19:46:57.484240+00:00",
+  "generator": "scripts/15_plot_perturbations.py",
+  "generator_sha256": "1cc783d50bdfb4d93d741bce27600dc0ca6973b4b825c6493f8c5e72e8f708fc",
+  "inputs": [
+    {
+      "path": "tables/session_perturbation_blocks.csv",
+      "sha256": "870d14f477cf0853f81c0f6cb345a42161e00783090fdc277eb74f6c0d99e457",
+      "size_bytes": 60325
+    },
+    {
+      "path": "tables/mouse_perturbation_contrasts.csv",
+      "sha256": "43f2a89541190025c475b7b845bf44ae32a6c70c2958c7c28a502d8a8f1257e9",
+      "size_bytes": 6608
+    },
+    {
+      "path": "tables/mouse_perturbation_interactions.csv",
+      "sha256": "63aa77466ce94f6b05569d36b58ab89773336a264f36591d93c2f5698cac1c59",
+      "size_bytes": 5807
+    },
+    {
+      "path": "tables/perturbation_statistics.csv",
+      "sha256": "86290aa19d2c4a8c4c399c04d8fae63ffc4a8d91564efa063df55715077c32c6",
+      "size_bytes": 14390
+    }
+  ],
+  "local_sources": [
+    {
+      "path": "src/dg/artifacts.py",
+      "sha256": "51667f969f1b622b5bded3dcf74a2d3fc689727cb967fdc47f50c81cf1720e91",
+      "size_bytes": 4557
+    },
+    {
+      "path": "src/dg/figure_perturbations.py",
+      "sha256": "721972fb3ddc8106c8c9fd106471f8cc6a9d38950fbb7dc704683407694b0dfa",
+      "size_bytes": 12805
+    },
+    {
+      "path": "scripts/15_plot_perturbations.py",
+      "sha256": "1cc783d50bdfb4d93d741bce27600dc0ca6973b4b825c6493f8c5e72e8f708fc",
+      "size_bytes": 20089
+    }
+  ],
+  "outputs": [
+    {
+      "path": "figures/main/figure_6_perturbations.svg",
+      "sha256": "018c3113cfb4889f357e8c88cd044d802f290319a18e5fe3e669116605684e63",
+      "size_bytes": 114728
+    },
+    {
+      "path": "figures/main/figure_6_perturbations.pdf",
+      "sha256": "1b10f9026e027cfa4e1add02181f6f988518ce95c01010c7f6800145c239656d",
+      "size_bytes": 39055
+    },
+    {
+      "path": "figures/main/figure_6_perturbations.png",
+      "sha256": "722bcecf4f62b720b0d2a9b9a1c3bda301e026b0760f8afb49fb1958f266521a",
+      "size_bytes": 462186
+    }
+  ],
+  "panels": {
+    "A": "behavioral responses across E1, NR, and E2 for contrast and designated-identity probes",
+    "B": "frozen early reward-axis scores across states for the same probes",
+    "C": "mouse-level behavioral state-by-perturbation interactions",
+    "D": "mouse-level reversible reward-state contrasts for the two held-out neural probe conditions"
+  },
+  "run_status": "complete",
+  "software": {
+    "matplotlib": "3.11.1",
+    "numpy": "2.5.3",
+    "polars": "1.44.1"
+  },
+  "source_data": [
+    {
+      "path": "figures/main/figure_6_perturbations_source_data/panel_ab_mouse_blocks.csv",
+      "sha256": "cf033b17fc2156b8b1a39a4bbbf4e47fe5df5f50c327b89d156fd7660d403158",
+      "size_bytes": 29399
+    },
+    {
+      "path": "figures/main/figure_6_perturbations_source_data/panel_ab_block_summary.csv",
+      "sha256": "b38b6086a35a6babd7f8f1ef3b793fb77b401bae62063f794a5dc66f3e0eaae2",
+      "size_bytes": 3489
+    },
+    {
+      "path": "figures/main/figure_6_perturbations_source_data/panel_cd_mouse_interactions.csv",
+      "sha256": "99c508750e69240ac2f64b1f5fa934b8d41cd6638c6cb3e1ff7483d99c29e5a6",
+      "size_bytes": 2941
+    },
+    {
+      "path": "figures/main/figure_6_perturbations_source_data/panel_cd_statistics.csv",
+      "sha256": "9b4c5f00fdc8d6e44a924e9b061fde5ed400db05a7a7c2e9680047d40ea0c370",
+      "size_bytes": 5334
+    }
+  ],
+  "source_data_manifest": {
+    "path": "figures/main/figure_6_perturbations_source_data/manifest.json",
+    "sha256": "2a016a06eb38b5110ed4f3626899bb5d07c064fe42448ea033d8b4c58e88c177",
+    "size_bytes": 1279
+  },
+  "started_at_utc": "2026-09-07T19:46:57.356715+00:00"
+}

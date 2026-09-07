@@ -1,0 +1,116 @@
+{
+  "schema_version": 1,
+  "overall_status": "approved",
+  "approval_record": {
+    "approved_by": "user (conversation instruction)",
+    "approved_at": "2026-09-07T03:15:53Z",
+    "note": "User stated: all locks approved"
+  },
+  "decisions": {
+    "D01": {
+      "title": "Immutable DANDI version",
+      "value": "DANDI:001051/0.260825.2232",
+      "status": "approved",
+      "approved_by": "user (conversation instruction)",
+      "approved_at": "2026-09-07T03:15:53Z"
+    },
+    "D02": {
+      "title": "Task-event semantics",
+      "value": "NWB reward-state flags first with pinned companion fallback; derive cross-state responses from exact-deduplicated raw lick_times in (0.150, 0.750] s; report duplicate burden; audit online outcomes only in reward-available blocks; no nominal-time fallback",
+      "status": "approved",
+      "approved_by": "user (conversation instruction)",
+      "approved_at": "2026-09-07T03:15:53Z"
+    },
+    "D03": {
+      "title": "Session inclusion thresholds",
+      "value": "minimum 10 go trials/block and 5 catch trials/engaged block; engaged response >=0.5 and d-prime >=1.0; late NR response <=0.2; suppression drop >=0.3",
+      "status": "approved",
+      "approved_by": "user (conversation instruction)",
+      "approved_at": "2026-09-07T03:15:53Z"
+    },
+    "D04": {
+      "title": "Engaged-block unit consistency",
+      "value": "Noise-calibrated equivalence on condition-matched lick-free familiar full-contrast events and baseline; exclude final 600 s",
+      "status": "approved",
+      "approved_by": "user (conversation instruction)",
+      "approved_at": "2026-09-07T03:15:53Z"
+    },
+    "D05": {
+      "title": "Discovery/confirmation split",
+      "value": "Mouse-grouped approximately 2/3 discovery and 1/3 confirmation after behavior QC; one confirmation run",
+      "status": "approved",
+      "approved_by": "user (conversation instruction)",
+      "approved_at": "2026-09-07T03:15:53Z"
+    },
+    "D06": {
+      "title": "Primary time windows",
+      "value": "25 ms modeling bins; early sensory, late/pre-lick, lick, and baseline windows to be frozen after timing validation",
+      "status": "approved",
+      "approved_by": "user (conversation instruction)",
+      "approved_at": "2026-09-07T03:15:53Z"
+    },
+    "D07": {
+      "title": "Functional representation",
+      "value": "Ridge-regularized event-kernel spike model with out-of-fold deviance/dropouts plus model-free PSTHs",
+      "status": "approved",
+      "approved_by": "user (conversation instruction)",
+      "approved_at": "2026-09-07T03:15:53Z"
+    },
+    "D08": {
+      "title": "Discrete clusters versus continuous axes",
+      "value": "Use discrete labels only after mouse-bootstrap stability and held-out mapping; otherwise continuous axes",
+      "status": "approved",
+      "approved_by": "user (conversation instruction)",
+      "approved_at": "2026-09-07T03:15:53Z"
+    },
+    "D09": {
+      "title": "Anatomical granularity and coverage",
+      "value": "Lock one Allen CCFv3 parent level and mouse/session/unit coverage minima before enrichment testing",
+      "status": "approved",
+      "approved_by": "user (conversation instruction)",
+      "approved_at": "2026-09-07T03:15:53Z"
+    },
+    "D10": {
+      "title": "Primary interaction analysis",
+      "value": "Positive-lag ridge-regularized reduced-rank prediction of target residual activity with target history and measured covariates",
+      "status": "approved",
+      "approved_by": "user (conversation instruction)",
+      "approved_at": "2026-09-07T03:15:53Z"
+    },
+    "D11": {
+      "title": "Candidate source/target regions",
+      "value": "Nominate a small set in discovery and test unchanged in confirmation",
+      "status": "approved",
+      "approved_by": "user (conversation instruction)",
+      "approved_at": "2026-09-07T03:15:53Z"
+    },
+    "D12": {
+      "title": "Genotype, sex, day, and cohort handling",
+      "value": "Prespecified strata/covariates; cell-type claims require validated optotagging",
+      "status": "approved",
+      "approved_by": "user (conversation instruction)",
+      "approved_at": "2026-09-07T03:15:53Z"
+    },
+    "D13": {
+      "title": "Missing pupil/video policy",
+      "value": "Running and licks core; pupil/video adjusted where valid with matched complete-case sensitivity",
+      "status": "approved",
+      "approved_by": "user (conversation instruction)",
+      "approved_at": "2026-09-07T03:15:53Z"
+    },
+    "D14": {
+      "title": "Confirmatory viability threshold",
+      "value": "Require adequate eligible held-out mice and simultaneous region-pair populations or label study exploratory",
+      "status": "approved",
+      "approved_by": "user (conversation instruction)",
+      "approved_at": "2026-09-07T03:15:53Z"
+    },
+    "D15": {
+      "title": "LFP scope",
+      "value": "Outside primary manuscript pending a separate reviewed plan",
+      "status": "approved",
+      "approved_by": "user (conversation instruction)",
+      "approved_at": "2026-09-07T03:15:53Z"
+    }
+  }
+}

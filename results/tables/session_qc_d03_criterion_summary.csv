@@ -1,0 +1,9 @@
+criterion_order,criterion_id,criterion_label,pass_column,approved_definition,n_sessions_total,n_sessions_evaluable,n_sessions_pass,n_sessions_fail,session_pass_fraction,n_mice_total,n_mice_with_any_session_pass,n_mice_with_all_sessions_pass
+1,minimum_go_trials_all_blocks,At least 10 go trials in each analysis block,minimum_go_trials_pass,"E1, late NR, and early E2 each have >=10 eligible go trials",99,99,98,1,0.98989898989899,27,27,26
+2,minimum_catch_trials_engaged_blocks,At least 5 catch trials in each engaged block,minimum_engaged_catch_trials_pass,E1 and early E2 each have >=5 eligible catch trials,99,99,99,0,1.0,27,27,27
+3,engaged_1_response,E1 go response probability >=0.5,engaged_1_response_pass,E1 canonical lick response probability >=0.5,99,99,80,19,0.8080808080808081,27,26,17
+4,engaged_2_response,Early-E2 go response probability >=0.5,engaged_2_response_pass,Early E2 canonical lick response probability >=0.5,99,99,59,40,0.5959595959595959,27,22,11
+5,engaged_1_dprime,E1 d-prime >=1.0,engaged_1_dprime_pass,E1 loglinear d-prime >=1.0,99,99,77,22,0.7777777777777778,27,27,13
+6,engaged_2_dprime,Early-E2 d-prime >=1.0,engaged_2_dprime_pass,Early E2 loglinear d-prime >=1.0,99,99,68,31,0.6868686868686869,27,23,15
+7,late_no_reward_response,Late-NR go response probability <=0.2,no_reward_response_pass,Final 600 s of NR canonical lick response probability <=0.2,99,99,75,24,0.7575757575757576,27,27,11
+8,reward_suppression_drop,Reward suppression drop >=0.3,reward_suppression_drop_pass,"min(E1, early E2) response probability - late NR >=0.3",99,99,62,37,0.6262626262626263,27,24,11

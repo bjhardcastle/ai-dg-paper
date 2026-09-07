@@ -1,0 +1,13 @@
+parent_region_order,parent_region_id,parent_region_acronym,parent_region_name,n_mice,n_sessions,n_probes,n_units,median_units_per_represented_mouse,median_sessions_per_represented_mouse,eligible_denominator_mice,eligible_denominator_sessions,eligible_denominator_units,coverage_eligible,minimum_mice,minimum_sessions,minimum_median_units_per_mouse,coverage_population
+1,1097,HY,Hypothalamus,4,4,4,63,14.5,1.0,12,23,20667,false,5,8,10,well-isolated finite-weight units; D04 not yet applied
+2,313,MB,Midbrain,10,14,20,1045,97.0,1.0,12,23,20667,true,5,8,10,well-isolated finite-weight units; D04 not yet applied
+3,698,OLF,Olfactory areas,1,1,1,2,2.0,1.0,12,23,20667,false,5,8,10,well-isolated finite-weight units; D04 not yet applied
+4,803,PAL,Pallidum,3,4,4,43,4.0,1.0,12,23,20667,false,5,8,10,well-isolated finite-weight units; D04 not yet applied
+5,315,Isocortex,Isocortex,12,23,121,10069,875.0,2.0,12,23,20667,true,5,8,10,well-isolated finite-weight units; D04 not yet applied
+6,703,CTXsp,Cortical subplate,0,0,0,0,0.0,0.0,12,23,20667,false,5,8,10,well-isolated finite-weight units; D04 not yet applied
+7,477,STR,Striatum,11,20,28,2046,112.0,2.0,12,23,20667,true,5,8,10,well-isolated finite-weight units; D04 not yet applied
+8,354,MY,Medulla,0,0,0,0,0.0,0.0,12,23,20667,false,5,8,10,well-isolated finite-weight units; D04 not yet applied
+9,549,TH,Thalamus,12,23,65,3714,309.5,2.0,12,23,20667,true,5,8,10,well-isolated finite-weight units; D04 not yet applied
+10,512,CB,Cerebellum,0,0,0,0,0.0,0.0,12,23,20667,false,5,8,10,well-isolated finite-weight units; D04 not yet applied
+11,1089,HPF,Hippocampal formation,12,23,64,2727,213.5,2.0,12,23,20667,true,5,8,10,well-isolated finite-weight units; D04 not yet applied
+12,771,P,Pons,0,0,0,0,0.0,0.0,12,23,20667,false,5,8,10,well-isolated finite-weight units; D04 not yet applied

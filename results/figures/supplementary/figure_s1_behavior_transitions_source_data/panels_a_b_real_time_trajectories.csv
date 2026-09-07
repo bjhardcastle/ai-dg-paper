@@ -1,0 +1,25 @@
+transition_id,transition_order,anchor_type,condition,bin_index,analysis_block,relative_bin_start_seconds,relative_bin_stop_seconds,relative_bin_center_seconds,n_mice_response_contributing,n_sessions_response_contributing,n_trials_contributing,response_probability,response_probability_ci_low,response_probability_ci_high,aggregation,transition_label
+reward_withdrawal,1,real,catch,-3,engaged_1,-360.0,-240.0,-300.0,27,95,298,0.13873456790123456,0.07592592592592592,0.2138387345679012,equal-session mean within mouse; equal-mouse mean,Reward withdrawal
+reward_withdrawal,1,real,catch,-2,engaged_1,-240.0,-120.0,-180.0,27,92,291,0.1383377425044092,0.08931455761316871,0.19684009406231628,equal-session mean within mouse; equal-mouse mean,Reward withdrawal
+reward_withdrawal,1,real,catch,-1,engaged_1,-120.0,0.0,-60.0,27,94,292,0.1074588477366255,0.050462962962962966,0.17834362139917698,equal-session mean within mouse; equal-mouse mean,Reward withdrawal
+reward_withdrawal,1,real,catch,0,no_reward,0.0,120.0,60.0,27,98,353,0.0882716049382716,0.049228395061728394,0.13549382716049385,equal-session mean within mouse; equal-mouse mean,Reward withdrawal
+reward_withdrawal,1,real,catch,1,no_reward,120.0,240.0,180.0,27,98,355,0.13631687242798354,0.08333333333333331,0.1949588477366255,equal-session mean within mouse; equal-mouse mean,Reward withdrawal
+reward_withdrawal,1,real,catch,2,no_reward,240.0,360.0,300.0,27,97,377,0.0728395061728395,0.03425925925925926,0.12150591563786003,equal-session mean within mouse; equal-mouse mean,Reward withdrawal
+reward_withdrawal,1,real,go,-3,engaged_1,-360.0,-240.0,-300.0,27,99,575,0.6550154320987653,0.5811393114344502,0.7304050007348618,equal-session mean within mouse; equal-mouse mean,Reward withdrawal
+reward_withdrawal,1,real,go,-2,engaged_1,-240.0,-120.0,-180.0,27,99,587,0.6660444836370762,0.5965177346658828,0.7355161792083088,equal-session mean within mouse; equal-mouse mean,Reward withdrawal
+reward_withdrawal,1,real,go,-1,engaged_1,-120.0,0.0,-60.0,27,99,573,0.6747219772682734,0.5873944554673721,0.758507556829316,equal-session mean within mouse; equal-mouse mean,Reward withdrawal
+reward_withdrawal,1,real,go,0,no_reward,0.0,120.0,60.0,27,99,736,0.5507699347977127,0.46887152777777785,0.629428152223291,equal-session mean within mouse; equal-mouse mean,Reward withdrawal
+reward_withdrawal,1,real,go,1,no_reward,120.0,240.0,180.0,27,99,761,0.3667031870735574,0.30538683795628246,0.4308240250832843,equal-session mean within mouse; equal-mouse mean,Reward withdrawal
+reward_withdrawal,1,real,go,2,no_reward,240.0,360.0,300.0,27,99,754,0.3100789642456309,0.2511472752213493,0.37457342661625076,equal-session mean within mouse; equal-mouse mean,Reward withdrawal
+reward_restoration,2,real,catch,-3,no_reward,-360.0,-240.0,-300.0,27,99,396,0.0673206937095826,0.029975014697236915,0.11499154908877131,equal-session mean within mouse; equal-mouse mean,Reward restoration
+reward_restoration,2,real,catch,-2,no_reward,-240.0,-120.0,-180.0,27,98,379,0.07896090534979423,0.035339506172839506,0.13106995884773662,equal-session mean within mouse; equal-mouse mean,Reward restoration
+reward_restoration,2,real,catch,-1,no_reward,-120.0,0.0,-60.0,27,99,387,0.06661522633744855,0.02571373456790129,0.1185763888888888,equal-session mean within mouse; equal-mouse mean,Reward restoration
+reward_restoration,2,real,catch,0,engaged_2,0.0,120.0,60.0,27,88,206,0.15252057613168724,0.0853909465020576,0.23123070987654315,equal-session mean within mouse; equal-mouse mean,Reward restoration
+reward_restoration,2,real,catch,1,engaged_2,120.0,240.0,180.0,27,94,314,0.1116769547325103,0.06373456790123457,0.16779963991769548,equal-session mean within mouse; equal-mouse mean,Reward restoration
+reward_restoration,2,real,catch,2,engaged_2,240.0,360.0,300.0,27,98,315,0.13641975308641976,0.07422453703703706,0.20488683127572016,equal-session mean within mouse; equal-mouse mean,Reward restoration
+reward_restoration,2,real,go,-3,no_reward,-360.0,-240.0,-300.0,27,99,776,0.1229413847469403,0.07681819295245225,0.1767396378912582,equal-session mean within mouse; equal-mouse mean,Reward restoration
+reward_restoration,2,real,go,-2,no_reward,-240.0,-120.0,-180.0,27,99,779,0.14096921596921597,0.09500756852030003,0.19434860899559972,equal-session mean within mouse; equal-mouse mean,Reward restoration
+reward_restoration,2,real,go,-1,no_reward,-120.0,0.0,-60.0,27,99,785,0.14908131134982985,0.10738257241729464,0.19607468256195107,equal-session mean within mouse; equal-mouse mean,Reward restoration
+reward_restoration,2,real,go,0,engaged_2,0.0,120.0,60.0,27,97,455,0.5585097001763669,0.4753268298059964,0.6407053755144032,equal-session mean within mouse; equal-mouse mean,Reward restoration
+reward_restoration,2,real,go,1,engaged_2,120.0,240.0,180.0,27,99,634,0.5803876507580211,0.4930206913713859,0.6716547251616696,equal-session mean within mouse; equal-mouse mean,Reward restoration
+reward_restoration,2,real,go,2,engaged_2,240.0,360.0,300.0,27,99,636,0.556050362531844,0.4477482914462081,0.6566635741230648,equal-session mean within mouse; equal-mouse mean,Reward restoration

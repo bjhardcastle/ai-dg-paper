@@ -1,0 +1,4 @@
+reward_block,block_order,mean_source_added_r2,ci_low,ci_high,n_mice,n_sessions,n_trials,aggregation,ci_method,bootstrap_seed,bootstrap_resamples
+engaged_1,0,-0.011961661288502828,-0.018699080085025185,-0.0061275591338174375,10,13,246,"equal sessions within mouse, then equal mice",mouse percentile bootstrap,1051,10000
+no_reward,1,-0.011174858287539386,-0.02377798808499355,-0.0021016843086745633,10,13,246,"equal sessions within mouse, then equal mice",mouse percentile bootstrap,1052,10000
+engaged_2,2,-0.007680835021463317,-0.01863428519849038,0.0041498775120819,10,13,246,"equal sessions within mouse, then equal mice",mouse percentile bootstrap,1053,10000

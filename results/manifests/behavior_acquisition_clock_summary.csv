@@ -1,0 +1,15 @@
+signal_id,timeseries_path,coverage_requirement,n_sources_audited,n_sources_present,n_sources_absent_or_unread,n_sources_read_error,n_sources_explicit_timestamps,n_sources_shared_explicit_timestamps,n_sources_rate_derived,n_sources_length_mismatch,data_dtypes,timestamp_dtypes,coverage_status,full_vector_clock_status
+autorewarded,/processing/rewards/autorewarded,core,99,99,0,0,99,0,0,0,"",float64,metadata_present,not_validated_metadata_only
+licks,/processing/licking/licks,core,99,99,0,0,99,0,0,0,"",float64,metadata_present,not_validated_metadata_only
+optotagging,/processing/optotagging/optotagging,core,99,99,0,0,99,0,0,0,"",float64,metadata_present,not_validated_metadata_only
+reward_volume,/processing/rewards/volume,core,99,99,0,0,99,0,0,0,"",float64,metadata_present,not_validated_metadata_only
+running_dx,/processing/running/dx,core,99,99,0,0,99,0,0,0,"",float64,metadata_present,not_validated_metadata_only
+running_speed,/processing/running/speed,core,99,99,0,0,99,0,0,0,"",float64,metadata_present,not_validated_metadata_only
+running_speed_unfiltered,/processing/running/speed_unfiltered,core,99,99,0,0,99,0,0,0,"",float64,metadata_present,not_validated_metadata_only
+stimulus_timestamps,/processing/stimulus/timestamps,core,99,99,0,0,99,0,0,0,"",float64,metadata_present,not_validated_metadata_only
+v_in,/acquisition/v_in,core,99,99,0,0,99,0,0,0,"",float64,metadata_present,not_validated_metadata_only
+v_sig,/acquisition/v_sig,core,99,99,0,0,99,0,0,0,"",float64,metadata_present,not_validated_metadata_only
+corneal_reflection_tracking,/acquisition/EyeTracking/corneal_reflection_tracking,optional,99,97,2,0,97,97,0,0,"",float64,optional_missing,not_validated_metadata_only
+eye_tracking,/acquisition/EyeTracking/eye_tracking,optional,99,97,2,0,97,0,0,0,"",float64,optional_missing,not_validated_metadata_only
+likely_blink,/acquisition/EyeTracking/likely_blink,optional,99,97,2,0,97,97,0,0,"",float64,optional_missing,not_validated_metadata_only
+pupil_tracking,/acquisition/EyeTracking/pupil_tracking,optional,99,97,2,0,97,97,0,0,"",float64,optional_missing,not_validated_metadata_only

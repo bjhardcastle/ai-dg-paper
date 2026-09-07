@@ -1,0 +1,25 @@
+metric,perturbation_family,condition,condition_order,condition_label,reward_block,block_order,block_label,estimate,ci_low,ci_high,n_mice,n_sessions,n_trials
+behavior_response,contrast,full,1,Contrast: full,engaged_1,1,E1,0.8810841550424883,0.8071337757535673,0.9496518383237132,12,23,194
+behavior_response,contrast,full,1,Contrast: full,no_reward,2,NR,0.19960544746929124,0.1548486942984998,0.24508623384262265,12,23,428
+behavior_response,contrast,full,1,Contrast: full,engaged_2,3,E2,0.7538112511699974,0.6605271824587807,0.845018678539383,12,23,347
+behavior_response,contrast,reduced,2,Contrast: 70%,engaged_1,1,E1,0.4902061287477954,0.36111662257495597,0.6193592923280423,12,23,193
+behavior_response,contrast,reduced,2,Contrast: 70%,no_reward,2,NR,0.06833238437540774,0.04757981193334361,0.08885473814197992,12,23,433
+behavior_response,contrast,reduced,2,Contrast: 70%,engaged_2,3,E2,0.4615077006040628,0.3729526359218696,0.5503939434721411,12,23,343
+behavior_response,novelty,familiar,3,Identity: familiar,engaged_1,1,E1,0.8292697224549311,0.7377919025537311,0.9060565171208288,12,23,463
+behavior_response,novelty,familiar,3,Identity: familiar,no_reward,2,NR,0.20911190610430666,0.1727001888367631,0.24670030457448813,12,23,1035
+behavior_response,novelty,familiar,3,Identity: familiar,engaged_2,3,E2,0.7584798751328109,0.664476407377741,0.8506970025042357,12,23,850
+behavior_response,novelty,designated_novel,4,Identity: designated novel,engaged_1,1,E1,0.9361399017649017,0.8813604711260961,0.9756944444444443,12,23,270
+behavior_response,novelty,designated_novel,4,Identity: designated novel,no_reward,2,NR,0.28564397774280575,0.220429396112135,0.34341430192040817,12,23,607
+behavior_response,novelty,designated_novel,4,Identity: designated novel,engaged_2,3,E2,0.7972997924292069,0.7244493184955142,0.8695597891718607,12,23,498
+early_reward_axis,contrast,full,1,Contrast: full,engaged_1,1,E1,0.503939878989316,0.49189500244768153,0.516345361871045,12,23,194
+early_reward_axis,contrast,full,1,Contrast: full,no_reward,2,NR,-0.4911061658492499,-0.5096645972219871,-0.46946364577444805,12,23,428
+early_reward_axis,contrast,full,1,Contrast: full,engaged_2,3,E2,-0.1295564871529953,-0.18151011424605254,-0.07831617147768799,12,23,347
+early_reward_axis,contrast,reduced,2,Contrast: 70%,engaged_1,1,E1,-0.050728654888313164,-0.10793052259953198,0.002118617827774621,12,23,193
+early_reward_axis,contrast,reduced,2,Contrast: 70%,no_reward,2,NR,-0.24953707909873327,-0.27194807850830033,-0.22704840994062922,12,23,433
+early_reward_axis,contrast,reduced,2,Contrast: 70%,engaged_2,3,E2,-0.189300360577118,-0.2229845667021644,-0.15667281488520013,12,23,343
+early_reward_axis,novelty,familiar,3,Identity: familiar,engaged_1,1,E1,0.5,0.49999999999999994,0.5,12,23,463
+early_reward_axis,novelty,familiar,3,Identity: familiar,no_reward,2,NR,-0.5,-0.5000000000000001,-0.5,12,23,1035
+early_reward_axis,novelty,familiar,3,Identity: familiar,engaged_2,3,E2,-0.15614325880263547,-0.20617329520605865,-0.1077778096981344,12,23,850
+early_reward_axis,novelty,designated_novel,4,Identity: designated novel,engaged_1,1,E1,0.09317170582174435,0.015277130765431527,0.1552011302397054,12,23,270
+early_reward_axis,novelty,designated_novel,4,Identity: designated novel,no_reward,2,NR,-0.17231635266508338,-0.23109675684759917,-0.12421973562984755,12,23,607
+early_reward_axis,novelty,designated_novel,4,Identity: designated novel,engaged_2,3,E2,-0.11056134444585354,-0.1745782928153783,-0.05791199286917666,12,23,498

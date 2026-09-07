@@ -1,0 +1,289 @@
+subject_id,perturbation_family,condition,reward_block,metric,n_sessions,n_trials,value,condition_order,condition_label,block_order,block_label
+614547,contrast,full,engaged_1,behavior_response,1,11,0.9090909090909091,1,Contrast: full,1,E1
+614547,contrast,full,no_reward,behavior_response,1,28,0.21428571428571427,1,Contrast: full,2,NR
+614547,contrast,full,engaged_2,behavior_response,1,15,0.8666666666666667,1,Contrast: full,3,E2
+614608,contrast,full,engaged_1,behavior_response,2,23,0.7007575757575758,1,Contrast: full,1,E1
+614608,contrast,full,no_reward,behavior_response,2,57,0.22598522167487686,1,Contrast: full,2,NR
+614608,contrast,full,engaged_2,behavior_response,2,40,0.7305764411027569,1,Contrast: full,3,E2
+615048,contrast,full,engaged_1,behavior_response,2,14,0.6428571428571428,1,Contrast: full,1,E1
+615048,contrast,full,no_reward,behavior_response,2,36,0.13777089783281732,1,Contrast: full,2,NR
+615048,contrast,full,engaged_2,behavior_response,2,29,0.6190476190476191,1,Contrast: full,3,E2
+615564,contrast,full,engaged_1,behavior_response,2,15,0.7232142857142857,1,Contrast: full,1,E1
+615564,contrast,full,no_reward,behavior_response,2,26,0.27976190476190477,1,Contrast: full,2,NR
+615564,contrast,full,engaged_2,behavior_response,2,24,0.7333333333333334,1,Contrast: full,3,E2
+623319,contrast,full,engaged_1,behavior_response,2,11,0.8166666666666667,1,Contrast: full,1,E1
+623319,contrast,full,no_reward,behavior_response,2,38,0.08333333333333333,1,Contrast: full,2,NR
+623319,contrast,full,engaged_2,behavior_response,2,21,0.9545454545454546,1,Contrast: full,3,E2
+623322,contrast,full,engaged_1,behavior_response,3,27,0.8518518518518517,1,Contrast: full,1,E1
+623322,contrast,full,no_reward,behavior_response,3,48,0.1400201106083459,1,Contrast: full,2,NR
+623322,contrast,full,engaged_2,behavior_response,3,48,0.5395580296896086,1,Contrast: full,3,E2
+626279,contrast,full,engaged_1,behavior_response,1,8,1.0,1,Contrast: full,1,E1
+626279,contrast,full,no_reward,behavior_response,1,18,0.2777777777777778,1,Contrast: full,2,NR
+626279,contrast,full,engaged_2,behavior_response,1,13,0.6153846153846154,1,Contrast: full,3,E2
+632295,contrast,full,engaged_1,behavior_response,2,12,0.9285714285714286,1,Contrast: full,1,E1
+632295,contrast,full,no_reward,behavior_response,2,33,0.17777777777777776,1,Contrast: full,2,NR
+632295,contrast,full,engaged_2,behavior_response,2,27,0.7774725274725275,1,Contrast: full,3,E2
+638387,contrast,full,engaged_1,behavior_response,1,8,1.0,1,Contrast: full,1,E1
+638387,contrast,full,no_reward,behavior_response,1,12,0.3333333333333333,1,Contrast: full,2,NR
+638387,contrast,full,engaged_2,behavior_response,1,9,0.4444444444444444,1,Contrast: full,3,E2
+640887,contrast,full,engaged_1,behavior_response,2,18,1.0,1,Contrast: full,1,E1
+640887,contrast,full,no_reward,behavior_response,2,39,0.10263157894736842,1,Contrast: full,2,NR
+640887,contrast,full,engaged_2,behavior_response,2,35,0.9117647058823529,1,Contrast: full,3,E2
+640890,contrast,full,engaged_1,behavior_response,2,20,1.0,1,Contrast: full,1,E1
+640890,contrast,full,no_reward,behavior_response,2,38,0.125,1,Contrast: full,2,NR
+640890,contrast,full,engaged_2,behavior_response,2,34,0.8529411764705883,1,Contrast: full,3,E2
+642504,contrast,full,engaged_1,behavior_response,3,27,1.0,1,Contrast: full,1,E1
+642504,contrast,full,no_reward,behavior_response,3,55,0.2975877192982456,1,Contrast: full,2,NR
+642504,contrast,full,engaged_2,behavior_response,3,52,1.0,1,Contrast: full,3,E2
+614547,contrast,reduced,engaged_1,behavior_response,1,9,0.4444444444444444,2,Contrast: 70%,1,E1
+614547,contrast,reduced,no_reward,behavior_response,1,29,0.13793103448275862,2,Contrast: 70%,2,NR
+614547,contrast,reduced,engaged_2,behavior_response,1,13,0.5384615384615384,2,Contrast: 70%,3,E2
+614608,contrast,reduced,engaged_1,behavior_response,2,21,0.125,2,Contrast: 70%,1,E1
+614608,contrast,reduced,no_reward,behavior_response,2,58,0.034482758620689655,2,Contrast: 70%,2,NR
+614608,contrast,reduced,engaged_2,behavior_response,2,40,0.17669172932330826,2,Contrast: 70%,3,E2
+615048,contrast,reduced,engaged_1,behavior_response,2,15,0.2767857142857143,2,Contrast: 70%,1,E1
+615048,contrast,reduced,no_reward,behavior_response,2,36,0.05555555555555555,2,Contrast: 70%,2,NR
+615048,contrast,reduced,engaged_2,behavior_response,2,32,0.40625,2,Contrast: 70%,3,E2
+615564,contrast,reduced,engaged_1,behavior_response,2,15,0.4642857142857143,2,Contrast: 70%,1,E1
+615564,contrast,reduced,no_reward,behavior_response,2,26,0.041666666666666664,2,Contrast: 70%,2,NR
+615564,contrast,reduced,engaged_2,behavior_response,2,23,0.44696969696969696,2,Contrast: 70%,3,E2
+623319,contrast,reduced,engaged_1,behavior_response,2,12,0.8333333333333333,2,Contrast: 70%,1,E1
+623319,contrast,reduced,no_reward,behavior_response,2,38,0.02631578947368421,2,Contrast: 70%,2,NR
+623319,contrast,reduced,engaged_2,behavior_response,2,23,0.5189393939393939,2,Contrast: 70%,3,E2
+623322,contrast,reduced,engaged_1,behavior_response,3,25,0.48677248677248675,2,Contrast: 70%,1,E1
+623322,contrast,reduced,no_reward,behavior_response,3,48,0.08888888888888889,2,Contrast: 70%,2,NR
+623322,contrast,reduced,engaged_2,behavior_response,3,45,0.2689075630252101,2,Contrast: 70%,3,E2
+626279,contrast,reduced,engaged_1,behavior_response,1,8,0.75,2,Contrast: 70%,1,E1
+626279,contrast,reduced,no_reward,behavior_response,1,17,0.0,2,Contrast: 70%,2,NR
+626279,contrast,reduced,engaged_2,behavior_response,1,13,0.6923076923076923,2,Contrast: 70%,3,E2
+632295,contrast,reduced,engaged_1,behavior_response,2,11,0.45,2,Contrast: 70%,1,E1
+632295,contrast,reduced,no_reward,behavior_response,2,36,0.08204334365325078,2,Contrast: 70%,2,NR
+632295,contrast,reduced,engaged_2,behavior_response,2,25,0.3344155844155844,2,Contrast: 70%,3,E2
+638387,contrast,reduced,engaged_1,behavior_response,1,10,0.4,2,Contrast: 70%,1,E1
+638387,contrast,reduced,no_reward,behavior_response,1,12,0.08333333333333333,2,Contrast: 70%,2,NR
+638387,contrast,reduced,engaged_2,behavior_response,1,10,0.4,2,Contrast: 70%,3,E2
+640887,contrast,reduced,engaged_1,behavior_response,2,19,0.16666666666666666,2,Contrast: 70%,1,E1
+640887,contrast,reduced,no_reward,behavior_response,2,40,0.07500000000000001,2,Contrast: 70%,2,NR
+640887,contrast,reduced,engaged_2,behavior_response,2,33,0.4007352941176471,2,Contrast: 70%,3,E2
+640890,contrast,reduced,engaged_1,behavior_response,2,19,0.6888888888888889,2,Contrast: 70%,1,E1
+640890,contrast,reduced,no_reward,behavior_response,2,38,0.10555555555555556,2,Contrast: 70%,2,NR
+640890,contrast,reduced,engaged_2,behavior_response,2,34,0.6284722222222222,2,Contrast: 70%,3,E2
+642504,contrast,reduced,engaged_1,behavior_response,3,29,0.7962962962962963,2,Contrast: 70%,1,E1
+642504,contrast,reduced,no_reward,behavior_response,3,55,0.0892156862745098,2,Contrast: 70%,2,NR
+642504,contrast,reduced,engaged_2,behavior_response,3,52,0.7259416924664602,2,Contrast: 70%,3,E2
+614547,novelty,familiar,engaged_1,behavior_response,1,20,0.85,3,Identity: familiar,1,E1
+614547,novelty,familiar,no_reward,behavior_response,1,60,0.31666666666666665,3,Identity: familiar,2,NR
+614547,novelty,familiar,engaged_2,behavior_response,1,29,0.896551724137931,3,Identity: familiar,3,E2
+614608,novelty,familiar,engaged_1,behavior_response,2,44,0.825,3,Identity: familiar,1,E1
+614608,novelty,familiar,no_reward,behavior_response,2,116,0.28448275862068967,3,Identity: familiar,2,NR
+614608,novelty,familiar,engaged_2,behavior_response,2,82,0.7358378056052475,3,Identity: familiar,3,E2
+615048,novelty,familiar,engaged_1,behavior_response,2,35,0.45751633986928103,3,Identity: familiar,1,E1
+615048,novelty,familiar,no_reward,behavior_response,2,89,0.16911021233569262,3,Identity: familiar,2,NR
+615048,novelty,familiar,engaged_2,behavior_response,2,77,0.611336032388664,3,Identity: familiar,3,E2
+615564,novelty,familiar,engaged_1,behavior_response,2,36,0.8888888888888888,3,Identity: familiar,1,E1
+615564,novelty,familiar,no_reward,behavior_response,2,66,0.23625349487418454,3,Identity: familiar,2,NR
+615564,novelty,familiar,engaged_2,behavior_response,2,59,0.6934889434889435,3,Identity: familiar,3,E2
+623319,novelty,familiar,engaged_1,behavior_response,2,26,0.8452380952380952,3,Identity: familiar,1,E1
+623319,novelty,familiar,no_reward,behavior_response,2,94,0.12789115646258503,3,Identity: familiar,2,NR
+623319,novelty,familiar,engaged_2,behavior_response,2,54,0.9436813186813187,3,Identity: familiar,3,E2
+623322,novelty,familiar,engaged_1,behavior_response,3,67,0.7831890331890331,3,Identity: familiar,1,E1
+623322,novelty,familiar,no_reward,behavior_response,3,117,0.1969519480141038,3,Identity: familiar,2,NR
+623322,novelty,familiar,engaged_2,behavior_response,3,123,0.5795311268715524,3,Identity: familiar,3,E2
+626279,novelty,familiar,engaged_1,behavior_response,1,21,0.6190476190476191,3,Identity: familiar,1,E1
+626279,novelty,familiar,no_reward,behavior_response,1,45,0.1111111111111111,3,Identity: familiar,2,NR
+626279,novelty,familiar,engaged_2,behavior_response,1,33,0.5151515151515151,3,Identity: familiar,3,E2
+632295,novelty,familiar,engaged_1,behavior_response,2,27,0.9285714285714286,3,Identity: familiar,1,E1
+632295,novelty,familiar,no_reward,behavior_response,2,86,0.26422764227642276,3,Identity: familiar,2,NR
+632295,novelty,familiar,engaged_2,behavior_response,2,66,0.8783410138248848,3,Identity: familiar,3,E2
+638387,novelty,familiar,engaged_1,behavior_response,1,21,0.8095238095238095,3,Identity: familiar,1,E1
+638387,novelty,familiar,no_reward,behavior_response,1,29,0.27586206896551724,3,Identity: familiar,2,NR
+638387,novelty,familiar,engaged_2,behavior_response,1,25,0.52,3,Identity: familiar,3,E2
+640887,novelty,familiar,engaged_1,behavior_response,2,48,1.0,3,Identity: familiar,1,E1
+640887,novelty,familiar,no_reward,behavior_response,2,100,0.16,3,Identity: familiar,2,NR
+640887,novelty,familiar,engaged_2,behavior_response,2,87,0.9523809523809523,3,Identity: familiar,3,E2
+640890,novelty,familiar,engaged_1,behavior_response,2,49,0.9587542087542087,3,Identity: familiar,1,E1
+640890,novelty,familiar,no_reward,behavior_response,2,96,0.1335214937038645,3,Identity: familiar,2,NR
+640890,novelty,familiar,engaged_2,behavior_response,2,87,0.7830338266384778,3,Identity: familiar,3,E2
+642504,novelty,familiar,engaged_1,behavior_response,3,69,0.9855072463768115,3,Identity: familiar,1,E1
+642504,novelty,familiar,no_reward,behavior_response,3,137,0.23326432022084195,3,Identity: familiar,2,NR
+642504,novelty,familiar,engaged_2,behavior_response,3,128,0.9924242424242425,3,Identity: familiar,3,E2
+614547,novelty,designated_novel,engaged_1,behavior_response,1,10,0.9,4,Identity: designated novel,1,E1
+614547,novelty,designated_novel,no_reward,behavior_response,1,29,0.41379310344827586,4,Identity: designated novel,2,NR
+614547,novelty,designated_novel,engaged_2,behavior_response,1,14,0.9285714285714286,4,Identity: designated novel,3,E2
+614608,novelty,designated_novel,engaged_1,behavior_response,2,22,0.9615384615384616,4,Identity: designated novel,1,E1
+614608,novelty,designated_novel,no_reward,behavior_response,2,58,0.34404761904761905,4,Identity: designated novel,2,NR
+614608,novelty,designated_novel,engaged_2,behavior_response,2,43,0.6309523809523809,4,Identity: designated novel,3,E2
+615048,novelty,designated_novel,engaged_1,behavior_response,2,22,0.9083333333333333,4,Identity: designated novel,1,E1
+615048,novelty,designated_novel,no_reward,behavior_response,2,54,0.4241379310344828,4,Identity: designated novel,2,NR
+615048,novelty,designated_novel,engaged_2,behavior_response,2,45,0.6452569169960474,4,Identity: designated novel,3,E2
+615564,novelty,designated_novel,engaged_1,behavior_response,2,22,1.0,4,Identity: designated novel,1,E1
+615564,novelty,designated_novel,no_reward,behavior_response,2,42,0.3340909090909091,4,Identity: designated novel,2,NR
+615564,novelty,designated_novel,engaged_2,behavior_response,2,34,0.7272727272727273,4,Identity: designated novel,3,E2
+623319,novelty,designated_novel,engaged_1,behavior_response,2,15,0.9375,4,Identity: designated novel,1,E1
+623319,novelty,designated_novel,no_reward,behavior_response,2,57,0.2974137931034483,4,Identity: designated novel,2,NR
+623319,novelty,designated_novel,engaged_2,behavior_response,2,31,0.9375,4,Identity: designated novel,3,E2
+623322,novelty,designated_novel,engaged_1,behavior_response,3,40,0.9249084249084248,4,Identity: designated novel,1,E1
+623322,novelty,designated_novel,no_reward,behavior_response,3,71,0.28444444444444444,4,Identity: designated novel,2,NR
+623322,novelty,designated_novel,engaged_2,behavior_response,3,74,0.623792270531401,4,Identity: designated novel,3,E2
+626279,novelty,designated_novel,engaged_1,behavior_response,1,11,0.9090909090909091,4,Identity: designated novel,1,E1
+626279,novelty,designated_novel,no_reward,behavior_response,1,29,0.3793103448275862,4,Identity: designated novel,2,NR
+626279,novelty,designated_novel,engaged_2,behavior_response,1,18,0.8333333333333334,4,Identity: designated novel,3,E2
+632295,novelty,designated_novel,engaged_1,behavior_response,2,15,1.0,4,Identity: designated novel,1,E1
+632295,novelty,designated_novel,no_reward,behavior_response,2,53,0.3385714285714286,4,Identity: designated novel,2,NR
+632295,novelty,designated_novel,engaged_2,behavior_response,2,41,0.9261904761904762,4,Identity: designated novel,3,E2
+638387,novelty,designated_novel,engaged_1,behavior_response,1,13,0.6923076923076923,4,Identity: designated novel,1,E1
+638387,novelty,designated_novel,no_reward,behavior_response,1,17,0.058823529411764705,4,Identity: designated novel,2,NR
+638387,novelty,designated_novel,engaged_2,behavior_response,1,15,0.6666666666666666,4,Identity: designated novel,3,E2
+640887,novelty,designated_novel,engaged_1,behavior_response,2,31,1.0,4,Identity: designated novel,1,E1
+640887,novelty,designated_novel,no_reward,behavior_response,2,57,0.10529556650246305,4,Identity: designated novel,2,NR
+640887,novelty,designated_novel,engaged_2,behavior_response,2,53,0.9252136752136753,4,Identity: designated novel,3,E2
+640890,novelty,designated_novel,engaged_1,behavior_response,2,27,1.0,4,Identity: designated novel,1,E1
+640890,novelty,designated_novel,no_reward,behavior_response,2,58,0.24137931034482757,4,Identity: designated novel,2,NR
+640890,novelty,designated_novel,engaged_2,behavior_response,2,52,0.7733333333333333,4,Identity: designated novel,3,E2
+642504,novelty,designated_novel,engaged_1,behavior_response,3,42,1.0,4,Identity: designated novel,1,E1
+642504,novelty,designated_novel,no_reward,behavior_response,3,82,0.20641975308641977,4,Identity: designated novel,2,NR
+642504,novelty,designated_novel,engaged_2,behavior_response,3,78,0.9495143000890126,4,Identity: designated novel,3,E2
+614547,contrast,full,engaged_1,early_reward_axis,1,11,0.5347844709013009,1,Contrast: full,1,E1
+614547,contrast,full,no_reward,early_reward_axis,1,28,-0.4439724149266815,1,Contrast: full,2,NR
+614547,contrast,full,engaged_2,early_reward_axis,1,15,-0.0500982164047727,1,Contrast: full,3,E2
+614608,contrast,full,engaged_1,early_reward_axis,2,23,0.5031731096247734,1,Contrast: full,1,E1
+614608,contrast,full,no_reward,early_reward_axis,2,57,-0.5010700936667325,1,Contrast: full,2,NR
+614608,contrast,full,engaged_2,early_reward_axis,2,40,-0.13379212293173778,1,Contrast: full,3,E2
+615048,contrast,full,engaged_1,early_reward_axis,2,14,0.49016742944511893,1,Contrast: full,1,E1
+615048,contrast,full,no_reward,early_reward_axis,2,36,-0.5169009434525053,1,Contrast: full,2,NR
+615048,contrast,full,engaged_2,early_reward_axis,2,29,-0.19409217166888856,1,Contrast: full,3,E2
+615564,contrast,full,engaged_1,early_reward_axis,2,15,0.5059842487606666,1,Contrast: full,1,E1
+615564,contrast,full,no_reward,early_reward_axis,2,26,-0.5092648432295259,1,Contrast: full,2,NR
+615564,contrast,full,engaged_2,early_reward_axis,2,24,-0.14941133945446472,1,Contrast: full,3,E2
+623319,contrast,full,engaged_1,early_reward_axis,2,11,0.48324347169346427,1,Contrast: full,1,E1
+623319,contrast,full,no_reward,early_reward_axis,2,38,-0.49158394305153713,1,Contrast: full,2,NR
+623319,contrast,full,engaged_2,early_reward_axis,2,21,-0.3164735960060323,1,Contrast: full,3,E2
+623322,contrast,full,engaged_1,early_reward_axis,3,27,0.4957673238039771,1,Contrast: full,1,E1
+623322,contrast,full,no_reward,early_reward_axis,3,48,-0.508966811993674,1,Contrast: full,2,NR
+623322,contrast,full,engaged_2,early_reward_axis,3,48,-0.21137387149392003,1,Contrast: full,3,E2
+626279,contrast,full,engaged_1,early_reward_axis,1,8,0.5370459543817284,1,Contrast: full,1,E1
+626279,contrast,full,no_reward,early_reward_axis,1,18,-0.41278041942502086,1,Contrast: full,2,NR
+626279,contrast,full,engaged_2,early_reward_axis,1,13,0.007051530511012743,1,Contrast: full,3,E2
+632295,contrast,full,engaged_1,early_reward_axis,2,12,0.4993652112090249,1,Contrast: full,1,E1
+632295,contrast,full,no_reward,early_reward_axis,2,33,-0.4445677557008135,1,Contrast: full,2,NR
+632295,contrast,full,engaged_2,early_reward_axis,2,27,-0.16176582482469196,1,Contrast: full,3,E2
+638387,contrast,full,engaged_1,early_reward_axis,1,8,0.46545583919082545,1,Contrast: full,1,E1
+638387,contrast,full,no_reward,early_reward_axis,1,12,-0.5123266687695488,1,Contrast: full,2,NR
+638387,contrast,full,engaged_2,early_reward_axis,1,9,-0.15150550573008342,1,Contrast: full,3,E2
+640887,contrast,full,engaged_1,early_reward_axis,2,18,0.5233714115399289,1,Contrast: full,1,E1
+640887,contrast,full,no_reward,early_reward_axis,2,39,-0.5162834631458437,1,Contrast: full,2,NR
+640887,contrast,full,engaged_2,early_reward_axis,2,35,0.018899517076915152,1,Contrast: full,3,E2
+640890,contrast,full,engaged_1,early_reward_axis,2,20,0.5260752208150087,1,Contrast: full,1,E1
+640890,contrast,full,no_reward,early_reward_axis,2,38,-0.5394787920679228,1,Contrast: full,2,NR
+640890,contrast,full,engaged_2,early_reward_axis,2,34,-0.11248751904672773,1,Contrast: full,3,E2
+642504,contrast,full,engaged_1,early_reward_axis,3,27,0.4828448565059739,1,Contrast: full,1,E1
+642504,contrast,full,no_reward,early_reward_axis,3,55,-0.49607784076119144,1,Contrast: full,2,NR
+642504,contrast,full,engaged_2,early_reward_axis,3,52,-0.09962872586255239,1,Contrast: full,3,E2
+614547,contrast,reduced,engaged_1,early_reward_axis,1,9,-0.2515519064480623,2,Contrast: 70%,1,E1
+614547,contrast,reduced,no_reward,early_reward_axis,1,29,-0.2208529790265442,2,Contrast: 70%,2,NR
+614547,contrast,reduced,engaged_2,early_reward_axis,1,13,-0.24622207212856712,2,Contrast: 70%,3,E2
+614608,contrast,reduced,engaged_1,early_reward_axis,2,21,-0.06104443655190492,2,Contrast: 70%,1,E1
+614608,contrast,reduced,no_reward,early_reward_axis,2,58,-0.2682637277737304,2,Contrast: 70%,2,NR
+614608,contrast,reduced,engaged_2,early_reward_axis,2,40,-0.24530697178742278,2,Contrast: 70%,3,E2
+615048,contrast,reduced,engaged_1,early_reward_axis,2,15,-0.05544592194236276,2,Contrast: 70%,1,E1
+615048,contrast,reduced,no_reward,early_reward_axis,2,36,-0.2228915288896995,2,Contrast: 70%,2,NR
+615048,contrast,reduced,engaged_2,early_reward_axis,2,32,-0.18959756893574545,2,Contrast: 70%,3,E2
+615564,contrast,reduced,engaged_1,early_reward_axis,2,15,-0.010187938308239476,2,Contrast: 70%,1,E1
+615564,contrast,reduced,no_reward,early_reward_axis,2,26,-0.3128974879728339,2,Contrast: 70%,2,NR
+615564,contrast,reduced,engaged_2,early_reward_axis,2,23,-0.1431116626225597,2,Contrast: 70%,3,E2
+623319,contrast,reduced,engaged_1,early_reward_axis,2,12,-0.12151303263354825,2,Contrast: 70%,1,E1
+623319,contrast,reduced,no_reward,early_reward_axis,2,38,-0.19432560114503022,2,Contrast: 70%,2,NR
+623319,contrast,reduced,engaged_2,early_reward_axis,2,23,-0.3031350969283861,2,Contrast: 70%,3,E2
+623322,contrast,reduced,engaged_1,early_reward_axis,3,25,0.027294070648537918,2,Contrast: 70%,1,E1
+623322,contrast,reduced,no_reward,early_reward_axis,3,48,-0.2723464863321062,2,Contrast: 70%,2,NR
+623322,contrast,reduced,engaged_2,early_reward_axis,3,45,-0.24782249603108142,2,Contrast: 70%,3,E2
+626279,contrast,reduced,engaged_1,early_reward_axis,1,8,0.11628806191159143,2,Contrast: 70%,1,E1
+626279,contrast,reduced,no_reward,early_reward_axis,1,17,-0.25914097856377966,2,Contrast: 70%,2,NR
+626279,contrast,reduced,engaged_2,early_reward_axis,1,13,-0.17985463302490792,2,Contrast: 70%,3,E2
+632295,contrast,reduced,engaged_1,early_reward_axis,2,11,-0.1856938578185449,2,Contrast: 70%,1,E1
+632295,contrast,reduced,no_reward,early_reward_axis,2,36,-0.23681528322713677,2,Contrast: 70%,2,NR
+632295,contrast,reduced,engaged_2,early_reward_axis,2,25,-0.18150795724780291,2,Contrast: 70%,3,E2
+638387,contrast,reduced,engaged_1,early_reward_axis,1,10,0.013124507963224272,2,Contrast: 70%,1,E1
+638387,contrast,reduced,no_reward,early_reward_axis,1,12,-0.17480115618471323,2,Contrast: 70%,2,NR
+638387,contrast,reduced,engaged_2,early_reward_axis,1,10,-0.09181118572511726,2,Contrast: 70%,3,E2
+640887,contrast,reduced,engaged_1,early_reward_axis,2,19,-0.09924198132461776,2,Contrast: 70%,1,E1
+640887,contrast,reduced,no_reward,early_reward_axis,2,40,-0.3047709102584878,2,Contrast: 70%,2,NR
+640887,contrast,reduced,engaged_2,early_reward_axis,2,33,-0.1598674200692325,2,Contrast: 70%,3,E2
+640890,contrast,reduced,engaged_1,early_reward_axis,2,19,0.04042883690198315,2,Contrast: 70%,1,E1
+640890,contrast,reduced,no_reward,early_reward_axis,2,38,-0.2501380128445364,2,Contrast: 70%,2,NR
+640890,contrast,reduced,engaged_2,early_reward_axis,2,34,-0.1314872919020449,2,Contrast: 70%,3,E2
+642504,contrast,reduced,engaged_1,early_reward_axis,3,29,-0.02120026105781457,2,Contrast: 70%,1,E1
+642504,contrast,reduced,no_reward,early_reward_axis,3,55,-0.2772007969662012,2,Contrast: 70%,2,NR
+642504,contrast,reduced,engaged_2,early_reward_axis,3,52,-0.1518799705225481,2,Contrast: 70%,3,E2
+614547,novelty,familiar,engaged_1,early_reward_axis,1,20,0.4999999999999997,3,Identity: familiar,1,E1
+614547,novelty,familiar,no_reward,early_reward_axis,1,60,-0.5000000000000003,3,Identity: familiar,2,NR
+614547,novelty,familiar,engaged_2,early_reward_axis,1,29,-0.07751113706413486,3,Identity: familiar,3,E2
+614608,novelty,familiar,engaged_1,early_reward_axis,2,44,0.5,3,Identity: familiar,1,E1
+614608,novelty,familiar,no_reward,early_reward_axis,2,116,-0.5,3,Identity: familiar,2,NR
+614608,novelty,familiar,engaged_2,early_reward_axis,2,82,-0.19331790309272023,3,Identity: familiar,3,E2
+615048,novelty,familiar,engaged_1,early_reward_axis,2,35,0.5,3,Identity: familiar,1,E1
+615048,novelty,familiar,no_reward,early_reward_axis,2,89,-0.5,3,Identity: familiar,2,NR
+615048,novelty,familiar,engaged_2,early_reward_axis,2,77,-0.19178077751832528,3,Identity: familiar,3,E2
+615564,novelty,familiar,engaged_1,early_reward_axis,2,36,0.5,3,Identity: familiar,1,E1
+615564,novelty,familiar,no_reward,early_reward_axis,2,66,-0.5,3,Identity: familiar,2,NR
+615564,novelty,familiar,engaged_2,early_reward_axis,2,59,-0.13743474809931383,3,Identity: familiar,3,E2
+623319,novelty,familiar,engaged_1,early_reward_axis,2,26,0.5,3,Identity: familiar,1,E1
+623319,novelty,familiar,no_reward,early_reward_axis,2,94,-0.5,3,Identity: familiar,2,NR
+623319,novelty,familiar,engaged_2,early_reward_axis,2,54,-0.34530786946856495,3,Identity: familiar,3,E2
+623322,novelty,familiar,engaged_1,early_reward_axis,3,67,0.5000000000000001,3,Identity: familiar,1,E1
+623322,novelty,familiar,no_reward,early_reward_axis,3,117,-0.5,3,Identity: familiar,2,NR
+623322,novelty,familiar,engaged_2,early_reward_axis,3,123,-0.24187122370531536,3,Identity: familiar,3,E2
+626279,novelty,familiar,engaged_1,early_reward_axis,1,21,0.49999999999999983,3,Identity: familiar,1,E1
+626279,novelty,familiar,no_reward,early_reward_axis,1,45,-0.49999999999999983,3,Identity: familiar,2,NR
+626279,novelty,familiar,engaged_2,early_reward_axis,1,33,-0.1403184363939639,3,Identity: familiar,3,E2
+632295,novelty,familiar,engaged_1,early_reward_axis,2,27,0.5,3,Identity: familiar,1,E1
+632295,novelty,familiar,no_reward,early_reward_axis,2,86,-0.5,3,Identity: familiar,2,NR
+632295,novelty,familiar,engaged_2,early_reward_axis,2,66,-0.20905828441172114,3,Identity: familiar,3,E2
+638387,novelty,familiar,engaged_1,early_reward_axis,1,21,0.5000000000000001,3,Identity: familiar,1,E1
+638387,novelty,familiar,no_reward,early_reward_axis,1,29,-0.5,3,Identity: familiar,2,NR
+638387,novelty,familiar,engaged_2,early_reward_axis,1,25,-0.12716277587007033,3,Identity: familiar,3,E2
+640887,novelty,familiar,engaged_1,early_reward_axis,2,48,0.5,3,Identity: familiar,1,E1
+640887,novelty,familiar,no_reward,early_reward_axis,2,100,-0.5,3,Identity: familiar,2,NR
+640887,novelty,familiar,engaged_2,early_reward_axis,2,87,0.013726639814584808,3,Identity: familiar,3,E2
+640890,novelty,familiar,engaged_1,early_reward_axis,2,49,0.5000000000000001,3,Identity: familiar,1,E1
+640890,novelty,familiar,no_reward,early_reward_axis,2,96,-0.5,3,Identity: familiar,2,NR
+640890,novelty,familiar,engaged_2,early_reward_axis,2,87,-0.12191982294604495,3,Identity: familiar,3,E2
+642504,novelty,familiar,engaged_1,early_reward_axis,3,69,0.5,3,Identity: familiar,1,E1
+642504,novelty,familiar,no_reward,early_reward_axis,3,137,-0.5,3,Identity: familiar,2,NR
+642504,novelty,familiar,engaged_2,early_reward_axis,3,128,-0.10176276687603558,3,Identity: familiar,3,E2
+614547,novelty,designated_novel,engaged_1,early_reward_axis,1,10,0.12430791104751235,4,Identity: designated novel,1,E1
+614547,novelty,designated_novel,no_reward,early_reward_axis,1,29,-0.0608539407843363,4,Identity: designated novel,2,NR
+614547,novelty,designated_novel,engaged_2,early_reward_axis,1,14,-0.020021812055475867,4,Identity: designated novel,3,E2
+614608,novelty,designated_novel,engaged_1,early_reward_axis,2,22,0.059246206825845256,4,Identity: designated novel,1,E1
+614608,novelty,designated_novel,no_reward,early_reward_axis,2,58,-0.406659489212407,4,Identity: designated novel,2,NR
+614608,novelty,designated_novel,engaged_2,early_reward_axis,2,43,-0.27793801487703285,4,Identity: designated novel,3,E2
+615048,novelty,designated_novel,engaged_1,early_reward_axis,2,22,0.08258763617687079,4,Identity: designated novel,1,E1
+615048,novelty,designated_novel,no_reward,early_reward_axis,2,54,-0.07216939726837669,4,Identity: designated novel,2,NR
+615048,novelty,designated_novel,engaged_2,early_reward_axis,2,45,-0.04701888027800842,4,Identity: designated novel,3,E2
+615564,novelty,designated_novel,engaged_1,early_reward_axis,2,22,0.1379407203488473,4,Identity: designated novel,1,E1
+615564,novelty,designated_novel,no_reward,early_reward_axis,2,42,-0.18711244049528675,4,Identity: designated novel,2,NR
+615564,novelty,designated_novel,engaged_2,early_reward_axis,2,34,-0.08688319882316964,4,Identity: designated novel,3,E2
+623319,novelty,designated_novel,engaged_1,early_reward_axis,2,15,-0.2614461420308206,4,Identity: designated novel,1,E1
+623319,novelty,designated_novel,no_reward,early_reward_axis,2,57,-0.29852595091772316,4,Identity: designated novel,2,NR
+623319,novelty,designated_novel,engaged_2,early_reward_axis,2,31,-0.35645009874857003,4,Identity: designated novel,3,E2
+623322,novelty,designated_novel,engaged_1,early_reward_axis,3,40,0.26784682352621775,4,Identity: designated novel,1,E1
+623322,novelty,designated_novel,no_reward,early_reward_axis,3,71,-0.13886070252863253,4,Identity: designated novel,2,NR
+623322,novelty,designated_novel,engaged_2,early_reward_axis,3,74,-0.16935180691256976,4,Identity: designated novel,3,E2
+626279,novelty,designated_novel,engaged_1,early_reward_axis,1,11,0.057304001223321514,4,Identity: designated novel,1,E1
+626279,novelty,designated_novel,no_reward,early_reward_axis,1,29,-0.15105912527349322,4,Identity: designated novel,2,NR
+626279,novelty,designated_novel,engaged_2,early_reward_axis,1,18,-0.06117287135468167,4,Identity: designated novel,3,E2
+632295,novelty,designated_novel,engaged_1,early_reward_axis,2,15,0.06671847283682758,4,Identity: designated novel,1,E1
+632295,novelty,designated_novel,no_reward,early_reward_axis,2,53,-0.13307132569622407,4,Identity: designated novel,2,NR
+632295,novelty,designated_novel,engaged_2,early_reward_axis,2,41,-0.14332021456509514,4,Identity: designated novel,3,E2
+638387,novelty,designated_novel,engaged_1,early_reward_axis,1,13,0.14389467657514843,4,Identity: designated novel,1,E1
+638387,novelty,designated_novel,no_reward,early_reward_axis,1,17,-0.11706276567910152,4,Identity: designated novel,2,NR
+638387,novelty,designated_novel,engaged_2,early_reward_axis,1,15,-0.07362993139574932,4,Identity: designated novel,3,E2
+640887,novelty,designated_novel,engaged_1,early_reward_axis,2,31,0.12271314615857332,4,Identity: designated novel,1,E1
+640887,novelty,designated_novel,no_reward,early_reward_axis,2,57,-0.23323370607624533,4,Identity: designated novel,2,NR
+640887,novelty,designated_novel,engaged_2,early_reward_axis,2,53,-0.009082658438235375,4,Identity: designated novel,3,E2
+640890,novelty,designated_novel,engaged_1,early_reward_axis,2,27,0.23405330165672256,4,Identity: designated novel,1,E1
+640890,novelty,designated_novel,no_reward,early_reward_axis,2,58,-0.13606196474900903,4,Identity: designated novel,2,NR
+640890,novelty,designated_novel,engaged_2,early_reward_axis,2,52,-0.04211223398020029,4,Identity: designated novel,3,E2
+642504,novelty,designated_novel,engaged_1,early_reward_axis,3,42,0.08289371551586601,4,Identity: designated novel,1,E1
+642504,novelty,designated_novel,no_reward,early_reward_axis,3,82,-0.13312542330016475,4,Identity: designated novel,2,NR
+642504,novelty,designated_novel,engaged_2,early_reward_axis,3,78,-0.03975441192145413,4,Identity: designated novel,3,E2

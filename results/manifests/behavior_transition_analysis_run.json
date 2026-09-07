@@ -1,0 +1,207 @@
+{
+  "analysis_id": "behavior_transition_qc",
+  "analysis_lock": {
+    "path": "/Users/benh/github/ai-dg-paper/config/analysis_lock.yaml",
+    "required_decisions": [
+      "D01",
+      "D02",
+      "D03"
+    ],
+    "sha256": "c1c78c89391c5656f7372ea433e63d43bf3c960ee9247639da57a45db556e30c",
+    "snapshot": {
+      "path": "results/manifests/behavior_transition_analysis_lock.yaml",
+      "sha256": "c1c78c89391c5656f7372ea433e63d43bf3c960ee9247639da57a45db556e30c",
+      "size_bytes": 5056
+    },
+    "status": "approved"
+  },
+  "analysis_scope": "behavior-only transition QC; distinct from planned neural Figure 2 analyses",
+  "analysis_status": "pass",
+  "analysis_tier": "exploratory",
+  "bin_definitions": {
+    "eligible_event_trial": "completed, non-auto-rewarded, mutually exclusive go/catch trial with finite change time and canonical raw-lick response",
+    "latency": "finite response latency among canonical responders only; conditional descriptive summary with separate missingness counts",
+    "response": "exact-deduplicated raw lick in (0.150, 0.750] s after change",
+    "time": "half-open 120 s bins spanning [-360, +360) s relative to each anchor",
+    "trial": "8-event-trial bins spanning ordinals -24:-1 and +1:+24; ordinals are assigned over all eligible go/catch events before condition stratification"
+  },
+  "boundary_definitions": {
+    "matching": "each transition uses its own within-source-state temporal midpoint and identical bin/effect windows; withdrawal and restoration kinetics are not pooled or constrained to match",
+    "reward_restoration_pseudo": "temporal midpoint of no reward within the same session",
+    "reward_restoration_real": "final no-reward trial stop",
+    "reward_withdrawal_pseudo": "temporal midpoint of E1 within the same session",
+    "reward_withdrawal_real": "first no-reward trial start"
+  },
+  "code_version": "24ba096deb2d8931af3423b9b5682cdbeec7884c+dirty",
+  "completed_at_utc": "2026-09-07T03:42:11.253401+00:00",
+  "configuration": {
+    "effect_window_seconds": 180.0,
+    "time_bin_width_seconds": 120.0,
+    "time_window_seconds": 360.0,
+    "trial_bin_width": 8,
+    "trial_window_count": 24
+  },
+  "dandiset_doi": "10.48324/dandi.001051/0.260825.2232",
+  "dandiset_id": "001051",
+  "dandiset_version": "0.260825.2232",
+  "effect_definitions": {
+    "latency_sign": "positive denotes slowing after withdrawal or speeding after restoration",
+    "pseudo_controlled": "signed real step minus transition-specific pseudo step",
+    "restoration_response_sign": "post minus pre; recovery is positive",
+    "specificity": "pseudo-controlled go step minus pseudo-controlled catch step",
+    "window": "3 minutes immediately before and after each real/pseudo anchor",
+    "withdrawal_response_sign": "pre minus post; suppression is positive"
+  },
+  "inference_policy": {
+    "aggregation": "equal-session mean within mouse; equal-mouse inference",
+    "bootstrap_resamples": 10000,
+    "descriptive_only": [
+      "real steps",
+      "pseudo steps",
+      "catch effects",
+      "all responder-only latency effects"
+    ],
+    "inferential_tests": [
+      "pseudo-controlled go response effect for each transition",
+      "pseudo-controlled go-minus-catch response specificity for each transition"
+    ],
+    "multiplicity": "Holm adjustment across withdrawal/restoration within separate go and go-minus-catch families",
+    "primary_unit": "mouse",
+    "sign_flip_resamples": 100000
+  },
+  "inputs": {
+    "behavior_analysis_run": {
+      "path": "results/manifests/behavior_analysis_run.json",
+      "sha256": "40d71be99c900f7b0ef7e564117361198d5ab785e48fec3b3ef9c7166452ae8f",
+      "size_bytes": 8443
+    },
+    "behavior_trials": {
+      "path": "results/tables/behavior_trials.parquet",
+      "sha256": "29a64113baaa25f445be9165a3353c0cf2009b291c83e89e3ce41a92997bd29e",
+      "size_bytes": 2905997
+    },
+    "session_qc": {
+      "path": "results/tables/session_qc.parquet",
+      "sha256": "4df834b5367f70d7e6307fa35dcf629a5203843b65d9e3fbf3b943608b1f0593",
+      "size_bytes": 133505
+    }
+  },
+  "local_sources": {
+    "artifacts": {
+      "path": "src/dg/artifacts.py",
+      "sha256": "51667f969f1b622b5bded3dcf74a2d3fc689727cb967fdc47f50c81cf1720e91",
+      "size_bytes": 4557
+    },
+    "behavior_transitions": {
+      "path": "src/dg/behavior_transitions.py",
+      "sha256": "8be5a77f7bd1ba2a8b8d9aa59c37c38df163800fda5233e25c7fd2758d449265",
+      "size_bytes": 77080
+    },
+    "gates": {
+      "path": "src/dg/gates.py",
+      "sha256": "4da105af9eadaf55e5942840c407811cc5890b10f1e333d14f30b34d38754a57",
+      "size_bytes": 5229
+    },
+    "generator": {
+      "path": "scripts/03_analyze_behavior_transitions.py",
+      "sha256": "db5a12fe8524853bc3bba30b373e1171859381f02a079ada534796aa5d69383d",
+      "size_bytes": 22661
+    },
+    "quality": {
+      "path": "src/dg/quality.py",
+      "sha256": "10f1ca1df10815e6d4dd1aff13559b8fde16e9598b16a70e9c60b81c4910e2cf",
+      "size_bytes": 48758
+    },
+    "statistics": {
+      "path": "src/dg/statistics.py",
+      "sha256": "9a74766204d03f524286c1087d20c0aad2cc7415f924a7a2b9e83830462339f0",
+      "size_bytes": 21952
+    }
+  },
+  "outputs": {
+    "analysis_lock_snapshot": {
+      "path": "results/manifests/behavior_transition_analysis_lock.yaml",
+      "sha256": "c1c78c89391c5656f7372ea433e63d43bf3c960ee9247639da57a45db556e30c",
+      "size_bytes": 5056
+    },
+    "behavior_transition_boundaries": {
+      "path": "results/tables/behavior_transition_boundaries.csv",
+      "sha256": "b2c5e478d7198352c66495f5749d42421c73d7e19ccaf0979f78c714aea9ef35",
+      "size_bytes": 86359
+    },
+    "behavior_transition_statistics": {
+      "path": "results/tables/behavior_transition_statistics.csv",
+      "sha256": "416e4da8ffca973129d0484007c20a230348d8b6341bc73d1fd02ca616203a80",
+      "size_bytes": 26025
+    },
+    "behavior_transition_time_trajectory_summary": {
+      "path": "results/tables/behavior_transition_time_trajectory_summary.csv",
+      "sha256": "5be2883a4b1b36b92d41823f86c8e980b579a4c4fe62617b6dee4e2e44b9b7f8",
+      "size_bytes": 18787
+    },
+    "behavior_transition_trial_trajectory_summary": {
+      "path": "results/tables/behavior_transition_trial_trajectory_summary.csv",
+      "sha256": "dcea38aa92a228664325f93b6e086c4154c1d61d1cf6be32d2410ff71b811556",
+      "size_bytes": 18509
+    },
+    "mouse_behavior_transition_effects": {
+      "path": "results/tables/mouse_behavior_transition_effects.csv",
+      "sha256": "82229e6dd87bc2a18bb3cb7e478728d0148c95ecc762de7daa5bec23b2f190e2",
+      "size_bytes": 28088
+    },
+    "mouse_behavior_transition_time_bins": {
+      "path": "results/tables/mouse_behavior_transition_time_bins.csv",
+      "sha256": "e7bf6a045a92c739c0596fd66ce1215b185e63663cd819320eb18d997b6d9175",
+      "size_bytes": 187122
+    },
+    "mouse_behavior_transition_trial_bins": {
+      "path": "results/tables/mouse_behavior_transition_trial_bins.csv",
+      "sha256": "3bfc5b3615ca5800b57d18b479ae66e038e79b70fae5e08f3a41717ebf019110",
+      "size_bytes": 175914
+    },
+    "session_behavior_transition_effect_windows": {
+      "path": "results/tables/session_behavior_transition_effect_windows.parquet",
+      "sha256": "f3240140428606e53cef331e0a0ab963e50b0726506a849663529eb836e29031",
+      "size_bytes": 43732
+    },
+    "session_behavior_transition_effects": {
+      "path": "results/tables/session_behavior_transition_effects.csv",
+      "sha256": "de3d246f5a98764a81fac5f1b7e68ff4eb808b6e870140d928f115808b6e7efb",
+      "size_bytes": 191174
+    },
+    "session_behavior_transition_time_bins": {
+      "path": "results/tables/session_behavior_transition_time_bins.parquet",
+      "sha256": "bfb9af75c904ed0d2e87ae2885c589a7b41fcf461b46b27d0f47267efeceef26",
+      "size_bytes": 70536
+    },
+    "session_behavior_transition_trial_bins": {
+      "path": "results/tables/session_behavior_transition_trial_bins.parquet",
+      "sha256": "001932c841b12bbb5cb50963cb413469c39ad46a45f116ed665b7d5bb3d7367b",
+      "size_bytes": 48280
+    },
+    "session_qc_d03_criterion_summary": {
+      "path": "results/tables/session_qc_d03_criterion_summary.csv",
+      "sha256": "bb862a566eda72e70b3010a91395608604e7f0f53dbea3f83cfa8735c6cb2cc0",
+      "size_bytes": 1603
+    },
+    "session_qc_d03_metric_distributions": {
+      "path": "results/tables/session_qc_d03_metric_distributions.csv",
+      "sha256": "12dc27ade3b8bd14b6261a957498678d758d2c01da2fb51b3d7e3cc4b708a99e",
+      "size_bytes": 2539
+    },
+    "software_environment": {
+      "path": "results/manifests/behavior_transition_environment.txt",
+      "sha256": "38f7b0228d10437cf87ff140ec0b99f84d92401bed8bba8352ae9009f54b9248",
+      "size_bytes": 376
+    }
+  },
+  "sample_sizes": {
+    "n_mice_inventory": 27,
+    "n_primary_inferential_rows": 4,
+    "n_sessions_inventory": 99,
+    "n_technically_valid_mice": 27,
+    "n_technically_valid_sessions": 99,
+    "n_transition_boundary_rows": 198
+  },
+  "started_at_utc": "2026-09-07T03:42:10.650504+00:00"
+}

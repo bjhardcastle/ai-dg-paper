@@ -1,0 +1,5 @@
+stage_order,attrition_stage,criterion_type,n_sessions,n_mice,n_sessions_removed_at_stage,n_sessions_removed_from_inventory,fraction_of_inventory
+0,inventory,inventory,99,27,0,0,1.0
+1,technically_valid,technical,99,27,0,0,1.0
+2,reversible_gating_estimable,estimability,99,27,0,0,1.0
+3,threshold_selected,behavior_threshold,34,18,65,65,0.3434343434343434

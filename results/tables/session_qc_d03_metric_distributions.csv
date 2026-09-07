@@ -1,0 +1,12 @@
+metric_id,criterion_group,metric_column,metric_label,threshold_operator,threshold_value,n_sessions_total,n_sessions_evaluable,n_sessions_missing,n_sessions_meeting_threshold,n_mice_total,n_mice_evaluable,minimum,p05,q25,median,q75,p95,maximum
+engaged_1_go_trials,minimum_go_trials_all_blocks,n_engaged_1_go_trials,E1 eligible go trials,>=,10.0,99,99,0,99,27,27,12.0,25.0,33.0,41.0,47.0,53.19999999999999,61.0
+late_no_reward_go_trials,minimum_go_trials_all_blocks,n_no_reward_late_go_trials,Late-NR eligible go trials,>=,10.0,99,99,0,98,27,27,7.0,25.0,36.0,41.0,46.0,49.0,50.0
+early_engaged_2_go_trials,minimum_go_trials_all_blocks,n_engaged_2_early_go_trials,Early-E2 eligible go trials,>=,10.0,99,99,0,99,27,27,27.0,29.0,39.0,47.0,54.0,64.0,72.0
+engaged_1_catch_trials,minimum_catch_trials_engaged_blocks,n_engaged_1_catch_trials,E1 eligible catch trials,>=,5.0,99,99,0,99,27,27,7.0,9.0,14.0,20.0,27.0,33.0,36.0
+early_engaged_2_catch_trials,minimum_catch_trials_engaged_blocks,n_engaged_2_early_catch_trials,Early-E2 eligible catch trials,>=,5.0,99,99,0,99,27,27,8.0,12.0,17.5,23.0,29.0,35.0,38.0
+engaged_1_response_probability,engaged_1_response,engaged_1_response_probability,E1 go response probability,>=,0.5,99,99,0,80,27,27,0.0,0.22920754716981134,0.5342501297353399,0.675,0.84,0.9411992263056093,1.0
+early_engaged_2_response_probability,engaged_2_response,engaged_2_early_response_probability,Early-E2 go response probability,>=,0.5,99,99,0,59,27,27,0.0,0.0165625,0.3337198515769944,0.6086956521739131,0.7801932367149759,0.9388979591836735,1.0
+engaged_1_dprime,engaged_1_dprime,engaged_1_dprime,E1 loglinear d-prime,>=,1.0,99,99,0,77,27,27,-0.2947482686907433,0.23440085400950106,1.120377198378404,1.6110178171504024,1.9946632598168486,2.7563090625055815,3.8436507615020057
+early_engaged_2_dprime,engaged_2_dprime,engaged_2_early_dprime,Early-E2 loglinear d-prime,>=,1.0,99,99,0,68,27,27,-0.4435577056844877,-0.029929734379378847,0.8600728030648126,1.4495967946601966,1.9328673220966324,2.84628324166052,3.190872474219857
+late_no_reward_response_probability,late_no_reward_response,no_reward_late_response_probability,Late-NR go response probability,<=,0.2,99,99,0,75,27,27,0.0,0.0,0.03963893249607535,0.08695652173913043,0.1896628216503993,0.4389057750759872,1.0
+reward_suppression_drop,reward_suppression_drop,reward_suppression_drop,Minimum engaged response minus late-NR response,>=,0.3,99,99,0,62,27,27,-0.44858156028368795,-0.0755,0.1570772058823529,0.42468085106382975,0.602051282051282,0.7852894888169242,0.9155196962505933

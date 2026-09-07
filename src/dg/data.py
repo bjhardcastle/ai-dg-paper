@@ -28,6 +28,11 @@ COMPANION_TRIALS_URL = (
     "SHIELD_Dynamic_Gating_Analysis/"
     f"{COMPANION_REPOSITORY_COMMIT}/metadata_tables/master_stim_trials_table.csv"
 )
+COMPANION_SESSION_METADATA_URL = (
+    "https://raw.githubusercontent.com/AllenInstitute/"
+    "SHIELD_Dynamic_Gating_Analysis/"
+    f"{COMPANION_REPOSITORY_COMMIT}/metadata_tables/dynamic_gating_session_metadata.csv"
+)
 
 UNITS_PATH = "/units"
 TRIALS_PATH = "/intervals/trials"
@@ -75,11 +80,14 @@ DEFAULT_TRIAL_COLUMNS = (
     "aborted",
     "auto_rewarded",
     "hit",
+    "miss",
     "false_alarm",
+    "correct_reject",
     "no_reward_epoch",
     "omitted_reward",
     "response_latency",
 )
+BEHAVIOR_TRIAL_COLUMNS = (*DEFAULT_TRIAL_COLUMNS, "lick_times")
 OPTIONAL_TRIAL_COLUMN_DTYPES = {
     "is_sham_change": pl.Boolean,
     "no_reward_epoch": pl.Boolean,
@@ -528,6 +536,30 @@ def scan_companion_trial_reward_epochs(
     )
 
 
+def scan_companion_session_metadata(
+    source: PathLike = COMPANION_SESSION_METADATA_URL,
+) -> pl.LazyFrame:
+    """Scan the authors' pinned one-row-per-session metadata table."""
+
+    return pl.scan_csv(source).select(
+        pl.col("ecephys_session_id").cast(pl.Int64),
+        pl.col("behavior_session_id").cast(pl.Int64),
+        pl.col("mouse_id").cast(pl.String).alias("subject_id"),
+        pl.col("date_of_acquisition"),
+        pl.col("session_type").alias("recording_day"),
+        pl.col("session_number").cast(pl.Int64),
+        pl.col("sex").alias("companion_sex"),
+        pl.col("genotype").alias("companion_genotype"),
+        pl.col("project_code"),
+        pl.col("age_in_days").cast(pl.Int64),
+        pl.col("unit_count").cast(pl.Int64).alias("companion_unit_count"),
+        pl.col("channel_count").cast(pl.Int64).alias("companion_channel_count"),
+        pl.col("novel_image_id"),
+        pl.col("has_lfp"),
+        pl.lit(str(source)).alias("companion_session_metadata_source"),
+    )
+
+
 def add_no_reward_epoch_from_companion(
     trials: pl.DataFrame | pl.LazyFrame,
     session_metadata: pl.DataFrame | pl.LazyFrame,
@@ -594,13 +626,18 @@ def add_no_reward_epoch_from_companion(
 def scan_trials_with_reward_epochs(
     sources: PathLike | collections.abc.Iterable[PathLike],
     *,
+    columns: collections.abc.Iterable[str] | None = DEFAULT_TRIAL_COLUMNS,
     companion_source: PathLike = COMPANION_TRIALS_URL,
     infer_schema_length: int | None = None,
 ) -> pl.LazyFrame:
     """Scan trials and fill the 22 sessions missing NWB reward-epoch flags."""
 
     source_list = _normalize_sources(sources)
-    trials = scan_trials(source_list, infer_schema_length=infer_schema_length)
+    trials = scan_trials(
+        source_list,
+        columns=columns,
+        infer_schema_length=infer_schema_length,
+    )
     metadata = get_session_metadata(source_list)
     companion = scan_companion_trial_reward_epochs(companion_source)
     return add_no_reward_epoch_from_companion(trials, metadata, companion)

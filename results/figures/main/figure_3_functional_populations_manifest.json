@@ -1,0 +1,92 @@
+{
+  "analysis_id": "functional_populations",
+  "analysis_tier": "discovery",
+  "authoritative": true,
+  "caveat": "discovery-only isolation-QC slice; D04 stability is pending",
+  "completed_at_utc": "2026-09-07T20:59:37.769399+00:00",
+  "confirmation_accessed": false,
+  "dandiset_version": "0.260825.2232",
+  "figure_id": "Figure 3",
+  "figure_stem": "figure_3_functional_populations",
+  "generator": "scripts/09_plot_functional_populations.py",
+  "generator_sha256": "ed7b98aa991531c6b8ef8ceafcb582c4a55710616e47d796839fea9b81e311ce",
+  "inputs": [
+    {
+      "bytes": 11033,
+      "path": "manifests/functional_populations_analysis_run.json",
+      "sha256": "4eca117e5349298c6dad7232abc23dd425fa52b7f2ecf08f5b68c137d275920a"
+    },
+    {
+      "bytes": 371036,
+      "path": "tables/functional_population_mouse_psths.csv",
+      "sha256": "7a909d755fb427fae7cd863caa565c0da4c5afcb3dde0afcc437fe20e4efbe91"
+    },
+    {
+      "bytes": 4130,
+      "path": "tables/functional_population_mouse_effects.csv",
+      "sha256": "8fa591efe3b337c25f5e48885a8f6c9263652ea589d67324c1984e1c16bd29c5"
+    },
+    {
+      "bytes": 5032,
+      "path": "tables/functional_population_statistics.csv",
+      "sha256": "69aa992687b064c1e5259f44df96b9ae5949a7d99314c67adab1f0e69f3e80d2"
+    },
+    {
+      "bytes": 970,
+      "path": "tables/functional_population_class_stability.csv",
+      "sha256": "8194f1ab6a8bb1df259bffdec2b0010eb646679a764a0cec7a120b39fae89240"
+    }
+  ],
+  "outputs": [
+    {
+      "bytes": 73486,
+      "path": "figures/main/figure_3_functional_populations.svg",
+      "sha256": "c3c43c516ab8f8346de91ee47dd8e36d4c0a372b3512474e4ff3ffea4182a824"
+    },
+    {
+      "bytes": 72399,
+      "path": "figures/main/figure_3_functional_populations.pdf",
+      "sha256": "f655ab7c97f88bcedd6ae58210bad9af1f39cf35fa3be462caf3291c83778976"
+    },
+    {
+      "bytes": 642881,
+      "path": "figures/main/figure_3_functional_populations.png",
+      "sha256": "e841a3c4f9fa82c6e01ea87702184bf2dd85e77df7702ef32f95fd395b91e300"
+    }
+  ],
+  "preliminary_vertical_slice": true,
+  "run_status": "complete",
+  "source_data": [
+    {
+      "bytes": 267814,
+      "path": "figures/main/figure_3_functional_populations_source_data/panel_a_mouse_psths.csv",
+      "sha256": "e0c0548549d989f44c250e2f8412f3e90fdce6d8418d74e62f3a2b6c82f225f9"
+    },
+    {
+      "bytes": 31283,
+      "path": "figures/main/figure_3_functional_populations_source_data/panel_a_psth_summary.csv",
+      "sha256": "e274b296b027d07b18695d60cd1e7d34a1b42680b2aedac4ef549f2278f0a24b"
+    },
+    {
+      "bytes": 2836,
+      "path": "figures/main/figure_3_functional_populations_source_data/panels_b_c_mouse_effects.csv",
+      "sha256": "3b8d8a65d3c605d986f1741b6384132655eca78041228e8c0a365aa90a9ea56d"
+    },
+    {
+      "bytes": 5032,
+      "path": "figures/main/figure_3_functional_populations_source_data/panels_b_c_statistics.csv",
+      "sha256": "f5130441627f4937120ae633269f554c4022afa4b4bcfdabeb1c2a10ae760de8"
+    },
+    {
+      "bytes": 970,
+      "path": "figures/main/figure_3_functional_populations_source_data/class_stability.csv",
+      "sha256": "806bb8c99e095d7e0a677dc76a2c8bd57c0803ebe6374ea7dbaf97e108e6a96d"
+    }
+  ],
+  "source_data_manifest": {
+    "bytes": 1500,
+    "path": "figures/main/figure_3_functional_populations_source_data/manifest.json",
+    "sha256": "2bf73430199b025b39c7f5210a415e43a7aeed4c8196818697134474aecedecc"
+  },
+  "started_at_utc": "2026-09-07T20:59:35.834419+00:00"
+}

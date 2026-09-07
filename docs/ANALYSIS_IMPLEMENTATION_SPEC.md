@@ -1,6 +1,6 @@
 # Dynamic Gating: detailed analysis implementation specification
 
-- Status: **technical companion to the high-level plan; not yet preregistered or locked**
+- Status: **D01-D15 approved by the user on 2026-09-07; not preregistered**. Figure 1 remains exploratory because it was developed before approval. Discovery-dependent model, window, anatomy, and region-pair artifacts must still be frozen before the one-time confirmation run.
 - Dataset: [DANDI:001051/0.260825.2232](https://dandiarchive.org/dandiset/001051/0.260825.2232), immutable published version
 - Primary modality: extracellular spikes
 - Scientific scope: identify a candidate distributed pathway by which visual changes drive licking when reward is available, but fail to do so when reward is unavailable.
@@ -37,7 +37,9 @@ The following facts are provisional and must be regenerated from the frozen DAND
 - A schema audit found trial-level `no_reward_epoch`, `is_sham_change`, and `omitted_reward` in 77 session NWBs and absent from 22 NWBs spanning six mice. For those files, use the authors' commit-pinned master stimulus table as an audited fallback; it covers 96 of 99 sessions and the preliminary join covers all 22 missing-flag NWBs. Regenerate that join audit, and exclude any unresolved session with a reason rather than assigning it from nominal task time.
 - The nominal `no_reward` task attribute is `[900, 2400]` seconds, but observed trial flags transition later (approximately 925 and 2426 seconds in an inspected session). Programmed times therefore cannot substitute for trial-level block labels.
 - Task-image presentations occur under five session-dependent interval-table names. The later `flash_250ms_presentations` table is passive and its `contrast` field is not the task contrast perturbation. Task contrast is encoded in names such as `im115_r-0.7` versus `im115_r-1.0`; physical changes must be derived from initial and changed image identities because `is_change` includes go and catch/sham events.
+- Trial `change_frame` can be task-block-relative while presentation `start_frame` is session-global, so raw equality between these fields is not a valid alignment criterion. Their relationship must be established independently for each session under the frame-origin contract in Section 2.3.
 - `is_image_novel` is a presentation-level identity label, not by itself a novelty epoch. Day-specific novel-image and cumulative-exposure semantics must be verified from the protocol before use as factors.
+- Online trial outcomes are disabled or incomplete for some no-reward trials. In an inspected published session, raw licks fell inside the nominal response window while both online `hit` and `miss` were false. Use exact-deduplicated raw `lick_times` to define the task-software-compatible `(150, 750]` ms response endpoint in all three blocks; report raw/unique/duplicate counts; preserve paired `hit`/`miss` and `false_alarm`/`correct_reject` outcomes only for reward-available agreement checks and an explicit discrepancy table.
 - The public master stimulus table covers 96 of the 99 sessions, and public session-level unit counts do not exactly match the number of rows in the public units table. These discrepancies are an audit item, not an exclusion rule.
 - Ninety-seven sessions are marked as having LFP, but the planned primary analyses use spikes. LFP should remain a secondary, separately reviewed analysis.
 
@@ -69,9 +71,19 @@ No synthetic observations, synthetic sessions, or imputed spike trains will be c
 
 Reward availability must come from the audited trial flag (NWB first, pinned companion fallback). The presentation fields `active`, `rewarded`, or `stimulus_block` must not be repurposed as reward-state labels.
 
+### 2.3 Task-presentation materialization and alignment contract
+
+The task-presentation projection and trial alignment are fail-closed audit operations:
+
+1. Materialize each canonical session as a complete table. Its `_table_index` values must be exactly the contiguous sequence `0, ..., n - 1`; enforce this both before and after combining sessions. Any missing, duplicate, or out-of-range source row invalidates the whole audit, rather than permitting a partial concatenation.
+2. Do not compare raw trial `change_frame` and presentation `start_frame` as if they shared an origin. Trial frames can be relative to the task block, whereas presentation frames are session-global.
+3. Infer exactly one integer frame-origin offset independently per session. Enumerate candidate pairs using exact agreement between the raw trial change-image token and presentation image token, agreement on physical identity change, and a non-omitted presentation. Accept a candidate only if it maps every finite trial frame anchor to exactly one presentation and is the unique full-coverage solution for that session. An absent or ambiguous solution fails alignment.
+4. Apply the accepted offset to the finite trial anchors and require every matched presentation start time to lie strictly within its corresponding trial interval. Preserve the raw and corrected frames, source paths, table paths, and table indices in the row-level audit.
+5. Use trial and presentation timestamps only as descriptive alignment diagnostics. Timestamp proximity or tolerance must never generate, rank, disambiguate, or select a frame-origin offset.
+
 ## 3. Decisions that require human approval
 
-Every row below must receive an explicit decision in a dated `analysis_lock` document. Recommended defaults are proposals, not silent choices.
+Every row below received explicit approval in the dated `analysis_lock` document. Discovery-dependent nominations remain separate frozen artifacts rather than silent choices.
 
 | ID | Decision needing human review | Recommended default | Consequence if unresolved |
 |---|---|---|---|
@@ -90,7 +102,7 @@ Every row below must receive an explicit decision in a dated `analysis_lock` doc
 | D13 | Missing pupil/video policy | Running and licks are core; pupil/video are adjusted where valid and tested in matched complete-case analyses | Different session sets could drive covariate results |
 | D14 | Confirmatory viability threshold | Require enough eligible held-out mice and simultaneous region pairs; otherwise label the complete study exploratory | Underpowered “confirmation” would be misleading |
 | D15 | Scope of LFP analyses | Keep outside the primary manuscript until the spike results and a separate LFP plan are reviewed | Scope expansion could delay or dilute the central result |
-**Gate:** do not unlock confirmatory neural labels or run inferential tests in the held-out mice until D01-D14 are recorded and analysis code passes frozen tests on discovery data.
+**Gate:** D01-D14 are recorded as approved. Do not run inferential tests in held-out mice until discovery code, windows, representations, nominations, and tests are frozen unchanged.
 
 ## 4. Experimental contrasts and hypotheses
 
@@ -148,7 +160,7 @@ Novelty is confounded with image identity and recording day unless the NWB desig
 
 ### 5.1 Session filter
 
-Session inclusion must be computed without neural data. The NWB task parameters specify a 150-750 ms response window; verify this against task labels and the dataset's associated analysis ([Bennett et al., 2026](https://doi.org/10.1016/j.cell.2026.06.025)) before freezing it.
+Session inclusion must be computed without neural data. The NWB task parameters specify a 150-750 ms response window and the task software applies a strict lower bound; verify this against raw lick timestamps, reward-available task labels, and the dataset's associated analysis ([Bennett et al., 2026](https://doi.org/10.1016/j.cell.2026.06.025)) before freezing it. The cross-state response is any valid exact-deduplicated raw lick in `(0.150, 0.750]` seconds, not the presence of an online outcome event. Report duplicate, missing, nonfinite, or unsorted lick timestamps and online-label disagreements rather than silently converting them to misses.
 
 For each block/window, calculate:
 
@@ -160,7 +172,7 @@ For each block/window, calculate:
 - running and available pupil/eye summaries;
 - number of analyzable change, catch, omission, and perturbation events.
 
-Proposed primary rule, subject to D03:
+Approved primary rule (D03):
 
 1. `E1` and the portion of `E2` before its final 10 minutes each show reliable change detection: at least a minimum number of go/catch trials, change-response probability at least 0.5, and d-prime at least 1.0. For the nominal 25-minute E2 block this is its first 15 minutes; the relative rule remains defined for sessions with atypical duration.
 2. The final 10 minutes of `NR` show behavioral suppression: change-response probability at most 0.2 and at least a 0.3 absolute decrease relative to the less responsive of `E1` and early `E2`.
@@ -170,7 +182,7 @@ Proposed primary rule, subject to D03:
 
 Why late `NR`: animals may initially persist in licking while learning that reward has been removed. Using the full no-reward block as an exclusion criterion would select directly on extinction speed, the transition phenomenon of interest.
 
-These numeric thresholds are starting proposals. Plot the distribution of each behavior-only criterion and have a human approve the cut points before neural outcomes are viewed. Keep a continuous “behavioral gating score” for sensitivity analyses so the conclusions do not depend entirely on dichotomization.
+These numeric thresholds are approved. Plot the distribution of each behavior-only criterion and preserve the dated approval record. Keep a continuous “behavioral gating score” for sensitivity analyses so the conclusions do not depend entirely on dichotomization.
 
 Required session-QC outputs:
 
@@ -194,7 +206,7 @@ Use strict `<`, not `<=`, unless D04 explicitly changes it. Treat a missing qual
 
 This filter is meant to reject unstable recordings, not neurons that show the biological `NR` effect. It must therefore use only `E1` and early `E2`, never `NR`, and only conditions shared across those blocks.
 
-Proposed noise-calibrated procedure, subject to D04:
+Approved noise-calibrated procedure (D04):
 
 1. Exclude the last 10 minutes of `E2`.
 2. Use the two shared full-contrast familiar images on non-change presentations plus pre-stimulus bins. Exclude perturbation, omission, auto-reward, reward, and peri-lick bins.
@@ -211,7 +223,7 @@ Lock the exact reliability statistic, number of resamples, equivalence margin, a
 - Preserve raw CCF acronyms and coordinates for the unit browser.
 - Exclude `out of brain`, `No Area`, root, ventricles, and fiber tracts from regional enrichment tests, but retain them with reason flags in all-unit outputs.
 - Map raw acronyms to a single locked ontology level for primary inference; retain fine structures descriptively.
-- Proposed minimum for a primary region: represented in at least 5 mice and 8 sessions, with at least 10 eligible units in the median represented mouse. Lock after a coverage-only audit.
+- Approved minimum for a primary region: represented in at least 5 mice and 8 sessions, with at least 10 eligible units in the median represented mouse. The exact ontology mapping remains a discovery-freeze artifact informed only by coverage.
 - Report probe/session coverage and the anatomical sampling denominator. Cluster enrichment is always relative to eligible recorded units, not to the biological neuron population of a region.
 
 ## 6. Discovery, cross-validation, and confirmation
@@ -692,6 +704,7 @@ Deliver:
 - immutable asset manifest;
 - NWB schema/path report;
 - reconciled session/unit/stimulus inventories;
+- complete per-session task-presentation projections and unique frame-origin alignment audit;
 - validated event dictionary and clock checks;
 - coverage-only summaries.
 

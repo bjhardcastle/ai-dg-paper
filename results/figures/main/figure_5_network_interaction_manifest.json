@@ -1,0 +1,108 @@
+{
+  "analysis_id": "simultaneous_network_interaction",
+  "analysis_manifest": {
+    "path": "manifests/network_analysis_run.json",
+    "sha256": "da31446f0f230d7515c5e1f585bbf10d7f4ec2d9a8d5737550fef964a17498fd",
+    "size_bytes": 6801
+  },
+  "analysis_tier": "discovery",
+  "authoritative": true,
+  "code_version": "b953bfdb128e3c196cb95c0499a91eeff0191f60+dirty",
+  "completed_at_utc": "2026-09-07T21:03:40.184312+00:00",
+  "confirmation_accessed": false,
+  "dandiset_version": "0.260825.2232",
+  "figure_id": "Figure 5",
+  "figure_stem": "figure_5_network_interaction",
+  "generator": "scripts/13_plot_network.py",
+  "generator_sha256": "53d13375d868bed1c6eb88cecfc9ec9168374a64bc8ba321e2555cab7e20f67a",
+  "inputs": [
+    {
+      "path": "tables/mouse_network_block_performance.csv",
+      "sha256": "491e80e3978bed1eb3bf0340b67d9011184b53016b2c87b420b5a358423b5f0c",
+      "size_bytes": 62882
+    },
+    {
+      "path": "tables/mouse_network_effects.csv",
+      "sha256": "85c999f7e30909f6a7f00019687484e76418ace2ad91e13beb06a1addee130b8",
+      "size_bytes": 37716
+    },
+    {
+      "path": "tables/network_statistics.csv",
+      "sha256": "2a6702cb4739a8d32520f40d10b47265a05fac83bb2720b6a9a29c0c736631c6",
+      "size_bytes": 25106
+    }
+  ],
+  "local_sources": [
+    {
+      "path": "src/dg/artifacts.py",
+      "sha256": "51667f969f1b622b5bded3dcf74a2d3fc689727cb967fdc47f50c81cf1720e91",
+      "size_bytes": 4557
+    },
+    {
+      "path": "src/dg/figure_network.py",
+      "sha256": "dd5419b3cd547334a5d8bbdf2c282ef647a04ccad383e32c8a1a6a2a2c9194eb",
+      "size_bytes": 10890
+    },
+    {
+      "path": "scripts/13_plot_network.py",
+      "sha256": "53d13375d868bed1c6eb88cecfc9ec9168374a64bc8ba321e2555cab7e20f67a",
+      "size_bytes": 18382
+    }
+  ],
+  "outputs": [
+    {
+      "path": "figures/main/figure_5_network_interaction.svg",
+      "sha256": "4ab0b2a6d3afc2af058e6976e87dbf8608af2d4bc2667704944c091cbdac7fef",
+      "size_bytes": 107632
+    },
+    {
+      "path": "figures/main/figure_5_network_interaction.pdf",
+      "sha256": "c42c4fb0bb25ddc3cc8449afdef24685cff5c0af9097414440ee7e1ca58399e9",
+      "size_bytes": 44324
+    },
+    {
+      "path": "figures/main/figure_5_network_interaction.png",
+      "sha256": "5c6ef1afc8cf889685f10ac460bf0308a82a353ae3e8fcec74b075b698fd89d9",
+      "size_bytes": 274884
+    }
+  ],
+  "panels": {
+    "A": "positive-lag residual reduced-rank prediction and control schematic",
+    "B": "nominated-pair source-added held-out target R-squared by reward block",
+    "C": "per-mouse reversible real versus within-block trial-shift effects"
+  },
+  "run_status": "complete",
+  "software": {
+    "matplotlib": "3.11.1",
+    "numpy": "2.5.3",
+    "polars": "1.44.1"
+  },
+  "source_data": [
+    {
+      "path": "figures/main/figure_5_network_interaction_source_data/panel_b_mouse_blocks.csv",
+      "sha256": "e7fe0f47c941ddba9aed8e87f9d0ec7f845942d556e0622f2387746feba750fe",
+      "size_bytes": 2472
+    },
+    {
+      "path": "figures/main/figure_5_network_interaction_source_data/panel_b_block_summary.csv",
+      "sha256": "d819fe36b4672963fbbbe2f0ce8329a44979a119f2e274cd3f49a4dd85d153d6",
+      "size_bytes": 661
+    },
+    {
+      "path": "figures/main/figure_5_network_interaction_source_data/panel_c_mouse_controls.csv",
+      "sha256": "9b7d77d4b63394479537629c0bb9cbb56a6b0f020378d1d78bcae9b47bf0b9e5",
+      "size_bytes": 1042
+    },
+    {
+      "path": "figures/main/figure_5_network_interaction_source_data/panel_c_statistic.csv",
+      "sha256": "cd552503c161147964e558246a4f39656226566985d24559813d59593450e81c",
+      "size_bytes": 1662
+    }
+  ],
+  "source_data_manifest": {
+    "path": "figures/main/figure_5_network_interaction_source_data/manifest.json",
+    "sha256": "5a4d61f29ee7cbf0a7877ab945b884b4ee5d6d5fb1fea61a255ea93ea2632cf8",
+    "size_bytes": 1284
+  },
+  "started_at_utc": "2026-09-07T21:03:39.147078+00:00"
+}

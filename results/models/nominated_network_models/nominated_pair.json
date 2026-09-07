@@ -1,0 +1,39 @@
+{
+  "analysis_id": "simultaneous_network_interaction",
+  "analysis_tier": "discovery",
+  "config": {
+    "baseline_start_seconds": -0.15,
+    "baseline_stop_seconds": 0.0,
+    "inner_folds": 3,
+    "maximum_units_per_region": 24,
+    "minimum_median_units_per_mouse": 10,
+    "minimum_pair_mice": 5,
+    "minimum_pair_sessions": 8,
+    "minimum_trials_per_block": 12,
+    "minimum_units_per_region": 8,
+    "outer_folds": 4,
+    "ranks": [
+      1,
+      2,
+      4,
+      8
+    ],
+    "ridge_alphas": [
+      0.1,
+      1.0,
+      10.0,
+      100.0
+    ],
+    "source_start_seconds": 0.0,
+    "source_stop_seconds": 0.15,
+    "target_start_seconds": 0.15,
+    "target_stop_seconds": 0.3
+  },
+  "confirmation_accessed": false,
+  "covariates": "image identity, linear/quadratic session time, eventual response/latency, and target early population history",
+  "primary_control": "within-block half-cycle trial shift of source population",
+  "selection_bias_warning": true,
+  "selection_rule": "maximum controlled reversible contrast among coverage-eligible pairs",
+  "source_region": "MB",
+  "target_region": "Isocortex"
+}

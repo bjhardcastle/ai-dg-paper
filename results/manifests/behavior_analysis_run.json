@@ -1,0 +1,201 @@
+{
+  "aggregation": "equal-session mean within mouse; equal-mouse mean",
+  "analysis_id": "figure_1_behavior",
+  "analysis_lock_path": "/Users/benh/github/ai-dg-paper/config/analysis_lock.yaml",
+  "analysis_lock_sha256": "c1c78c89391c5656f7372ea433e63d43bf3c960ee9247639da57a45db556e30c",
+  "analysis_lock_snapshot": "results/manifests/behavior_analysis_lock.yaml",
+  "analysis_status": "pass",
+  "analysis_tier": "exploratory",
+  "behavior_trials_checkpoint": {
+    "output_matches_trusted_checkpoint": false,
+    "path": "results/manifests/behavior_trials_checkpoint.json",
+    "sha256": "239a6bf00d96ea38ffc2fe981feb2118fb8e02823e27de763848da17a6314698",
+    "size_bytes": 2381,
+    "status": "validated_existing_not_refreshed",
+    "trusted_behavior_trials_sha256": "6b0f8b9bab1e824a3af6097771898083f6ffe8738d45c516665fce9d33e97b68"
+  },
+  "bootstrap_resamples": 10000,
+  "code_version": "24ba096deb2d8931af3423b9b5682cdbeec7884c+dirty",
+  "companion_trials_provenance": {
+    "cache_status": "verified_existing",
+    "cached_path": "/Users/benh/github/ai-dg-paper/results/cache/master_stim_trials_table.csv",
+    "content_size_bytes": 80416793,
+    "repository_commit": "3c09a0dc2972381f06393ddf5c000e16462c7037",
+    "sha256": "a29a3edd22b1f0838ddc1794139ba61d075e03c2d3fa5ba7d14e7caf7f9ebf7b",
+    "source_url": "https://raw.githubusercontent.com/AllenInstitute/SHIELD_Dynamic_Gating_Analysis/3c09a0dc2972381f06393ddf5c000e16462c7037/metadata_tables/master_stim_trials_table.csv"
+  },
+  "completed_at_utc": "2026-09-07T03:17:10.356993+00:00",
+  "dandiset_doi": "10.48324/dandi.001051/0.260825.2232",
+  "dandiset_id": "001051",
+  "dandiset_version": "0.260825.2232",
+  "generator": {
+    "path": "scripts/01_analyze_behavior.py",
+    "sha256": "d98c4d90fdee07d4d0623d019ead02be60715cad4b5b9d1f855d2c550d629fd7",
+    "size_bytes": 65873
+  },
+  "inference_cohort": "technically_valid_complete_primary_blocks",
+  "input_audit_run": {
+    "analysis_lock_status": "proposed",
+    "asset_inventory_status": "pass",
+    "companion_table_status": "verified_existing",
+    "completed_at_utc": "2026-09-07T03:07:13.897073+00:00",
+    "dandiset_doi": "10.48324/dandi.001051/0.260825.2232",
+    "dandiset_id": "001051",
+    "dandiset_version": "0.260825.2232",
+    "nwb_root_metadata_audit_status": "skipped_by_default",
+    "schema_audit_status": "pass",
+    "script": "scripts/00_freeze_and_audit.py",
+    "started_at_utc": "2026-09-07T03:05:26.934660+00:00",
+    "task_parameters_audit_status": "pass"
+  },
+  "late_engaged_2_exclusion_seconds": 600.0,
+  "late_no_reward_seconds": 600.0,
+  "lick_timestamp_audit_summary": {
+    "n_duplicate_lick_timestamps": 256,
+    "n_duplicate_response_window_licks": 256,
+    "n_raw_lick_timestamps": 176369,
+    "n_raw_response_window_licks": 19058,
+    "n_sessions_with_duplicate_lick_timestamps": 1,
+    "n_sessions_with_invalid_lick_vectors": 0,
+    "n_trials_with_duplicate_lick_timestamps": 255,
+    "n_trials_with_invalid_lick_vectors": 0,
+    "n_trials_without_valid_response_event": 33614,
+    "n_unique_lick_timestamps": 176113,
+    "n_unique_response_window_licks": 18802
+  },
+  "local_sources": [
+    {
+      "path": "src/dg/artifacts.py",
+      "sha256": "51667f969f1b622b5bded3dcf74a2d3fc689727cb967fdc47f50c81cf1720e91",
+      "size_bytes": 4557
+    },
+    {
+      "path": "src/dg/audit.py",
+      "sha256": "60c12002aa7cbf21230ca0bbacad5c06cf5e4b155c52bff2d0adfdc5954a37c9",
+      "size_bytes": 26905
+    },
+    {
+      "path": "src/dg/behavior.py",
+      "sha256": "ac209a19e2f46d144a712e3612b819f5015517ade87f993df6550b58b8b39e39",
+      "size_bytes": 39660
+    },
+    {
+      "path": "src/dg/data.py",
+      "sha256": "c03464112c2008922be1bf3cd21c02ed34077cae82f8988f57d54c1d1837183c",
+      "size_bytes": 24041
+    },
+    {
+      "path": "src/dg/gates.py",
+      "sha256": "0fb6a7f0e8636ce794a2d3b0b870bf50b0404a660e8c9b31453065daf90cd611",
+      "size_bytes": 3054
+    },
+    {
+      "path": "src/dg/quality.py",
+      "sha256": "10f1ca1df10815e6d4dd1aff13559b8fde16e9598b16a70e9c60b81c4910e2cf",
+      "size_bytes": 48758
+    },
+    {
+      "path": "src/dg/statistics.py",
+      "sha256": "9a74766204d03f524286c1087d20c0aad2cc7415f924a7a2b9e83830462339f0",
+      "size_bytes": 21952
+    }
+  ],
+  "n_estimable_mice": 27,
+  "n_estimable_sessions": 99,
+  "n_inventory_mice": 27,
+  "n_inventory_sessions": 99,
+  "n_technically_valid_mice": 27,
+  "n_technically_valid_sessions": 99,
+  "n_trials": 66130,
+  "outputs": {
+    "behavior_response_audit": {
+      "path": "results/tables/behavior_response_audit.csv",
+      "sha256": "1804e25e6cd8d6cdcbb9383573d0471ec456c0983012d6c524652934165813d0",
+      "size_bytes": 61237
+    },
+    "behavior_statistics": {
+      "path": "results/tables/behavior_statistics.csv",
+      "sha256": "d6ae652b364c9b69509995487e4d911680ba2f7d9163a13002fdab7b303ab0ae",
+      "size_bytes": 16735
+    },
+    "behavior_trials": {
+      "path": "results/tables/behavior_trials.parquet",
+      "sha256": "29a64113baaa25f445be9165a3353c0cf2009b291c83e89e3ce41a92997bd29e",
+      "size_bytes": 2905997
+    },
+    "lick_timestamp_audit": {
+      "path": "results/tables/lick_timestamp_audit.csv",
+      "sha256": "21bbf684a9199fd52510eacc77cb23d9798d9e2099a6749bb2c2a25f2935782c",
+      "size_bytes": 82259
+    },
+    "mouse_behavior_blocks": {
+      "path": "results/tables/mouse_behavior_blocks.csv",
+      "sha256": "4840f68af2689f0376467a7e78e805c5f30f4859910af6aafa50d8994896b772",
+      "size_bytes": 28374
+    },
+    "mouse_gating": {
+      "path": "results/tables/mouse_gating.csv",
+      "sha256": "115bbfbccfdeac5ee13ccb2c6a8f8a936cd085f3efe96ee1706f748c5d25a728",
+      "size_bytes": 10365
+    },
+    "reward_epoch_audit": {
+      "path": "results/tables/reward_epoch_audit.csv",
+      "sha256": "a94afc9e4f5d4f313acc46d838026a03a73c3ec632ad451020d1011206a48cd1",
+      "size_bytes": 14564
+    },
+    "session_attrition": {
+      "path": "results/tables/session_attrition.csv",
+      "sha256": "3b4627f88d76717f99c82ecc39665c64a1d8825a714cc20caa1b355723a1ea95",
+      "size_bytes": 353
+    },
+    "session_behavior_blocks": {
+      "path": "results/tables/session_behavior_blocks.csv",
+      "sha256": "738cb2709a51475053d2c18ab90a7e42d1fe69f8aaad0daa9923101dccda95a0",
+      "size_bytes": 429772
+    },
+    "session_block_timing": {
+      "path": "results/tables/session_block_timing.csv",
+      "sha256": "63a932ebdcd401fe0b6a729baf33f49fcd21403c251decc79ed4cb081e2798b6",
+      "size_bytes": 63095
+    },
+    "session_qc": {
+      "path": "results/tables/session_qc.parquet",
+      "sha256": "4df834b5367f70d7e6307fa35dcf629a5203843b65d9e3fbf3b943608b1f0593",
+      "size_bytes": 133505
+    }
+  },
+  "pending_behavior_decisions": [],
+  "primary_test_result_ids": [
+    "withdrawal_suppression_mouse_mean",
+    "restoration_recovery_mouse_mean"
+  ],
+  "response_definition": {
+    "count_semantics": "exact-deduplicated lick timestamps",
+    "event_time_column": "change_time",
+    "online_outcomes": "agreement audit only; interpretable in reward-available blocks",
+    "source": "raw trial lick_times",
+    "window_interval": "(start, stop]",
+    "window_start_seconds": 0.15,
+    "window_stop_seconds": 0.75
+  },
+  "restoration_claim_rule": "requires positive withdrawal and restoration estimates with both tests interpreted in the shared Holm family; the symmetric reversible score is summary-only",
+  "reused_behavior_trials_sha256": "6b0f8b9bab1e824a3af6097771898083f6ffe8738d45c516665fce9d33e97b68",
+  "script": "scripts/01_analyze_behavior.py",
+  "seed": 1051,
+  "session_inventory_path": "/Users/benh/github/ai-dg-paper/results/manifests/session_inventory.parquet",
+  "session_inventory_sha256": "1e395b175be2b6234907bb3e81b30b7ad3380745eb580573d5e18998cdfc573f",
+  "session_quality_thresholds": {
+    "maximum_no_reward_response_rate": 0.2,
+    "minimum_catch_trials_per_engaged_block": 5,
+    "minimum_engaged_dprime": 1.0,
+    "minimum_engaged_response_rate": 0.5,
+    "minimum_go_trials_per_block": 10,
+    "minimum_reward_suppression_drop": 0.3
+  },
+  "sign_flip_resamples": 100000,
+  "started_at_utc": "2026-09-07T03:17:08.866633+00:00",
+  "task_parameters_audit_path": "results/manifests/task_parameters_audit.csv",
+  "task_parameters_audit_sha256": "edfdc3cb2e9193cd5c04d74bbb2cd77153c4babef0fe973feb15f352ae1a7082",
+  "threshold_selected_cohort_role": "QC characterization only",
+  "trial_input_mode": "validated_existing_behavior_trials"
+}

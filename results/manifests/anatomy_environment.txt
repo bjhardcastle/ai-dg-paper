@@ -1,0 +1,12 @@
+recorded_at_utc=2026-09-07T19:44:57.053979+00:00
+python=3.14.3
+python_executable=/private/tmp/ai-dg-uv-cache/environments-v2/10-analyze-anatomy-4b4c0ca9451578b0/bin/python3
+platform=macOS-15.7.1-arm64-arm-64bit-Mach-O
+package.lazynwb=1.0.0.dev8
+package.numpy=2.5.3
+package.polars=1.44.1
+package.pyarrow=25.0.1
+package.pytest=not-installed
+package.ruff=not-installed
+git.revision=b953bfdb128e3c196cb95c0499a91eeff0191f60
+git.dirty=true

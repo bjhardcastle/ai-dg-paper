@@ -1,0 +1,58 @@
+subject_id,parent_region_id,parent_region_acronym,parent_region_name,score_type,mouse_effect,n_sessions,n_units
+614608,313,MB,Midbrain,absolute_loading,0.07967897020321636,2,166
+615048,313,MB,Midbrain,absolute_loading,-0.019526360271685823,2,140
+615564,313,MB,Midbrain,absolute_loading,-0.13909596576163327,1,93
+623319,313,MB,Midbrain,absolute_loading,-0.1495480302482644,1,90
+623322,313,MB,Midbrain,absolute_loading,0.4649055234539811,1,18
+626279,313,MB,Midbrain,absolute_loading,-0.03261993126206321,1,101
+632295,313,MB,Midbrain,absolute_loading,-0.06116718622331367,1,78
+640887,313,MB,Midbrain,absolute_loading,-0.09301469585291941,1,162
+640890,313,MB,Midbrain,absolute_loading,0.1679301637203527,1,52
+642504,313,MB,Midbrain,absolute_loading,-0.1033270919259414,3,145
+614547,315,Isocortex,Isocortex,absolute_loading,0.07754519856215743,1,387
+614608,315,Isocortex,Isocortex,absolute_loading,0.014408016984636401,2,1732
+615048,315,Isocortex,Isocortex,absolute_loading,0.0425253480288872,2,985
+615564,315,Isocortex,Isocortex,absolute_loading,0.08068456842887628,2,778
+623319,315,Isocortex,Isocortex,absolute_loading,0.08435548614023264,2,457
+623322,315,Isocortex,Isocortex,absolute_loading,0.1431540079248552,3,1202
+626279,315,Isocortex,Isocortex,absolute_loading,0.12005012213095152,1,469
+632295,315,Isocortex,Isocortex,absolute_loading,0.07066279475684198,2,998
+638387,315,Isocortex,Isocortex,absolute_loading,0.13251873591743313,1,331
+640887,315,Isocortex,Isocortex,absolute_loading,0.06723895540566036,2,795
+640890,315,Isocortex,Isocortex,absolute_loading,0.130121947552506,2,955
+642504,315,Isocortex,Isocortex,absolute_loading,0.09517220165405642,3,980
+614547,477,STR,Striatum,absolute_loading,0.3668281978822189,1,112
+614608,477,STR,Striatum,absolute_loading,0.36537188259975617,2,103
+615048,477,STR,Striatum,absolute_loading,0.09347938801285166,2,446
+615564,477,STR,Striatum,absolute_loading,0.18189393830909031,2,89
+623319,477,STR,Striatum,absolute_loading,0.20509106590322174,2,94
+623322,477,STR,Striatum,absolute_loading,-0.31737908101004164,2,40
+632295,477,STR,Striatum,absolute_loading,0.4152004987028992,2,205
+638387,477,STR,Striatum,absolute_loading,0.1326585106446539,1,84
+640887,477,STR,Striatum,absolute_loading,0.3193191921578085,2,314
+640890,477,STR,Striatum,absolute_loading,0.07915280708572633,2,354
+642504,477,STR,Striatum,absolute_loading,0.25032771966008666,2,205
+614547,549,TH,Thalamus,absolute_loading,-0.3582393453998942,1,136
+614608,549,TH,Thalamus,absolute_loading,-0.3256301217869991,2,197
+615048,549,TH,Thalamus,absolute_loading,-0.23346408156478582,2,254
+615564,549,TH,Thalamus,absolute_loading,-0.2393441141842566,2,314
+623319,549,TH,Thalamus,absolute_loading,-0.15619213083737954,2,384
+623322,549,TH,Thalamus,absolute_loading,-0.24031012233067175,3,521
+626279,549,TH,Thalamus,absolute_loading,-0.2463564313598036,1,192
+632295,549,TH,Thalamus,absolute_loading,-0.319433805732205,2,397
+638387,549,TH,Thalamus,absolute_loading,-0.2702377328990368,1,171
+640887,549,TH,Thalamus,absolute_loading,-0.26258563437848387,2,305
+640890,549,TH,Thalamus,absolute_loading,-0.30085428456450164,2,443
+642504,549,TH,Thalamus,absolute_loading,-0.3194086841473353,3,400
+614547,1089,HPF,Hippocampal formation,absolute_loading,-0.16448442096540616,1,131
+614608,1089,HPF,Hippocampal formation,absolute_loading,-0.1176484068594614,2,226
+615048,1089,HPF,Hippocampal formation,absolute_loading,-0.05647596343198355,2,271
+615564,1089,HPF,Hippocampal formation,absolute_loading,-0.14640766945683922,2,252
+623319,1089,HPF,Hippocampal formation,absolute_loading,-0.027019587671680556,2,138
+623322,1089,HPF,Hippocampal formation,absolute_loading,-0.0644718341307715,3,603
+626279,1089,HPF,Hippocampal formation,absolute_loading,-0.04260044329004177,1,134
+632295,1089,HPF,Hippocampal formation,absolute_loading,-0.027661792633042373,2,201
+638387,1089,HPF,Hippocampal formation,absolute_loading,0.11339294734338817,1,33
+640887,1089,HPF,Hippocampal formation,absolute_loading,-0.22160589919837761,2,183
+640890,1089,HPF,Hippocampal formation,absolute_loading,-0.14421637793243025,2,256
+642504,1089,HPF,Hippocampal formation,absolute_loading,-0.06804809646318374,3,299

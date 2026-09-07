@@ -1,0 +1,2 @@
+n_assets_audited,n_raw_video_asset_candidates,raw_video_asset_paths,raw_video_asset_status,candidate_detection_scope,metadata_only,asset_values_loaded
+666,0,[],no_name_matched_candidate_in_frozen_asset_inventory,case_insensitive_asset_path_token_regex_video_or_movie,true,false

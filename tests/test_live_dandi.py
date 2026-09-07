@@ -6,6 +6,7 @@ import os
 import polars as pl
 import pytest
 
+import dg.audit
 import dg.data
 
 EXPLICIT_FLAG_SOURCE = (
@@ -62,3 +63,25 @@ def test_published_unit_filter_includes_author_good_label() -> None:
     assert units.get_column("quality").unique().to_list() == ["good"]
     assert units.get_column("isi_violations").max() < 0.5
     assert units.get_column("amplitude_cutoff").max() < 0.1
+
+
+def test_published_electrode_columns_pass_schema_audit() -> None:
+    """Guard the direct schema path needed for tables below NWB ``/general``."""
+
+    session_manifest = pl.DataFrame(
+        {
+            "asset_id": ["c8015581-fc08-4a4f-a39a-ea3910b0d425"],
+            "path": ["sub-604914/sub-604914_ses-20220427T041046.nwb"],
+            "s3_url": [EXPLICIT_FLAG_SOURCE],
+            "subject_id": ["604914"],
+        }
+    )
+
+    audit = dg.audit.audit_nwb_schemas(session_manifest, max_workers=1)
+    electrodes = audit.filter(pl.col("table_path") == dg.data.ELECTRODES_PATH)
+
+    assert set(electrodes.get_column("column_name")) == set(
+        dg.audit.REQUIRED_TABLE_COLUMNS[dg.data.ELECTRODES_PATH]
+    )
+    assert electrodes.get_column("present").all()
+    assert electrodes.get_column("audit_error").null_count() == electrodes.height

@@ -1,0 +1,67 @@
+{
+  "behavior_trials": {
+    "path": "results/tables/behavior_trials.parquet",
+    "sha256": "6b0f8b9bab1e824a3af6097771898083f6ffe8738d45c516665fce9d33e97b68",
+    "size_bytes": 2905997
+  },
+  "checkpoint_kind": "direct_remote_nwb_behavior_trials",
+  "companion_trials": {
+    "path": "results/cache/master_stim_trials_table.csv",
+    "repository_commit": "3c09a0dc2972381f06393ddf5c000e16462c7037",
+    "sha256": "a29a3edd22b1f0838ddc1794139ba61d075e03c2d3fa5ba7d14e7caf7f9ebf7b",
+    "size_bytes": 80416793,
+    "source_url": "https://raw.githubusercontent.com/AllenInstitute/SHIELD_Dynamic_Gating_Analysis/3c09a0dc2972381f06393ddf5c000e16462c7037/metadata_tables/master_stim_trials_table.csv"
+  },
+  "created_at_utc": "2026-09-07T03:15:34.378971+00:00",
+  "dandiset_id": "001051",
+  "dandiset_version": "0.260825.2232",
+  "generator": {
+    "path": "scripts/01_analyze_behavior.py",
+    "sha256": "d98c4d90fdee07d4d0623d019ead02be60715cad4b5b9d1f855d2c550d629fd7",
+    "size_bytes": 65873
+  },
+  "local_sources": [
+    {
+      "path": "src/dg/artifacts.py",
+      "sha256": "51667f969f1b622b5bded3dcf74a2d3fc689727cb967fdc47f50c81cf1720e91",
+      "size_bytes": 4557
+    },
+    {
+      "path": "src/dg/audit.py",
+      "sha256": "60c12002aa7cbf21230ca0bbacad5c06cf5e4b155c52bff2d0adfdc5954a37c9",
+      "size_bytes": 26905
+    },
+    {
+      "path": "src/dg/behavior.py",
+      "sha256": "ac209a19e2f46d144a712e3612b819f5015517ade87f993df6550b58b8b39e39",
+      "size_bytes": 39660
+    },
+    {
+      "path": "src/dg/data.py",
+      "sha256": "c03464112c2008922be1bf3cd21c02ed34077cae82f8988f57d54c1d1837183c",
+      "size_bytes": 24041
+    },
+    {
+      "path": "src/dg/gates.py",
+      "sha256": "0fb6a7f0e8636ce794a2d3b0b870bf50b0404a660e8c9b31453065daf90cd611",
+      "size_bytes": 3054
+    },
+    {
+      "path": "src/dg/quality.py",
+      "sha256": "10f1ca1df10815e6d4dd1aff13559b8fde16e9598b16a70e9c60b81c4910e2cf",
+      "size_bytes": 48758
+    },
+    {
+      "path": "src/dg/statistics.py",
+      "sha256": "9a74766204d03f524286c1087d20c0aad2cc7415f924a7a2b9e83830462339f0",
+      "size_bytes": 21952
+    }
+  ],
+  "schema_version": 1,
+  "session_inventory": {
+    "path": "results/manifests/session_inventory.parquet",
+    "sha256": "1e395b175be2b6234907bb3e81b30b7ad3380745eb580573d5e18998cdfc573f",
+    "size_bytes": 40479
+  },
+  "trial_input_mode": "remote_nwb"
+}

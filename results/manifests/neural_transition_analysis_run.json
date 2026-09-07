@@ -1,0 +1,171 @@
+{
+  "analysis_id": "neural_transition_axis",
+  "analysis_status": "complete",
+  "analysis_tier": "discovery",
+  "authoritative": true,
+  "code_version": "b953bfdb128e3c196cb95c0499a91eeff0191f60+dirty",
+  "completed_at_utc": "2026-09-07T18:04:40.481235+00:00",
+  "confirmation_accessed": false,
+  "confirmation_policy": "sealed; no confirmation identity or neural source was loaded",
+  "dandiset_id": "001051",
+  "dandiset_version": "0.260825.2232",
+  "data_access": {
+    "legacy_accessor_calls": 0,
+    "legacy_accessor_forbidden_at_runtime": true,
+    "library": "lazynwb",
+    "numeric_and_spike_reader": "lazynwb.scan_nwb custom reader",
+    "peak_spike_materialization": "one bounded unit batch per session",
+    "quality_reader": "lazynwb obstore range reader plus custom HDF5 parser global-heap decoder",
+    "spike_batch_size_units": 32,
+    "transport": "obstore byte-range reads",
+    "version": "1.0.0.dev8"
+  },
+  "discovery_counts": {
+    "all_units": 48600,
+    "mice": 12,
+    "scored_trials": 2348,
+    "sessions": 23,
+    "well_isolated_units": 20667
+  },
+  "inputs": {
+    "analysis_lock": {
+      "path": "config/analysis_lock.yaml",
+      "sha256": "c1c78c89391c5656f7372ea433e63d43bf3c960ee9247639da57a45db556e30c",
+      "size_bytes": 5056
+    },
+    "behavior_trials": {
+      "path": "tables/behavior_trials.parquet",
+      "sha256": "29a64113baaa25f445be9165a3353c0cf2009b291c83e89e3ce41a92997bd29e",
+      "size_bytes": 2905997
+    },
+    "session_cohort_assignments": {
+      "path": "tables/session_cohort_assignments.csv",
+      "sha256": "321e06edd217d4e937465cb85b34f270191f7e04b8cbe5db92cca7e1572cc404",
+      "size_bytes": 56298
+    },
+    "session_qc": {
+      "path": "tables/session_qc.parquet",
+      "sha256": "4df834b5367f70d7e6307fa35dcf629a5203843b65d9e3fbf3b943608b1f0593",
+      "size_bytes": 133505
+    }
+  },
+  "local_sources": {
+    "scripts/06_analyze_neural_transitions.py": {
+      "path": "scripts/06_analyze_neural_transitions.py",
+      "sha256": "8ce37c24f7f74b06520acf6d04b702ab036e787b7bf10c0cb47c77fa4a360676",
+      "size_bytes": 41933
+    },
+    "src/dg/artifacts.py": {
+      "path": "src/dg/artifacts.py",
+      "sha256": "51667f969f1b622b5bded3dcf74a2d3fc689727cb967fdc47f50c81cf1720e91",
+      "size_bytes": 4557
+    },
+    "src/dg/behavior_transitions.py": {
+      "path": "src/dg/behavior_transitions.py",
+      "sha256": "d782c4276db38fa4b42ea4fe40b5a8f466880bd2d77bc10deff5c51dfa5cf467",
+      "size_bytes": 87669
+    },
+    "src/dg/data.py": {
+      "path": "src/dg/data.py",
+      "sha256": "c03464112c2008922be1bf3cd21c02ed34077cae82f8988f57d54c1d1837183c",
+      "size_bytes": 24041
+    },
+    "src/dg/lazynwb_obstore.py": {
+      "path": "src/dg/lazynwb_obstore.py",
+      "sha256": "0f8463ba138eb4d948a5d6452a9ce6f5f033dffdeb47a3a8995d83a426b39aa8",
+      "size_bytes": 9972
+    },
+    "src/dg/neural_transitions.py": {
+      "path": "src/dg/neural_transitions.py",
+      "sha256": "e2c1554dc8690bdfdd9abcf03e160304a2f000324c8161aac567f209d695c1f8",
+      "size_bytes": 32877
+    },
+    "src/dg/statistics.py": {
+      "path": "src/dg/statistics.py",
+      "sha256": "9a74766204d03f524286c1087d20c0aad2cc7415f924a7a2b9e83830462339f0",
+      "size_bytes": 21952
+    }
+  },
+  "model": {
+    "effect_window_seconds": 360.0,
+    "inner_folds": 3,
+    "lick_exclusion_seconds": 0.15,
+    "minimum_axis_trials_per_state": 6,
+    "minimum_trials_per_effect_side": 5,
+    "outer_folds": 5,
+    "ridge_lambdas": [
+      0.001,
+      0.01,
+      0.1,
+      1.0,
+      10.0,
+      100.0,
+      1000.0
+    ],
+    "spike_window_seconds": 0.15,
+    "trajectory_bin_width_seconds": 120.0,
+    "trajectory_window_seconds": 360.0
+  },
+  "outputs": {
+    "discovery_session_sources": {
+      "path": "tables/discovery_session_sources.parquet",
+      "sha256": "413690db61ed65c59917d220ac396c99e46c8a05d4e8fd2198fd884f8c2cce65",
+      "size_bytes": 5172
+    },
+    "mouse_neural_axis_metrics": {
+      "path": "tables/mouse_neural_axis_metrics.csv",
+      "sha256": "6dbd0a9405c0dfed0a41c2c039fc2389ecec990d34974779639d04cc8a847efb",
+      "size_bytes": 1139
+    },
+    "mouse_neural_transition_effects": {
+      "path": "tables/mouse_neural_transition_effects.csv",
+      "sha256": "5c49766b801b0dddeab7b3473b68c5a34bc1671775665978f44660714590fbb9",
+      "size_bytes": 1945
+    },
+    "neural_transition_axis_sessions": {
+      "path": "tables/neural_transition_axis_sessions.csv",
+      "sha256": "e029f350dbe1f7d8d2a08f4f5d08259e8a08e0ed77615652a842c29783598dca",
+      "size_bytes": 8018
+    },
+    "neural_transition_environment": {
+      "path": "manifests/neural_transition_environment.txt",
+      "sha256": "3af94edd8964f232a472695db17081903516d20542711d3bcc6966768e67d7a6",
+      "size_bytes": 377
+    },
+    "neural_transition_statistics": {
+      "path": "tables/neural_transition_statistics.csv",
+      "sha256": "ee793d82c2f9c9e4fb0c5a4f36b04e144b589e07e388f67e33d576a9c2f07e90",
+      "size_bytes": 4995
+    },
+    "neural_transition_trajectory": {
+      "path": "tables/neural_transition_trajectory.csv",
+      "sha256": "100f1ef067f4596c76aeaedb720717a78c6353e6e702d8b8f6ddba7be2b81a7b",
+      "size_bytes": 15327
+    },
+    "neural_transition_trial_scores": {
+      "path": "tables/neural_transition_trial_scores.parquet",
+      "sha256": "a269af7ba0ae1901e5ff78f027f28e1b3932a79f55c83f9ee6a9b44bd8450053",
+      "size_bytes": 52143
+    },
+    "neural_transition_unit_qc": {
+      "path": "tables/neural_transition_unit_qc.parquet",
+      "sha256": "c3efadf9330e34500556c50e9d2e8cc032903dcfae7a7ff6b802abe1f2610e00",
+      "size_bytes": 1483685
+    },
+    "session_neural_transition_effects": {
+      "path": "tables/session_neural_transition_effects.csv",
+      "sha256": "b31ae06e10a07aeed03dba68d87ad687429c5e5079d97893b39bf2b291b77253",
+      "size_bytes": 8825
+    },
+    "session_neural_transition_trajectories": {
+      "path": "tables/session_neural_transition_trajectories.parquet",
+      "sha256": "a0474c18150a080912bbbae43cad6278f09d4470f832c8af34aca2196d0b0fee",
+      "size_bytes": 10561
+    }
+  },
+  "preliminary_vertical_slice": true,
+  "run_status": "complete",
+  "started_at_utc": "2026-09-07T17:43:55.169467+00:00",
+  "trial_filter": "completed non-auto familiar full-contrast physical image changes; no lick in the closed +/-150 ms peristimulus interval",
+  "unit_filter": "isi_violations < 0.5; amplitude_cutoff < 0.1; quality == good; D04 engaged-block consistency not yet applied in this preliminary discovery slice"
+}

@@ -1,0 +1,12 @@
+recorded_at_utc=2026-09-07T03:07:13.848133+00:00
+python=3.14.3
+python_executable=/Users/benh/github/ai-dg-paper/.venv/bin/python
+platform=macOS-15.7.1-arm64-arm-64bit-Mach-O
+package.lazynwb=1.0.0.dev8
+package.numpy=2.5.3
+package.polars=1.44.1
+package.pyarrow=25.0.1
+package.pytest=9.1.1
+package.ruff=0.16.6
+git.revision=24ba096deb2d8931af3423b9b5682cdbeec7884c
+git.dirty=true

@@ -1,0 +1,34 @@
+{
+  "aggregation": "equal sessions within mouse, then equal mice",
+  "analysis_manifest": {
+    "path": "manifests/network_analysis_run.json",
+    "sha256": "da31446f0f230d7515c5e1f585bbf10d7f4ec2d9a8d5737550fef964a17498fd",
+    "size_bytes": 6801
+  },
+  "figure_id": "Figure 5",
+  "files": [
+    {
+      "path": "figures/main/figure_5_network_interaction_source_data/panel_b_mouse_blocks.csv",
+      "sha256": "e7fe0f47c941ddba9aed8e87f9d0ec7f845942d556e0622f2387746feba750fe",
+      "size_bytes": 2472
+    },
+    {
+      "path": "figures/main/figure_5_network_interaction_source_data/panel_b_block_summary.csv",
+      "sha256": "d819fe36b4672963fbbbe2f0ce8329a44979a119f2e274cd3f49a4dd85d153d6",
+      "size_bytes": 661
+    },
+    {
+      "path": "figures/main/figure_5_network_interaction_source_data/panel_c_mouse_controls.csv",
+      "sha256": "9b7d77d4b63394479537629c0bb9cbb56a6b0f020378d1d78bcae9b47bf0b9e5",
+      "size_bytes": 1042
+    },
+    {
+      "path": "figures/main/figure_5_network_interaction_source_data/panel_c_statistic.csv",
+      "sha256": "cd552503c161147964e558246a4f39656226566985d24559813d59593450e81c",
+      "size_bytes": 1662
+    }
+  ],
+  "generated_at_utc": "2026-09-07T21:03:39.223808+00:00",
+  "source_region": "MB",
+  "target_region": "Isocortex"
+}

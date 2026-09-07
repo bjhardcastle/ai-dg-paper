@@ -1,0 +1,109 @@
+subject_id,transition_id,transition_order,condition,pseudo_controlled_step,n_sessions_pseudo_controlled_step,n_controlled_window_trials,within_mouse_aggregation,transition_label,condition_order,condition_label
+604914,reward_withdrawal,1,go,0.20833333333333334,2,76,equal_session_mean,Reward withdrawal,1,Go response
+607660,reward_withdrawal,1,go,0.34174575424575426,4,145,equal_session_mean,Reward withdrawal,1,Go response
+608671,reward_withdrawal,1,go,0.30495337995337995,4,180,equal_session_mean,Reward withdrawal,1,Go response
+608672,reward_withdrawal,1,go,0.31304945054945055,4,148,equal_session_mean,Reward withdrawal,1,Go response
+611160,reward_withdrawal,1,go,0.09636243386243386,3,112,equal_session_mean,Reward withdrawal,1,Go response
+611166,reward_withdrawal,1,go,-0.18327228327228332,4,138,equal_session_mean,Reward withdrawal,1,Go response
+612090,reward_withdrawal,1,go,0.2645437895437895,4,175,equal_session_mean,Reward withdrawal,1,Go response
+614547,reward_withdrawal,1,go,0.11405723905723904,3,106,equal_session_mean,Reward withdrawal,1,Go response
+614608,reward_withdrawal,1,go,0.02937409812409808,4,170,equal_session_mean,Reward withdrawal,1,Go response
+615047,reward_withdrawal,1,go,0.053467365967365975,4,184,equal_session_mean,Reward withdrawal,1,Go response
+615048,reward_withdrawal,1,go,0.13379814629814626,4,142,equal_session_mean,Reward withdrawal,1,Go response
+615563,reward_withdrawal,1,go,0.4608585858585859,3,123,equal_session_mean,Reward withdrawal,1,Go response
+615564,reward_withdrawal,1,go,0.1935966810966811,4,132,equal_session_mean,Reward withdrawal,1,Go response
+623319,reward_withdrawal,1,go,0.21904761904761905,3,65,equal_session_mean,Reward withdrawal,1,Go response
+623322,reward_withdrawal,1,go,0.21667915417915415,4,158,equal_session_mean,Reward withdrawal,1,Go response
+623784,reward_withdrawal,1,go,-0.10664682539682545,4,110,equal_session_mean,Reward withdrawal,1,Go response
+623786,reward_withdrawal,1,go,0.20865800865800868,4,137,equal_session_mean,Reward withdrawal,1,Go response
+626279,reward_withdrawal,1,go,0.09324633699633697,4,154,equal_session_mean,Reward withdrawal,1,Go response
+632295,reward_withdrawal,1,go,0.02968073593073592,4,112,equal_session_mean,Reward withdrawal,1,Go response
+633232,reward_withdrawal,1,go,-0.14558913308913307,4,99,equal_session_mean,Reward withdrawal,1,Go response
+636740,reward_withdrawal,1,go,-0.18323412698412697,4,166,equal_session_mean,Reward withdrawal,1,Go response
+637483,reward_withdrawal,1,go,0.1494431494431495,3,119,equal_session_mean,Reward withdrawal,1,Go response
+637488,reward_withdrawal,1,go,0.1523809523809524,4,196,equal_session_mean,Reward withdrawal,1,Go response
+638387,reward_withdrawal,1,go,0.11596320346320346,4,143,equal_session_mean,Reward withdrawal,1,Go response
+640887,reward_withdrawal,1,go,-0.04131701631701631,3,128,equal_session_mean,Reward withdrawal,1,Go response
+640890,reward_withdrawal,1,go,0.4283820346320346,4,158,equal_session_mean,Reward withdrawal,1,Go response
+642504,reward_withdrawal,1,go,0.41186868686868694,3,120,equal_session_mean,Reward withdrawal,1,Go response
+604914,reward_withdrawal,1,go_minus_catch,0.6166666666666667,1,67,equal_session_mean,Reward withdrawal,2,Go − catch
+607660,reward_withdrawal,1,go_minus_catch,0.1834124209124209,4,199,equal_session_mean,Reward withdrawal,2,Go − catch
+608671,reward_withdrawal,1,go_minus_catch,0.3216200466200466,4,241,equal_session_mean,Reward withdrawal,2,Go − catch
+608672,reward_withdrawal,1,go_minus_catch,-0.06195054945054945,4,203,equal_session_mean,Reward withdrawal,2,Go − catch
+611160,reward_withdrawal,1,go_minus_catch,-0.48697089947089944,3,149,equal_session_mean,Reward withdrawal,2,Go − catch
+611166,reward_withdrawal,1,go_minus_catch,-0.5374389499389499,4,187,equal_session_mean,Reward withdrawal,2,Go − catch
+612090,reward_withdrawal,1,go_minus_catch,0.30621045621045617,4,235,equal_session_mean,Reward withdrawal,2,Go − catch
+614547,reward_withdrawal,1,go_minus_catch,0.16961279461279458,3,145,equal_session_mean,Reward withdrawal,2,Go − catch
+614608,reward_withdrawal,1,go_minus_catch,0.07104076479076474,4,233,equal_session_mean,Reward withdrawal,2,Go − catch
+615047,reward_withdrawal,1,go_minus_catch,0.22013403263403267,4,241,equal_session_mean,Reward withdrawal,2,Go − catch
+615048,reward_withdrawal,1,go_minus_catch,0.30701243201243195,4,230,equal_session_mean,Reward withdrawal,2,Go − catch
+615563,reward_withdrawal,1,go_minus_catch,0.49419191919191924,3,193,equal_session_mean,Reward withdrawal,2,Go − catch
+615564,reward_withdrawal,1,go_minus_catch,0.23556096681096683,4,220,equal_session_mean,Reward withdrawal,2,Go − catch
+623319,reward_withdrawal,1,go_minus_catch,-0.330952380952381,3,110,equal_session_mean,Reward withdrawal,2,Go − catch
+623322,reward_withdrawal,1,go_minus_catch,0.15239343989343987,4,252,equal_session_mean,Reward withdrawal,2,Go − catch
+623784,reward_withdrawal,1,go_minus_catch,-0.3167658730158731,4,186,equal_session_mean,Reward withdrawal,2,Go − catch
+623786,reward_withdrawal,1,go_minus_catch,0.2562770562770563,4,222,equal_session_mean,Reward withdrawal,2,Go − catch
+626279,reward_withdrawal,1,go_minus_catch,-0.1716346153846154,4,244,equal_session_mean,Reward withdrawal,2,Go − catch
+632295,reward_withdrawal,1,go_minus_catch,-0.12210497835497838,4,175,equal_session_mean,Reward withdrawal,2,Go − catch
+633232,reward_withdrawal,1,go_minus_catch,0.035246235246235234,3,130,equal_session_mean,Reward withdrawal,2,Go − catch
+636740,reward_withdrawal,1,go_minus_catch,-0.08561507936507935,4,267,equal_session_mean,Reward withdrawal,2,Go − catch
+637483,reward_withdrawal,1,go_minus_catch,0.3827764827764828,3,189,equal_session_mean,Reward withdrawal,2,Go − catch
+637488,reward_withdrawal,1,go_minus_catch,0.11071428571428574,4,306,equal_session_mean,Reward withdrawal,2,Go − catch
+638387,reward_withdrawal,1,go_minus_catch,0.3367965367965368,4,230,equal_session_mean,Reward withdrawal,2,Go − catch
+640887,reward_withdrawal,1,go_minus_catch,-0.1159201909201909,3,202,equal_session_mean,Reward withdrawal,2,Go − catch
+640890,reward_withdrawal,1,go_minus_catch,0.4313582251082251,4,253,equal_session_mean,Reward withdrawal,2,Go − catch
+642504,reward_withdrawal,1,go_minus_catch,0.35353535353535354,3,193,equal_session_mean,Reward withdrawal,2,Go − catch
+604914,reward_restoration,2,go,0.012339743589743594,2,106,equal_session_mean,Reward restoration,1,Go response
+607660,reward_restoration,2,go,0.21369047619047615,4,199,equal_session_mean,Reward restoration,1,Go response
+608671,reward_restoration,2,go,0.22668650793650794,4,206,equal_session_mean,Reward restoration,1,Go response
+608672,reward_restoration,2,go,0.3583919552669552,4,199,equal_session_mean,Reward restoration,1,Go response
+611160,reward_restoration,2,go,0.29402218152218157,3,159,equal_session_mean,Reward restoration,1,Go response
+611166,reward_restoration,2,go,0.2033000700280112,4,209,equal_session_mean,Reward restoration,1,Go response
+612090,reward_restoration,2,go,0.4212625609684433,4,215,equal_session_mean,Reward restoration,1,Go response
+614547,reward_restoration,2,go,0.6408272283272284,3,148,equal_session_mean,Reward restoration,1,Go response
+614608,reward_restoration,2,go,0.5071761571761572,4,204,equal_session_mean,Reward restoration,1,Go response
+615047,reward_restoration,2,go,0.1067880036630037,4,189,equal_session_mean,Reward restoration,1,Go response
+615048,reward_restoration,2,go,0.5743652181152181,4,162,equal_session_mean,Reward restoration,1,Go response
+615563,reward_restoration,2,go,0.8498963998963999,3,122,equal_session_mean,Reward restoration,1,Go response
+615564,reward_restoration,2,go,0.5392045454545455,4,126,equal_session_mean,Reward restoration,1,Go response
+623319,reward_restoration,2,go,0.5446442446442447,3,123,equal_session_mean,Reward restoration,1,Go response
+623322,reward_restoration,2,go,0.8097943722943723,4,152,equal_session_mean,Reward restoration,1,Go response
+623784,reward_restoration,2,go,0.6974837662337663,4,121,equal_session_mean,Reward restoration,1,Go response
+623786,reward_restoration,2,go,0.8632441632441633,3,110,equal_session_mean,Reward restoration,1,Go response
+626279,reward_restoration,2,go,0.5184849872349873,4,171,equal_session_mean,Reward restoration,1,Go response
+632295,reward_restoration,2,go,0.8575757575757575,4,156,equal_session_mean,Reward restoration,1,Go response
+633232,reward_restoration,2,go,0.11769203019203017,4,149,equal_session_mean,Reward restoration,1,Go response
+636740,reward_restoration,2,go,0.6158785658785659,4,180,equal_session_mean,Reward restoration,1,Go response
+637483,reward_restoration,2,go,0.6590964590964591,3,103,equal_session_mean,Reward restoration,1,Go response
+637488,reward_restoration,2,go,0.16210317460317458,4,190,equal_session_mean,Reward restoration,1,Go response
+638387,reward_restoration,2,go,0.3888167388167388,3,107,equal_session_mean,Reward restoration,1,Go response
+640887,reward_restoration,2,go,0.5786796536796537,3,132,equal_session_mean,Reward restoration,1,Go response
+640890,reward_restoration,2,go,0.7891455766455766,4,170,equal_session_mean,Reward restoration,1,Go response
+642504,reward_restoration,2,go,0.9452575202575203,3,135,equal_session_mean,Reward restoration,1,Go response
+604914,reward_restoration,2,go_minus_catch,0.012339743589743594,2,141,equal_session_mean,Reward restoration,2,Go − catch
+607660,reward_restoration,2,go_minus_catch,-0.07619047619047621,3,210,equal_session_mean,Reward restoration,2,Go − catch
+608671,reward_restoration,2,go_minus_catch,0.15168650793650792,4,274,equal_session_mean,Reward restoration,2,Go − catch
+608672,reward_restoration,2,go_minus_catch,-0.09160804473304476,4,264,equal_session_mean,Reward restoration,2,Go − catch
+611160,reward_restoration,2,go_minus_catch,0.21068884818884823,3,210,equal_session_mean,Reward restoration,2,Go − catch
+611166,reward_restoration,2,go_minus_catch,0.05746673669467789,4,272,equal_session_mean,Reward restoration,2,Go − catch
+612090,reward_restoration,2,go_minus_catch,0.25042922763511,4,287,equal_session_mean,Reward restoration,2,Go − catch
+614547,reward_restoration,2,go_minus_catch,0.6686050061050062,3,198,equal_session_mean,Reward restoration,2,Go − catch
+614608,reward_restoration,2,go_minus_catch,0.42384282384282385,4,272,equal_session_mean,Reward restoration,2,Go − catch
+615047,reward_restoration,2,go_minus_catch,0.20221306471306474,3,197,equal_session_mean,Reward restoration,2,Go − catch
+615048,reward_restoration,2,go_minus_catch,0.39311521811521805,4,257,equal_session_mean,Reward restoration,2,Go − catch
+615563,reward_restoration,2,go_minus_catch,0.7467217967217966,3,191,equal_session_mean,Reward restoration,2,Go − catch
+615564,reward_restoration,2,go_minus_catch,-0.035200216450216384,4,200,equal_session_mean,Reward restoration,2,Go − catch
+623319,reward_restoration,2,go_minus_catch,0.49702519702519704,3,199,equal_session_mean,Reward restoration,2,Go − catch
+623322,reward_restoration,2,go_minus_catch,0.9178300865800866,4,239,equal_session_mean,Reward restoration,2,Go − catch
+623784,reward_restoration,2,go_minus_catch,1.3308170995670996,4,184,equal_session_mean,Reward restoration,2,Go − catch
+623786,reward_restoration,2,go_minus_catch,0.6568949568949569,3,179,equal_session_mean,Reward restoration,2,Go − catch
+626279,reward_restoration,2,go_minus_catch,0.3986437173937174,4,274,equal_session_mean,Reward restoration,2,Go − catch
+632295,reward_restoration,2,go_minus_catch,0.3447781385281385,4,245,equal_session_mean,Reward restoration,2,Go − catch
+633232,reward_restoration,2,go_minus_catch,-0.0015540015540015661,4,248,equal_session_mean,Reward restoration,2,Go − catch
+636740,reward_restoration,2,go_minus_catch,0.6197476134976135,4,285,equal_session_mean,Reward restoration,2,Go − catch
+637483,reward_restoration,2,go_minus_catch,0.4892551892551893,3,174,equal_session_mean,Reward restoration,2,Go − catch
+637488,reward_restoration,2,go_minus_catch,0.13085317460317458,4,300,equal_session_mean,Reward restoration,2,Go − catch
+638387,reward_restoration,2,go_minus_catch,0.33326118326118326,3,171,equal_session_mean,Reward restoration,2,Go − catch
+640887,reward_restoration,2,go_minus_catch,0.656060606060606,3,216,equal_session_mean,Reward restoration,2,Go − catch
+640890,reward_restoration,2,go_minus_catch,0.6269431956931957,4,276,equal_session_mean,Reward restoration,2,Go − catch
+642504,reward_restoration,2,go_minus_catch,0.9452575202575203,3,207,equal_session_mean,Reward restoration,2,Go − catch

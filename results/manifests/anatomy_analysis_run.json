@@ -1,0 +1,249 @@
+{
+  "analysis_definition": {
+    "absolute_measure": "absolute axis coefficient standardized within session",
+    "aggregation": "region within session, equal sessions within mouse, equal mice",
+    "bootstrap_resamples": 10000,
+    "d04_status": "not applied; isolation-only preliminary analysis",
+    "functional_measure": "Figure 2 session-specific E1-versus-NR axis coefficient",
+    "multiplicity": "Holm across every eligible region and both score types",
+    "null": "shuffle fixed anatomy labels within session",
+    "permutations": 10000,
+    "signed_measure": "axis coefficient standardized within session"
+  },
+  "analysis_id": "anatomical_axis_enrichment",
+  "analysis_status": "complete",
+  "analysis_tier": "discovery",
+  "authoritative": true,
+  "code_version": "b953bfdb128e3c196cb95c0499a91eeff0191f60+dirty",
+  "completed_at_utc": "2026-09-07T19:44:57.109153+00:00",
+  "confirmation_accessed": false,
+  "confirmation_policy": "sealed; no confirmation identity or source was loaded",
+  "dandiset_id": "001051",
+  "dandiset_version": "0.260825.2232",
+  "data_access": {
+    "coordinate_reader": "lazynwb.scan_nwb projected scalar electrode columns",
+    "legacy_accessor_calls": 0,
+    "legacy_accessor_forbidden_at_runtime": true,
+    "library": "lazynwb",
+    "session_batching": "one discovery session at a time",
+    "spike_arrays_loaded": false,
+    "structure_reader": "dg.lazynwb_obstore.read_vlen_string_column(/units/structure_layer)",
+    "transport": "obstore byte-range reads",
+    "version": "1.0.0.dev8",
+    "waveform_arrays_loaded": false
+  },
+  "discovery_counts": {
+    "all_units": 48600,
+    "coverage_eligible_parent_regions": 5,
+    "mapped_analysis_units": 19709,
+    "mice": 12,
+    "sessions": 23,
+    "well_isolated_finite_weight_units": 20667
+  },
+  "inputs": {
+    "analysis_lock": {
+      "path": "config/analysis_lock.yaml",
+      "sha256": "c1c78c89391c5656f7372ea433e63d43bf3c960ee9247639da57a45db556e30c",
+      "size_bytes": 5056
+    },
+    "discovery_session_sources": {
+      "path": "tables/discovery_session_sources.parquet",
+      "sha256": "413690db61ed65c59917d220ac396c99e46c8a05d4e8fd2198fd884f8c2cce65",
+      "size_bytes": 5172
+    },
+    "neural_transition_analysis_run": {
+      "path": "manifests/neural_transition_analysis_run.json",
+      "sha256": "2c0d48386e214028a390d1baefa5bfb8b1800781c9bd25334304d11f2ccab1b9",
+      "size_bytes": 6514
+    },
+    "neural_transition_unit_qc": {
+      "path": "tables/neural_transition_unit_qc.parquet",
+      "sha256": "c3efadf9330e34500556c50e9d2e8cc032903dcfae7a7ff6b802abe1f2610e00",
+      "size_bytes": 1483685
+    }
+  },
+  "local_sources": {
+    "scripts/10_analyze_anatomy.py": {
+      "path": "scripts/10_analyze_anatomy.py",
+      "sha256": "6ce06ff56b4c9df57ad5b59f45884e0fa4ec8906bae3149c3c81d3e1fcd2dad4",
+      "size_bytes": 20224
+    },
+    "src/dg/anatomical_enrichment.py": {
+      "path": "src/dg/anatomical_enrichment.py",
+      "sha256": "6790424bf2a3d3e3c95bd773d896166269466196af0d9efcc157847d6e7986fe",
+      "size_bytes": 29301
+    },
+    "src/dg/artifacts.py": {
+      "path": "src/dg/artifacts.py",
+      "sha256": "51667f969f1b622b5bded3dcf74a2d3fc689727cb967fdc47f50c81cf1720e91",
+      "size_bytes": 4557
+    },
+    "src/dg/data.py": {
+      "path": "src/dg/data.py",
+      "sha256": "c03464112c2008922be1bf3cd21c02ed34077cae82f8988f57d54c1d1837183c",
+      "size_bytes": 24041
+    },
+    "src/dg/lazynwb_obstore.py": {
+      "path": "src/dg/lazynwb_obstore.py",
+      "sha256": "0f8463ba138eb4d948a5d6452a9ce6f5f033dffdeb47a3a8995d83a426b39aa8",
+      "size_bytes": 9972
+    },
+    "src/dg/ontology.py": {
+      "path": "src/dg/ontology.py",
+      "sha256": "4309fbee08c3d0d57fe63a84bec47f015854ce8557f4b63f854e4a072d8e5b24",
+      "size_bytes": 25623
+    },
+    "src/dg/statistics.py": {
+      "path": "src/dg/statistics.py",
+      "sha256": "9a74766204d03f524286c1087d20c0aad2cc7415f924a7a2b9e83830462339f0",
+      "size_bytes": 21952
+    }
+  },
+  "nominated_regions": [
+    {
+      "adjusted_p_value": 0.000999900009999,
+      "estimate": 0.08820311529059122,
+      "parent_region_acronym": "Isocortex",
+      "parent_region_name": "Isocortex"
+    },
+    {
+      "adjusted_p_value": 0.000999900009999,
+      "estimate": 0.19017673817711558,
+      "parent_region_acronym": "STR",
+      "parent_region_name": "Striatum"
+    }
+  ],
+  "outputs": {
+    "anatomical_axis_unit_scores": {
+      "path": "tables/anatomical_axis_unit_scores.parquet",
+      "sha256": "470afeb2e16c991f4e0e6ef41f1de536ba9f283b027257cf593ada3447763d39",
+      "size_bytes": 824456
+    },
+    "anatomy_enrichment_statistics": {
+      "path": "tables/anatomy_enrichment_statistics.csv",
+      "sha256": "ea81a128fddbd7c55116a85cf725ded0f51a7aaa8d496aeefdf83a5bd1145e1a",
+      "size_bytes": 11395
+    },
+    "anatomy_environment": {
+      "path": "manifests/anatomy_environment.txt",
+      "sha256": "a4ab445b0eec9b37d3b3437213f9a474d278d13e8577e875a778509516fb9b53",
+      "size_bytes": 435
+    },
+    "anatomy_ontology_provenance": {
+      "path": "manifests/anatomy_ontology_provenance.csv",
+      "sha256": "d9c8dee23362ea0fb59c9fd5ae6e45a79e85e5700858d440b3886d7389c021cf",
+      "size_bytes": 1330
+    },
+    "anatomy_ontology_validation": {
+      "path": "manifests/anatomy_ontology_validation.csv",
+      "sha256": "9861fecbbcb14415c4dd3b252870c9ff5381ebaf49f0293f791c71e3db8eb2b9",
+      "size_bytes": 616
+    },
+    "anatomy_permutation_null": {
+      "path": "tables/anatomy_permutation_null.parquet",
+      "sha256": "9ab71bb7940e7e0d5d712240c6c6652e9d532be208c5b4b6364151a1b9826ca6",
+      "size_bytes": 823902
+    },
+    "anatomy_region_coverage": {
+      "path": "tables/anatomy_region_coverage.csv",
+      "sha256": "a1845edcc81eba57131e1fa6076979d54aa609afafc32f7e34291ce04587fe48",
+      "size_bytes": 1824
+    },
+    "anatomy_region_screen": {
+      "path": "tables/anatomy_region_screen.csv",
+      "sha256": "914eb1575d8729b2546c262be900c3f4db0887069b931b83f9e1ca0c169743e8",
+      "size_bytes": 12065
+    },
+    "mouse_anatomical_enrichment": {
+      "path": "tables/mouse_anatomical_enrichment.csv",
+      "sha256": "70298237e6e7125c11a31c00814628fd351d20bc7035a21ab102b4696e8c1249",
+      "size_bytes": 13957
+    },
+    "neural_unit_anatomy": {
+      "path": "tables/neural_unit_anatomy.parquet",
+      "sha256": "ee2a6c103642c0ae2356bad05622b8b631ac93e89f103286f2df1e30e50a2aec",
+      "size_bytes": 583572
+    },
+    "session_anatomical_enrichment": {
+      "path": "tables/session_anatomical_enrichment.parquet",
+      "sha256": "5ea271bf81d5b8f69fb33ae68146a8d8e3ea150f1d144e4da3d70748cf6d619c",
+      "size_bytes": 8498
+    }
+  },
+  "parent_region_contract": {
+    "coverage_minima": {
+      "median_units_per_represented_mouse": 10,
+      "mice": 5,
+      "sessions": 8
+    },
+    "level": "official 12 major divisions",
+    "ontology": "Allen CCFv3 graph 1",
+    "regions": [
+      {
+        "acronym": "HY",
+        "id": 1097,
+        "name": "Hypothalamus"
+      },
+      {
+        "acronym": "MB",
+        "id": 313,
+        "name": "Midbrain"
+      },
+      {
+        "acronym": "OLF",
+        "id": 698,
+        "name": "Olfactory areas"
+      },
+      {
+        "acronym": "PAL",
+        "id": 803,
+        "name": "Pallidum"
+      },
+      {
+        "acronym": "Isocortex",
+        "id": 315,
+        "name": "Isocortex"
+      },
+      {
+        "acronym": "CTXsp",
+        "id": 703,
+        "name": "Cortical subplate"
+      },
+      {
+        "acronym": "STR",
+        "id": 477,
+        "name": "Striatum"
+      },
+      {
+        "acronym": "MY",
+        "id": 354,
+        "name": "Medulla"
+      },
+      {
+        "acronym": "TH",
+        "id": 549,
+        "name": "Thalamus"
+      },
+      {
+        "acronym": "CB",
+        "id": 512,
+        "name": "Cerebellum"
+      },
+      {
+        "acronym": "HPF",
+        "id": 1089,
+        "name": "Hippocampal formation"
+      },
+      {
+        "acronym": "P",
+        "id": 771,
+        "name": "Pons"
+      }
+    ],
+    "structure_set_id": 687527670
+  },
+  "preliminary_vertical_slice": true,
+  "run_status": "complete",
+  "started_at_utc": "2026-09-07T19:44:14.823530+00:00",
+  "upstream_neural_manifest_code_version": "b953bfdb128e3c196cb95c0499a91eeff0191f60+dirty"
+}

@@ -58,7 +58,9 @@ def _published_trial_excerpt() -> pl.DataFrame:
             "aborted": [False] * 9,
             "auto_rewarded": [False] * 9,
             "hit": [True, True, True, True, False, False, True, True, True],
+            "miss": [False] * 9,
             "false_alarm": [False] * 9,
+            "correct_reject": [False] * 9,
             "no_reward_epoch": [
                 False,
                 False,
@@ -90,7 +92,9 @@ def _published_behavior_excerpt() -> pl.DataFrame:
             "aborted": [False, False],
             "auto_rewarded": [False, False],
             "hit": [False, False],
+            "miss": [False, False],
             "false_alarm": [True, True],
+            "correct_reject": [False, False],
             "no_reward_epoch": [False, False],
         }
     )
@@ -151,6 +155,106 @@ def _published_unit_windows() -> pl.DataFrame:
             "engaged_2_stop": [2438.0],
         }
     )
+
+
+def _published_raw_lick_excerpt() -> pl.DataFrame:
+    # Trial 298 has an in-window lick although its online hit event is false;
+    # outcome events were not a state-independent response label in NR.
+    return pl.DataFrame(
+        {
+            "_nwb_path": [PUBLIC_SESSION_SOURCE, PUBLIC_SESSION_SOURCE],
+            "id": [294, 298],
+            "change_time": [932.4977700000001, 967.79384],
+            "lick_times": [
+                [932.67598, 932.67598, 932.82576, 934.89424],
+                [964.65235, 966.72075, 966.83738, 966.97091, 967.97229, 968.4391],
+            ],
+            "hit": [True, False],
+            "no_reward_epoch": [True, True],
+        }
+    )
+
+
+def test_raw_lick_response_is_state_independent_of_online_outcome() -> None:
+    responses = dg.quality.add_trial_response_from_licks(_published_raw_lick_excerpt())
+
+    assert responses.get_column("response_in_window").to_list() == [True, True]
+    assert responses.get_column("n_response_window_licks").to_list() == [2, 2]
+    assert responses.get_column("n_raw_response_window_licks").to_list() == [3, 2]
+    assert responses.get_column("n_duplicate_response_window_licks").to_list() == [1, 0]
+    assert responses.get_column("n_raw_lick_timestamps").to_list() == [4, 6]
+    assert responses.get_column("n_unique_lick_timestamps").to_list() == [3, 6]
+    assert responses.get_column("n_duplicate_lick_timestamps").to_list() == [1, 0]
+    assert responses.get_column("response_latency_from_licks").to_list()[0] == pytest.approx(
+        0.17820999999992182
+    )
+    discrepant = responses.filter(pl.col("id") == 298).row(0, named=True)
+    assert discrepant["response_in_window"]
+    assert not discrepant["hit"]
+
+
+def test_raw_lick_response_uses_task_softwares_half_open_window() -> None:
+    # Arithmetic boundary fixture, not a neuroscience observation.
+    trials = pl.DataFrame(
+        {
+            "change_time": [0.0],
+            "lick_times": [[0.15, 0.150001, 0.75, 0.750001]],
+        }
+    )
+
+    response = dg.quality.add_trial_response_from_licks(trials).row(0, named=True)
+
+    assert response["response_in_window"]
+    assert response["response_latency_from_licks"] == pytest.approx(0.150001)
+    assert response["n_response_window_licks"] == 2
+
+
+@pytest.mark.parametrize(
+    ("lick_times", "change_time", "status", "lick_times_valid", "event_time_valid"),
+    [
+        (None, 932.4977700000001, "missing_lick_times", False, True),
+        ([932.67598, math.nan], 932.4977700000001, "invalid_lick_times", False, True),
+        ([932.82576, 932.67598], 932.4977700000001, "unsorted_lick_times", False, True),
+        ([932.67598], math.nan, "invalid_event_time", True, False),
+    ],
+)
+def test_raw_lick_response_fails_closed(
+    lick_times: list[float] | None,
+    change_time: float,
+    status: str,
+    lick_times_valid: bool,
+    event_time_valid: bool,
+) -> None:
+    trials = pl.DataFrame(
+        {"change_time": [change_time], "lick_times": [lick_times]},
+        schema={"change_time": pl.Float64, "lick_times": pl.List(pl.Float64)},
+    )
+
+    result = dg.quality.add_trial_response_from_licks(trials)
+
+    assert result.get_column("response_in_window").item() is None
+    assert result.get_column("lick_times_valid").item() is lick_times_valid
+    assert result.get_column("response_event_time_valid").item() is event_time_valid
+    assert result.get_column("lick_response_status").item() == status
+
+
+def test_behavior_summary_can_use_raw_lick_response_column() -> None:
+    trials = _published_behavior_excerpt().with_columns(
+        pl.when(pl.col("id").is_in([298, 299]))
+        .then(pl.lit(True))
+        .otherwise(pl.col("hit") | pl.col("false_alarm"))
+        .alias("response_in_window")
+    )
+
+    result = dg.quality.summarize_session_behavior(
+        trials,
+        no_reward_tail_seconds=None,
+        final_engaged_exclusion_seconds=0,
+        response_column="response_in_window",
+    ).collect()
+
+    assert result.get_column("no_reward_response_rate").item() == 1.0
+    assert result.get_column("behavior_response_source").item() == "response_in_window"
 
 
 def test_well_isolated_filter_uses_strict_project_thresholds() -> None:
@@ -248,7 +352,10 @@ def test_reward_blocks_and_behavior_summary() -> None:
         {"reward_block": "no_reward", "len": 3},
     ]
     assert summary.get_column("engaged_1_response_rate").item() == 1.0
-    assert summary.get_column("no_reward_response_rate").item() == 1 / 3
+    # Only trial 294 has a valid hit/miss pair. Trials 298 and 299 have neither
+    # outcome because online outcomes were disabled during NR.
+    assert summary.get_column("no_reward_response_rate").item() == 1.0
+    assert summary.get_column("n_invalid_behavior_labels").item() == 2
     assert summary.get_column("engaged_2_response_rate").item() == 1.0
     assert 0.4 < summary.get_column("engaged_1_dprime").item() < 0.5
     assert 0.4 < summary.get_column("engaged_2_dprime").item() < 0.5
@@ -262,13 +369,14 @@ def test_reward_blocks_and_behavior_summary() -> None:
         minimum_engaged_dprime=0.4,
         maximum_no_reward_response_rate=0.34,
     )
+    online_label_audit = dg.quality.add_good_session_flag(
+        summary,
+        thresholds=excerpt_thresholds,
+    )
+    assert not online_label_audit.get_column("is_good_session").item()
     assert (
-        dg.quality.add_good_session_flag(
-            summary,
-            thresholds=excerpt_thresholds,
-        )
-        .get_column("is_good_session")
-        .item()
+        "invalid_behavior_labels"
+        in online_label_audit.get_column("session_exclusion_reasons").item()
     )
 
     discriminating_thresholds = dg.quality.SessionQualityThresholds(
@@ -368,7 +476,9 @@ def test_behavior_filter_rejects_unknown_task_or_outcome_labels(
     ).collect()
     audited = dg.quality.add_good_session_flag(summary)
 
-    assert summary.get_column("n_invalid_behavior_labels").item() == 1
+    # Two published NR trials already lack an online outcome; the mutation
+    # introduces one additional invalid label.
+    assert summary.get_column("n_invalid_behavior_labels").item() == 3
     assert not audited.get_column("behavior_labels_pass").item()
     assert "invalid_behavior_labels" in audited.get_column("session_exclusion_reasons").item()
 

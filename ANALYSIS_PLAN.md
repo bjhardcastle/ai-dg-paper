@@ -1,6 +1,6 @@
 # Dynamic Gating: high-level analysis plan
 
-**Status:** proposal for human review; no neural outcome should be treated as confirmatory until the decisions below are approved and frozen.
+**Status:** D01-D15 were approved by the user on 2026-09-07 and are recorded in `config/analysis_lock.yaml`. Figure 1 remains exploratory because it was developed before approval. Preliminary discovery-only Figures 2--6 are complete: the functional and anatomical results are positive, the simultaneous-network screen is null after correction, and held-out contrast/identity probes constrain interpretation. These vertical slices use isolation-only unit QC and do not replace D04, the remaining controls, or confirmation. Discovery-nominated windows, representations, regions, and models must still be frozen before the one-time confirmation run.
 
 **Dataset:** immutable [DANDI:001051/0.260825.2232](https://doi.org/10.48324/dandi.001051/0.260825.2232), 99 session NWBs from 27 mice. Spiking is the primary neural modality.
 
@@ -35,13 +35,16 @@ A preliminary whole-dataset schema audit found several issues that are analysis-
 - Nominal task-parameter times do not coincide exactly with trial transitions. Never infer confirmatory block labels from nominal time, `active`, `rewarded`, or `stimulus_block`.
 - Task-image presentations use five table paths. The later passive-flash table is not the task contrast manipulation. Task contrast is encoded in image names such as `im115_r-0.7`; `is_image_novel` is an identity label, not a novelty epoch.
 - `is_change` includes go and catch/sham events. Define a physical identity change from `initial_image_name != change_image_name`, while retaining go/catch labels as separate task factors.
+- Trial `change_frame` can be relative to the task block while presentation `start_frame` is session-global. Infer one integer frame-origin offset independently per session from exhaustive exact matches on the non-omitted raw image token and physical-change label. Accept an offset only when it is the unique solution that maps every finite trial anchor one-to-one, then require each matched presentation start to fall strictly within its trial interval. Presentation timestamps are descriptive checks only; they must never infer, rank, or select the frame offset.
+- A materialized task-presentation table is complete only when every canonical session contains the contiguous source indices `_table_index = 0, ..., n - 1`. A missing, duplicate, or out-of-range row invalidates the whole audit rather than yielding a partial multi-session table.
+- Online `hit`, `miss`, `false_alarm`, and `correct_reject` events are not state-independent response labels: during the no-reward epoch, raw response-window licks can occur on trials with no online outcome event. Derive the cross-state behavioral response and latency from exact-deduplicated raw `lick_times` in the audited `(150, 750]` ms window, report duplicate burden, and retain paired online outcome labels only for an agreement audit in reward-available blocks.
 - The NWB root `identifier`, not the often-null standard `session_id`, supplies the ecephys session ID in inspected files.
 
 Before neural analysis, regenerate these counts, audit every session schema, validate acquisition clocks and event alignment, reconcile the 99 sessions with companion metadata, and freeze the CCF ontology level used for anatomy. No synthetic observations, sessions, or spike trains will be created.
 
-## Decisions for approval
+## Approved decision framework
 
-Recommended values are starting proposals. Approve them using behavior and coverage only, before inspecting reward-state neural effects.
+The user approved the choices below using behavior and coverage only, before inspection of reward-state neural effects. `config/analysis_lock.yaml` is authoritative. Choices that intentionally depend on discovery (for example exact response windows, stable functional representation, and nominated region pairs) still require a versioned discovery freeze before confirmation.
 
 | Decision | Recommended choice |
 |---|---|
@@ -60,13 +63,13 @@ Also approve handling of sex, genotype, recording day/cohort, missing pupil/vide
 
 ### Sessions
 
-Compute eligibility without neural data. Use the NWB-defined 150-750 ms response window after validating it against trial labels and the related task description ([Bennett et al., 2026](https://doi.org/10.1016/j.cell.2026.06.025)). Label the blocks:
+Compute eligibility without neural data. Use the NWB-defined response window with the task software's strict lower bound, `(150, 750]` ms, after validating it against raw lick timestamps, paired reward-available outcome labels, and the related task description ([Bennett et al., 2026](https://doi.org/10.1016/j.cell.2026.06.025)). Define response and latency from exact-deduplicated raw `lick_times` for every reward state, retain duplicate counts, and never treat an absent online outcome event in `NR` as a non-response. Label the blocks:
 
 - `E1`: first reward-available block;
 - `NR`: no-reward block;
 - `E2`: second reward-available block after the audited return of reward availability.
 
-Proposed behavior-only rule:
+Approved behavior-only rule (D03):
 
 1. In `E1` and the portion of `E2` before its final 10 minutes, require enough completed, non-auto-rewarded go and catch trials, go-response probability >= 0.5, and loglinear-corrected d-prime >= 1.0.
 2. In the final 10 minutes of `NR`, require enough go trials and go-response probability <= 0.2. These bounds imply at least a 0.3 response-rate drop from either qualifying engaged block.

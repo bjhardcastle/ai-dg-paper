@@ -14,6 +14,8 @@ SOURCE_COLUMN = "_nwb_path"
 REWARD_BLOCK_COLUMN = "reward_block"
 COARSE_UNIT_STABILITY_COLUMN = "coarse_engaged_rate_consistent"
 REQUIRED_UNIT_QUALITY = "good"
+DEFAULT_RESPONSE_WINDOW_START_SECONDS = 0.150
+DEFAULT_RESPONSE_WINDOW_STOP_SECONDS = 0.750
 
 FrameT = TypeVar("FrameT", pl.DataFrame, pl.LazyFrame)
 
@@ -287,25 +289,170 @@ def summarize_task_structure(
     )
 
 
+def add_trial_response_from_licks(
+    trials: FrameT,
+    *,
+    response_window_start_seconds: float = DEFAULT_RESPONSE_WINDOW_START_SECONDS,
+    response_window_stop_seconds: float = DEFAULT_RESPONSE_WINDOW_STOP_SECONDS,
+    event_time_column: str = "change_time",
+    lick_times_column: str = "lick_times",
+) -> FrameT:
+    """Derive task responses directly from raw lick timestamps.
+
+    Dynamic Gating's online ``hit``/``false_alarm`` outcome events are not a
+    state-independent response measure: when licks are disabled during the
+    no-reward epoch, some trials have no online outcome even though raw licks
+    occur in the nominal response window. This helper therefore defines the
+    cross-state behavior endpoint as any raw lick in the audited ``(150, 750]``
+    ms window, matching the task software's strict lower boundary. The online
+    labels remain available for an agreement audit.
+
+    Exact duplicate lick timestamps occur in the published NWBs. Boolean
+    response and latency use exact-deduplicated timestamps; both raw and unique
+    total/window counts are retained so duplicate burden is auditable. Missing,
+    nonfinite, multidimensional, or decreasing vectors are marked invalid
+    rather than silently converted to a non-response.
+    """
+
+    _validate_nonnegative_finite("response_window_start_seconds", response_window_start_seconds)
+    _validate_nonnegative_finite("response_window_stop_seconds", response_window_stop_seconds)
+    if response_window_stop_seconds <= response_window_start_seconds:
+        raise ValueError("response window stop must be greater than start")
+    schema_names = (
+        set(trials.collect_schema().names())
+        if isinstance(trials, pl.LazyFrame)
+        else set(trials.columns)
+    )
+    missing = {event_time_column, lick_times_column}.difference(schema_names)
+    if missing:
+        raise ValueError(f"trials is missing response columns: {sorted(missing)}")
+
+    response_dtype = pl.Struct(
+        {
+            "response_in_window": pl.Boolean,
+            "response_latency_from_licks": pl.Float64,
+            "n_response_window_licks": pl.Int64,
+            "n_raw_response_window_licks": pl.Int64,
+            "n_unique_response_window_licks": pl.Int64,
+            "n_duplicate_response_window_licks": pl.Int64,
+            "n_raw_lick_timestamps": pl.Int64,
+            "n_unique_lick_timestamps": pl.Int64,
+            "n_duplicate_lick_timestamps": pl.Int64,
+            "lick_times_valid": pl.Boolean,
+            "response_event_time_valid": pl.Boolean,
+            "lick_response_status": pl.String,
+        }
+    )
+
+    def derive_response(row: dict[str, Any]) -> dict[str, Any]:
+        event_time = row[event_time_column]
+        raw_licks = row[lick_times_column]
+        event_time_valid = _is_finite_number(event_time)
+        if raw_licks is None:
+            return _invalid_lick_response(
+                "missing_lick_times",
+                response_event_time_valid=event_time_valid,
+            )
+        try:
+            licks = np.asarray(raw_licks, dtype=float)
+        except (TypeError, ValueError):
+            return _invalid_lick_response(
+                "invalid_lick_times",
+                response_event_time_valid=event_time_valid,
+            )
+        if licks.ndim != 1 or not np.isfinite(licks).all():
+            return _invalid_lick_response(
+                "invalid_lick_times",
+                response_event_time_valid=event_time_valid,
+            )
+        if licks.size > 1 and np.any(np.diff(licks) < 0):
+            return _invalid_lick_response(
+                "unsorted_lick_times",
+                response_event_time_valid=event_time_valid,
+            )
+
+        unique_licks = np.unique(licks)
+        timestamp_counts = {
+            "n_raw_lick_timestamps": int(licks.size),
+            "n_unique_lick_timestamps": int(unique_licks.size),
+            "n_duplicate_lick_timestamps": int(licks.size - unique_licks.size),
+        }
+        if not event_time_valid:
+            return {
+                "response_in_window": None,
+                "response_latency_from_licks": None,
+                "n_response_window_licks": None,
+                "n_raw_response_window_licks": None,
+                "n_unique_response_window_licks": None,
+                "n_duplicate_response_window_licks": None,
+                **timestamp_counts,
+                "lick_times_valid": True,
+                "response_event_time_valid": False,
+                "lick_response_status": "invalid_event_time",
+            }
+        raw_latency = licks - float(event_time)
+        raw_in_window = (raw_latency > response_window_start_seconds) & (
+            raw_latency <= response_window_stop_seconds
+        )
+        latency = unique_licks - float(event_time)
+        in_window = (latency > response_window_start_seconds) & (
+            latency <= response_window_stop_seconds
+        )
+        qualifying = latency[in_window]
+        n_raw_response_window_licks = int(np.count_nonzero(raw_in_window))
+        n_unique_response_window_licks = int(qualifying.size)
+        return {
+            "response_in_window": bool(qualifying.size),
+            "response_latency_from_licks": (float(qualifying[0]) if qualifying.size else None),
+            "n_response_window_licks": n_unique_response_window_licks,
+            "n_raw_response_window_licks": n_raw_response_window_licks,
+            "n_unique_response_window_licks": n_unique_response_window_licks,
+            "n_duplicate_response_window_licks": (
+                n_raw_response_window_licks - n_unique_response_window_licks
+            ),
+            **timestamp_counts,
+            "lick_times_valid": True,
+            "response_event_time_valid": True,
+            "lick_response_status": "pass",
+        }
+
+    return (
+        trials.with_columns(
+            pl.struct(event_time_column, lick_times_column)
+            .map_elements(derive_response, return_dtype=response_dtype)
+            .alias("_lick_response")
+        )
+        .unnest("_lick_response")
+        .with_columns(
+            pl.lit(response_window_start_seconds).alias("response_window_start_seconds"),
+            pl.lit(response_window_stop_seconds).alias("response_window_stop_seconds"),
+        )
+    )
+
+
 def summarize_session_behavior(
     trials: pl.DataFrame | pl.LazyFrame,
     *,
     no_reward_tail_seconds: float | None = 600.0,
     final_engaged_exclusion_seconds: float = 600.0,
     event_time_column: str = "change_time",
+    response_column: str | None = None,
     confidence_level: float = 0.95,
     source_column: str = SOURCE_COLUMN,
 ) -> pl.LazyFrame:
     """Summarize target and catch responses in reward-availability windows.
 
-    The denominator is completed, non-auto-rewarded NWB ``go`` trials; the
-    numerator is the subset carrying the NWB ``hit`` label. This label remains
-    defined during the no-reward epoch and therefore measures licking without
-    conflating it with reward delivery. By default, only the final ten minutes
-    of no reward and all but the final ten minutes of engaged block 2 determine
-    session eligibility. Window membership uses the actual change event time,
-    not trial start time. Thus early extinction and possible late E2
-    disengagement are not selected away.
+    The denominator is completed, non-auto-rewarded NWB ``go`` trials. Pass
+    ``response_column="response_in_window"`` after calling
+    :func:`add_trial_response_from_licks` for the manuscript analysis. This is
+    required because online outcome labels can be disabled in the no-reward
+    epoch despite recorded licks. A ``None`` response column retains the legacy
+    NWB ``hit``/``false_alarm`` behavior for explicit audit comparisons only.
+
+    By default, only the final ten minutes of no reward and all but the final
+    ten minutes of engaged block 2 determine session eligibility. Window
+    membership uses the actual change event time, not trial start time. Thus
+    early extinction and possible late E2 disengagement are not selected away.
     """
 
     if no_reward_tail_seconds is not None:
@@ -341,8 +488,6 @@ def summarize_session_behavior(
     catch = pl.col("catch")
     aborted = pl.col("aborted")
     auto_rewarded = pl.col("auto_rewarded")
-    hit_label = pl.col("hit")
-    false_alarm_label = pl.col("false_alarm")
     core_labels_valid = pl.all_horizontal(
         go.is_not_null(),
         catch.is_not_null(),
@@ -353,12 +498,42 @@ def summarize_session_behavior(
     candidate_catch = (
         catch.fill_null(False) & ~aborted.fill_null(False) & ~auto_rewarded.fill_null(False)
     )
-    outcome_labels_valid = (~candidate_go | hit_label.is_not_null()) & (
-        ~candidate_catch | false_alarm_label.is_not_null()
-    )
+    if response_column is None:
+        hit_label = pl.col("hit")
+        miss_label = pl.col("miss")
+        false_alarm_label = pl.col("false_alarm")
+        correct_reject_label = pl.col("correct_reject")
+        schema_names = set(frame.collect_schema().names())
+        missing_outcome_columns = {"miss", "correct_reject"}.difference(schema_names)
+        if missing_outcome_columns:
+            raise ValueError(
+                "trials is missing complementary outcome columns: "
+                f"{sorted(missing_outcome_columns)}"
+            )
+        go_outcome_valid = (
+            hit_label.is_not_null() & miss_label.is_not_null() & (hit_label != miss_label)
+        ).fill_null(False)
+        catch_outcome_valid = (
+            false_alarm_label.is_not_null()
+            & correct_reject_label.is_not_null()
+            & (false_alarm_label != correct_reject_label)
+        ).fill_null(False)
+        outcome_labels_valid = (~candidate_go | go_outcome_valid) & (
+            ~candidate_catch | catch_outcome_valid
+        )
+        hit = hit_label.fill_null(False)
+        false_alarm = false_alarm_label.fill_null(False)
+        response_source = "nwb_outcome_labels"
+    else:
+        schema_names = set(frame.collect_schema().names())
+        if response_column not in schema_names:
+            raise ValueError(f"trials is missing response column: {response_column!r}")
+        derived_response = pl.col(response_column)
+        outcome_labels_valid = (~(candidate_go | candidate_catch)) | derived_response.is_not_null()
+        hit = derived_response.fill_null(False)
+        false_alarm = derived_response.fill_null(False)
+        response_source = response_column
     behavior_labels_valid = core_labels_valid & outcome_labels_valid
-    hit = pl.col("hit").fill_null(False)
-    false_alarm = pl.col("false_alarm").fill_null(False)
     event_time = pl.col(event_time_column)
     event_time_valid = event_time.is_not_null() & event_time.is_finite()
     event_time_within_trial = (
@@ -451,6 +626,7 @@ def summarize_session_behavior(
             - pl.col("no_reward_response_rate")
         ).alias("reward_suppression_drop"),
         pl.lit(confidence_level).alias("behavior_confidence_level"),
+        pl.lit(response_source).alias("behavior_response_source"),
     )
 
 
@@ -913,6 +1089,27 @@ def _is_finite_number(value: Any) -> bool:
         return math.isfinite(float(value))
     except (TypeError, ValueError):
         return False
+
+
+def _invalid_lick_response(
+    status: str,
+    *,
+    response_event_time_valid: bool,
+) -> dict[str, Any]:
+    return {
+        "response_in_window": None,
+        "response_latency_from_licks": None,
+        "n_response_window_licks": None,
+        "n_raw_response_window_licks": None,
+        "n_unique_response_window_licks": None,
+        "n_duplicate_response_window_licks": None,
+        "n_raw_lick_timestamps": None,
+        "n_unique_lick_timestamps": None,
+        "n_duplicate_lick_timestamps": None,
+        "lick_times_valid": False,
+        "response_event_time_valid": response_event_time_valid,
+        "lick_response_status": status,
+    }
 
 
 def _wilson_interval_exprs(

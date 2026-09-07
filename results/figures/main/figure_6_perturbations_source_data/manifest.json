@@ -1,0 +1,33 @@
+{
+  "aggregation": "equal sessions within mouse, then equal mice",
+  "analysis_manifest": {
+    "path": "manifests/perturbation_analysis_run.json",
+    "sha256": "7a51507b448352cfc4202b234641920e099d8ef83a734fc9c598e11a19543e35",
+    "size_bytes": 5341
+  },
+  "figure_id": "Figure 6",
+  "files": [
+    {
+      "path": "figures/main/figure_6_perturbations_source_data/panel_ab_mouse_blocks.csv",
+      "sha256": "cf033b17fc2156b8b1a39a4bbbf4e47fe5df5f50c327b89d156fd7660d403158",
+      "size_bytes": 29399
+    },
+    {
+      "path": "figures/main/figure_6_perturbations_source_data/panel_ab_block_summary.csv",
+      "sha256": "b38b6086a35a6babd7f8f1ef3b793fb77b401bae62063f794a5dc66f3e0eaae2",
+      "size_bytes": 3489
+    },
+    {
+      "path": "figures/main/figure_6_perturbations_source_data/panel_cd_mouse_interactions.csv",
+      "sha256": "99c508750e69240ac2f64b1f5fa934b8d41cd6638c6cb3e1ff7483d99c29e5a6",
+      "size_bytes": 2941
+    },
+    {
+      "path": "figures/main/figure_6_perturbations_source_data/panel_cd_statistics.csv",
+      "sha256": "9b4c5f00fdc8d6e44a924e9b061fde5ed400db05a7a7c2e9680047d40ea0c370",
+      "size_bytes": 5334
+    }
+  ],
+  "generated_at_utc": "2026-09-07T19:46:57.484240+00:00",
+  "interval": "10,000-resample mouse percentile bootstrap"
+}

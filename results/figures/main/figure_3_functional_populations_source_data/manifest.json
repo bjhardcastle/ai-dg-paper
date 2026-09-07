@@ -1,0 +1,38 @@
+{
+  "aggregation": "units within session, sessions within mouse, equal mice",
+  "analysis_manifest": {
+    "bytes": 11033,
+    "path": "manifests/functional_populations_analysis_run.json",
+    "sha256": "4eca117e5349298c6dad7232abc23dd425fa52b7f2ecf08f5b68c137d275920a"
+  },
+  "confirmation_accessed": false,
+  "figure_id": "Figure 3",
+  "files": [
+    {
+      "bytes": 267814,
+      "path": "figures/main/figure_3_functional_populations_source_data/panel_a_mouse_psths.csv",
+      "sha256": "e0c0548549d989f44c250e2f8412f3e90fdce6d8418d74e62f3a2b6c82f225f9"
+    },
+    {
+      "bytes": 31283,
+      "path": "figures/main/figure_3_functional_populations_source_data/panel_a_psth_summary.csv",
+      "sha256": "e274b296b027d07b18695d60cd1e7d34a1b42680b2aedac4ef549f2278f0a24b"
+    },
+    {
+      "bytes": 2836,
+      "path": "figures/main/figure_3_functional_populations_source_data/panels_b_c_mouse_effects.csv",
+      "sha256": "3b8d8a65d3c605d986f1741b6384132655eca78041228e8c0a365aa90a9ea56d"
+    },
+    {
+      "bytes": 5032,
+      "path": "figures/main/figure_3_functional_populations_source_data/panels_b_c_statistics.csv",
+      "sha256": "f5130441627f4937120ae633269f554c4022afa4b4bcfdabeb1c2a10ae760de8"
+    },
+    {
+      "bytes": 970,
+      "path": "figures/main/figure_3_functional_populations_source_data/class_stability.csv",
+      "sha256": "806bb8c99e095d7e0a677dc76a2c8bd57c0803ebe6374ea7dbaf97e108e6a96d"
+    }
+  ],
+  "psth_interval": "10,000-resample mouse percentile bootstrap"
+}

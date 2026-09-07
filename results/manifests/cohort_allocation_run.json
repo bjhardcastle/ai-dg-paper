@@ -1,0 +1,144 @@
+{
+  "allocation_inputs": "threshold-selection boolean plus sex, genotype, project_code, recording-day summaries, and inventory/selected session counts",
+  "allocation_status": "provisional_pending_coarse_regional_coverage",
+  "analysis_id": "d05_mouse_grouped_cohort_allocation",
+  "analysis_status": "provisional",
+  "behavior_analysis_reference": {
+    "analysis_id": "figure_1_behavior",
+    "analysis_status": "pass",
+    "pending_behavior_decisions": []
+  },
+  "code_version": "24ba096deb2d8931af3423b9b5682cdbeec7884c+dirty",
+  "cohort_counts": {
+    "confirmation_mice": 6,
+    "confirmation_threshold_selected_sessions": 11,
+    "discovery_mice": 12,
+    "discovery_threshold_selected_sessions": 23,
+    "eligible_mice": 18,
+    "excluded_mice": 9,
+    "inventory_mice": 27,
+    "inventory_sessions": 99,
+    "threshold_selected_sessions": 34
+  },
+  "completed_at_utc": "2026-09-07T03:32:50.007908+00:00",
+  "confirmation_policy": "provisional holdout; one-time access is not activated",
+  "dandiset": {
+    "dandiset_doi": "10.48324/dandi.001051/0.260825.2232",
+    "dandiset_id": "001051",
+    "dandiset_version": "0.260825.2232"
+  },
+  "decision_statuses": {
+    "D01": "approved",
+    "D03": "approved",
+    "D05": "approved",
+    "D12": "approved"
+  },
+  "eligibility_rule": "mouse eligible iff at least one inventory session is D03 threshold-selected (session_qc.is_good_session)",
+  "inputs": {
+    "analysis_lock": {
+      "path": "config/analysis_lock.yaml",
+      "sha256": "c1c78c89391c5656f7372ea433e63d43bf3c960ee9247639da57a45db556e30c",
+      "size_bytes": 5056
+    },
+    "behavior_analysis_run": {
+      "path": "results/manifests/behavior_analysis_run.json",
+      "sha256": "40d71be99c900f7b0ef7e564117361198d5ab785e48fec3b3ef9c7166452ae8f",
+      "size_bytes": 8443
+    },
+    "session_inventory": {
+      "path": "results/manifests/session_inventory.parquet",
+      "sha256": "1e395b175be2b6234907bb3e81b30b7ad3380745eb580573d5e18998cdfc573f",
+      "size_bytes": 40479
+    },
+    "session_qc": {
+      "path": "results/tables/session_qc.parquet",
+      "sha256": "4df834b5367f70d7e6307fa35dcf629a5203843b65d9e3fbf3b943608b1f0593",
+      "size_bytes": 133505
+    }
+  },
+  "local_sources": [
+    {
+      "path": "src/dg/artifacts.py",
+      "sha256": "51667f969f1b622b5bded3dcf74a2d3fc689727cb967fdc47f50c81cf1720e91",
+      "size_bytes": 4557
+    },
+    {
+      "path": "src/dg/cohorts.py",
+      "sha256": "ddb48ee9b0eec6e7fb5788f9984f18d77f7e98fcabc96f393504391de5a13faf",
+      "size_bytes": 30524
+    },
+    {
+      "path": "src/dg/gates.py",
+      "sha256": "4da105af9eadaf55e5942840c407811cc5890b10f1e333d14f30b34d38754a57",
+      "size_bytes": 5229
+    },
+    {
+      "path": "scripts/03_allocate_cohorts.py",
+      "sha256": "bd7fa99bf526584ede3af7f34cbd471b20501e53706d5df223b516d01298721d",
+      "size_bytes": 13134
+    }
+  ],
+  "neural_activity_used_for_allocation": false,
+  "outputs": {
+    "analysis_lock_snapshot": {
+      "path": "results/manifests/cohort_allocation_lock.yaml",
+      "sha256": "c1c78c89391c5656f7372ea433e63d43bf3c960ee9247639da57a45db556e30c",
+      "size_bytes": 5056
+    },
+    "balance_precision_summary": {
+      "path": "results/tables/cohort_allocation_summary.csv",
+      "sha256": "31f7dc8629ff4fe94fd767c91dc8ece0079e033fb6c2d18b2248e6d89b4eb20e",
+      "size_bytes": 1046
+    },
+    "metadata_balance": {
+      "path": "results/tables/cohort_metadata_balance.csv",
+      "sha256": "f9a69a9a88b97aa1d627caa3ff22700ed3e4e436aad56baed3d0c8f09a7c9438",
+      "size_bytes": 3177
+    },
+    "mouse_assignments": {
+      "path": "results/tables/mouse_cohort_assignments.csv",
+      "sha256": "2fd94c61d60c03e37168e54507d0c11ae993f8a0768dc0a14e3181a3f24e5377",
+      "size_bytes": 6708
+    },
+    "session_assignments": {
+      "path": "results/tables/session_cohort_assignments.csv",
+      "sha256": "321e06edd217d4e937465cb85b34f270191f7e04b8cbe5db92cca7e1572cc404",
+      "size_bytes": 56298
+    }
+  },
+  "ready_for_neural_discovery": false,
+  "requested_confirmation_mice": 6,
+  "requested_discovery_mice": 12,
+  "required_approved_decisions": [
+    "D01",
+    "D03",
+    "D05",
+    "D12"
+  ],
+  "schema_version": 1,
+  "script": "scripts/03_allocate_cohorts.py",
+  "search": {
+    "arithmetic": "exact_fraction_squared_smd",
+    "candidates_evaluated": 18564,
+    "expected_candidates": 18564,
+    "maximum_absolute_smd": 0.1947984306184949,
+    "method": "exhaustive",
+    "objective": "equal-family mean of within-family mean squared standardized discovery-minus-confirmation differences; standardizer is sample SD across all eligible mice",
+    "objective_exact": "1571293/446927360",
+    "objective_float": 0.003515768200004582,
+    "primary_objective_ties": 2,
+    "root_mean_squared_smd": 0.05929391368432836,
+    "secondary_objective_ties": 2,
+    "selected_tie_break_sha256": "9bdc54dd6b0549ca69aa0693b7974ee0966cec6e0ba75eab95996b593f4f1619",
+    "tie_break_rule": "minimum maximum squared SMD, then minimum SHA-256 rank of seed plus sorted confirmation IDs, then lexical IDs"
+  },
+  "session_retention_rule": "retain every inventory session; inherit the mouse split; include only threshold-selected sessions in downstream split analyses",
+  "split_seed": 1051,
+  "stage": "approved_behavior_metadata_only_allocation_provisional",
+  "started_at_utc": "2026-09-07T03:32:47.424580+00:00",
+  "unmet_balance_requirement": {
+    "reason": "M0 currently exposes raw structure acronyms, but D09 does not yet freeze an ontology version and parent-level mapping; inventing that mapping inside D05 would make the split under-specified",
+    "required_action": "freeze a discovery-free coarse regional coverage table and rerun this exhaustive allocation before accessing neural discovery outcomes",
+    "requirement": "coarse regional coverage balance from implementation spec 6.1"
+  }
+}

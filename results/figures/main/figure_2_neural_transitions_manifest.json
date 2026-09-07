@@ -1,0 +1,107 @@
+{
+  "analysis_id": "neural_transition_axis",
+  "analysis_manifest": {
+    "path": "manifests/neural_transition_analysis_run.json",
+    "sha256": "2c0d48386e214028a390d1baefa5bfb8b1800781c9bd25334304d11f2ccab1b9",
+    "size_bytes": 6514
+  },
+  "analysis_tier": "discovery",
+  "authoritative": true,
+  "code_version": "b953bfdb128e3c196cb95c0499a91eeff0191f60+dirty",
+  "completed_at_utc": "2026-09-07T18:16:12.736615+00:00",
+  "dandiset_version": "0.260825.2232",
+  "figure_id": "Figure 2",
+  "figure_stem": "figure_2_neural_transitions",
+  "generated_at_utc": "2026-09-07T18:16:12.736615+00:00",
+  "generator": "scripts/07_plot_neural_transitions.py",
+  "generator_sha256": "5b69586ac30b7ce19081bbc7e0161c98a84752f8650f0c3053fc7e1faa65ad03",
+  "inputs": [
+    {
+      "path": "tables/neural_transition_trajectory.csv",
+      "sha256": "100f1ef067f4596c76aeaedb720717a78c6353e6e702d8b8f6ddba7be2b81a7b",
+      "size_bytes": 15327
+    },
+    {
+      "path": "tables/mouse_neural_transition_effects.csv",
+      "sha256": "5c49766b801b0dddeab7b3473b68c5a34bc1671775665978f44660714590fbb9",
+      "size_bytes": 1945
+    },
+    {
+      "path": "tables/neural_transition_statistics.csv",
+      "sha256": "ee793d82c2f9c9e4fb0c5a4f36b04e144b589e07e388f67e33d576a9c2f07e90",
+      "size_bytes": 4995
+    }
+  ],
+  "local_sources": [
+    {
+      "path": "src/dg/artifacts.py",
+      "sha256": "51667f969f1b622b5bded3dcf74a2d3fc689727cb967fdc47f50c81cf1720e91",
+      "size_bytes": 4557
+    },
+    {
+      "path": "src/dg/figure_neural_transitions.py",
+      "sha256": "1bca47da3871f2e97eba7d37fafc3db913b4fb8708ac566cafb7c43250861086",
+      "size_bytes": 15280
+    },
+    {
+      "path": "scripts/07_plot_neural_transitions.py",
+      "sha256": "5b69586ac30b7ce19081bbc7e0161c98a84752f8650f0c3053fc7e1faa65ad03",
+      "size_bytes": 18329
+    }
+  ],
+  "outputs": [
+    {
+      "path": "figures/main/figure_2_neural_transitions.svg",
+      "sha256": "e2b46139f3ce3d5037f0981e4ae3c94abdb0b8b9c012b2f6306cffea0bd56893",
+      "size_bytes": 85876
+    },
+    {
+      "path": "figures/main/figure_2_neural_transitions.pdf",
+      "sha256": "1b47d106080c1b22a3b89afae3a71179d7f2515b59706d759b4e86e5cd89def7",
+      "size_bytes": 33730
+    },
+    {
+      "path": "figures/main/figure_2_neural_transitions.png",
+      "sha256": "39b0e3d0cd58e719c274021823dda8ce9644f675bd4ce36de52b2c4d6aac3306",
+      "size_bytes": 251145
+    }
+  ],
+  "panels": {
+    "A": "mouse-level reward-state axis trajectories around real and within-state pseudo-boundaries at withdrawal and restoration",
+    "B": "all-mouse direction-corrected real-minus-pseudo transition effects over six minutes per side with mouse-bootstrap 95% confidence intervals"
+  },
+  "run_status": "complete",
+  "software": {
+    "matplotlib": "3.11.1",
+    "numpy": "2.5.3",
+    "polars": "1.44.1"
+  },
+  "source_data": [
+    {
+      "path": "figures/main/figure_2_neural_transitions_source_data/panel_a_mouse_trajectories.csv",
+      "sha256": "26e0aeef7b8aaa03c1baabbc8e436ab70e39fe6aadca0700232f94a01f60a084",
+      "size_bytes": 27896
+    },
+    {
+      "path": "figures/main/figure_2_neural_transitions_source_data/panel_a_trajectory_summary.csv",
+      "sha256": "5ed32def60c0c481e1b6ce4f96636ac85119fc94b336e2ea8855c00cc4fcb0a3",
+      "size_bytes": 5679
+    },
+    {
+      "path": "figures/main/figure_2_neural_transitions_source_data/panel_b_mouse_effects.csv",
+      "sha256": "b6a4ac520b697c71b15e89bcc6f8d007a763f9e0563c807b6955f91edb997231",
+      "size_bytes": 2450
+    },
+    {
+      "path": "figures/main/figure_2_neural_transitions_source_data/panel_b_statistics.csv",
+      "sha256": "5efccc9aa45840843778e739fd9e3fcf6a38da8e5fe7bb749fc8f3eb30841e70",
+      "size_bytes": 694
+    }
+  ],
+  "source_data_manifest": {
+    "path": "figures/main/figure_2_neural_transitions_source_data/manifest.json",
+    "sha256": "8c910d61e9d0cfe346c6fcf7d8d00ebde87ebba791602b32d849935fc0d63311",
+    "size_bytes": 1349
+  },
+  "started_at_utc": "2026-09-07T18:16:01.037019+00:00"
+}

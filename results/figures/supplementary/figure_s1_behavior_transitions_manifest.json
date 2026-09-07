@@ -1,0 +1,11 @@
+{
+  "authoritative": false,
+  "error_message": "behavior-transition analysis is not a completed authoritative exploratory run",
+  "error_type": "RuntimeError",
+  "failed_at_utc": "2026-09-07T07:31:44.021078+00:00",
+  "figure_id": "Figure S1",
+  "figure_stem": "figure_s1_behavior_transitions",
+  "generator": "scripts/05_plot_behavior_transitions.py",
+  "run_status": "failed",
+  "started_at_utc": "2026-09-07T07:31:44.018597+00:00"
+}

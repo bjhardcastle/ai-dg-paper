@@ -1,0 +1,11 @@
+{
+  "authoritative": false,
+  "error_message": "behavior analysis is not a completed authoritative exploratory run",
+  "error_type": "RuntimeError",
+  "failed_at_utc": "2026-09-07T07:35:31.142722+00:00",
+  "figure_id": "Figure 1",
+  "figure_stem": "figure_1_behavior",
+  "generator": "scripts/02_plot_behavior.py",
+  "run_status": "failed",
+  "started_at_utc": "2026-09-07T07:35:31.140083+00:00"
+}

@@ -1,0 +1,24 @@
+- Freeze dataset to DANDI `001051/0.260825.2232`: 99 session NWBs, 27 mice; exclude probe-level LFP assets from session analyses.
+- Ecephys session ID lives in NWB root `identifier`; standard `session_id` is often null.
+- Trial reward-state flags are missing in 22/99 NWBs. Use the commit-pinned Allen companion table; it covers 96/99 sessions and all 22 affected sessions.
+- Never infer E1/NR/E2 from nominal task times, `active`, `rewarded`, or `stimulus_block`; nominal transitions do not exactly match trial transitions.
+- Cross-state responses must come from exact-deduplicated raw `lick_times` in `(150, 750]` ms. Online outcomes omit real NR licks.
+- Online versus raw-lick labels agree ~99.3–99.4% in engaged blocks, so online labels remain useful only as an audit.
+- One session contains all observed duplicate-lick trouble: 256 duplicated timestamps across 255 trials; no invalid or unsorted lick vectors were found.
+- Task image presentations occur under five different NWB table paths, not one universal path.
+- `change_frame` may be task-block-relative while presentation `start_frame` is session-global; infer a unique integer frame-origin offset per session.
+- Do not use timestamps to select that frame offset; require exhaustive one-to-one image-token/physical-change matches and within-trial placement.
+- Task contrast is encoded in image tokens such as `im115_r-0.7`; the later passive-flash table is unrelated.
+- `is_image_novel` labels image identity, not a novelty epoch; novelty is confounded with image, recording day, and exposure.
+- `auto_rewarded` cannot identify E2 onset; at least one inspected session has auto-rewarded trials only in E1.
+- All 99 sessions are technically valid and behaviorally estimable, but the strict “good gating” thresholds retain only 34 sessions from 18 mice.
+- Across all 99 sessions, mouse-level go-response probability is ~0.666 in E1, ~0.151 late NR, and ~0.561 early E2.
+- E2 does not fully return to E1: early-E2 response probability is ~0.104 lower than E1.
+- Boundary-local effects survive within-state pseudo-boundary control: withdrawal `+0.144`, restoration `+0.500` response-probability differences.
+- Withdrawal change-vs-catch specificity is weak after pseudo-boundary control (`CI` crosses zero); restoration specificity is strong (`+0.402`).
+- Eye-tracking streams exist in 97/99 sessions; core lick, running, stimulus, reward, and optotagging streams exist in all 99.
+- Clock inventories currently validate metadata/coverage only—not full timestamp vectors or cross-stream alignment.
+- Multi-file joins must include `_nwb_path`; otherwise identical row/unit IDs can silently cross-match sessions.
+- The current neural-transition run is unfinished; no neural cluster, region-enrichment, or circuit result is yet trustworthy.
+- The latest Milestone-0 audit manifest failed with `BrokenPipeError` and is non-authoritative; locate the earlier successful provenance chain before discovery access.
+- Existing behavior results are exploratory and were generated from a dirty code tree; the current trial parquet also does not match the trusted checkpoint hash.
