@@ -13,6 +13,7 @@ import polars as pl
 SOURCE_COLUMN = "_nwb_path"
 REWARD_BLOCK_COLUMN = "reward_block"
 COARSE_UNIT_STABILITY_COLUMN = "coarse_engaged_rate_consistent"
+REQUIRED_UNIT_QUALITY = "good"
 
 FrameT = TypeVar("FrameT", pl.DataFrame, pl.LazyFrame)
 
@@ -34,7 +35,7 @@ def _validate_nonnegative_finite(name: str, value: float) -> None:
 
 @dataclasses.dataclass(frozen=True, slots=True)
 class UnitQualityThresholds:
-    """Isolation thresholds applied directly to the NWB units table."""
+    """Numeric isolation thresholds applied with ``quality == 'good'``."""
 
     maximum_isi_violations: float = 0.5
     maximum_amplitude_cutoff: float = 0.1
@@ -98,10 +99,11 @@ DEFAULT_COARSE_UNIT_STABILITY_THRESHOLDS = CoarseUnitStabilityThresholds()
 def well_isolated_unit_expr(
     thresholds: UnitQualityThresholds = DEFAULT_UNIT_QUALITY_THRESHOLDS,
 ) -> pl.Expr:
-    """Build the strict isolation-quality predicate specified for this project."""
+    """Build the strict, author-label-aware unit predicate for this project."""
 
     isi = pl.col("isi_violations")
     amplitude = pl.col("amplitude_cutoff")
+    quality = pl.col("quality")
     return (
         isi.is_not_null()
         & isi.is_finite()
@@ -111,6 +113,8 @@ def well_isolated_unit_expr(
         & amplitude.is_finite()
         & (amplitude >= 0)
         & (amplitude < thresholds.maximum_amplitude_cutoff)
+        & quality.is_not_null()
+        & (quality == REQUIRED_UNIT_QUALITY)
     )
 
 
@@ -119,7 +123,7 @@ def filter_well_isolated_units(
     *,
     thresholds: UnitQualityThresholds = DEFAULT_UNIT_QUALITY_THRESHOLDS,
 ) -> FrameT:
-    """Keep units below both strict isolation-metric thresholds."""
+    """Keep author-labeled good units below both strict isolation thresholds."""
 
     return units.filter(well_isolated_unit_expr(thresholds))
 
@@ -133,6 +137,7 @@ def add_well_isolated_unit_flag(
 
     isi = pl.col("isi_violations")
     amplitude = pl.col("amplitude_cutoff")
+    quality = pl.col("quality")
     return units.with_columns(
         well_isolated_unit_expr(thresholds).alias("well_isolated"),
         pl.concat_str(
@@ -153,6 +158,11 @@ def add_well_isolated_unit_flag(
                 & (amplitude >= thresholds.maximum_amplitude_cutoff)
             )
             .then(pl.lit("amplitude_cutoff_above_threshold;"))
+            .otherwise(pl.lit("")),
+            pl.when(quality.is_null())
+            .then(pl.lit("invalid_quality;"))
+            .when(quality != REQUIRED_UNIT_QUALITY)
+            .then(pl.lit("quality_not_good;"))
             .otherwise(pl.lit("")),
         )
         .str.strip_chars_end(";")

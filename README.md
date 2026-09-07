@@ -51,7 +51,9 @@ units = (
 )
 ```
 
-The session screen defaults to the final ten minutes of the no-reward block and
+The unit screen requires `isi_violations < 0.5`, `amplitude_cutoff < 0.1`, and
+the authors' `quality == "good"` label. The session screen defaults to the
+final ten minutes of the no-reward block and
 excludes the last ten minutes of the second engaged block. It requires engaged
 go responses, catch-trial discrimination (loglinear-corrected d-prime), and
 suppressed no-reward go responses. Its numeric cutoffs remain proposals until

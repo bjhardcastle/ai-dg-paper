@@ -57,19 +57,22 @@ def test_source_resolution_pins_version_and_filters_subject(monkeypatch) -> None
 
 
 def test_scan_units_pushes_isolation_filter_before_selection(monkeypatch) -> None:
-    # First three units in the published sub-604914 session NWB.
+    # Published units from the sub-604914 session NWB, including the first
+    # author-labeled good unit.
     actual_units = pl.DataFrame(
         {
-            "id": [219487, 219488, 219489],
+            "id": [219487, 219488, 219489, 219492],
             "isi_violations": [
                 4.042293115676158,
                 0.5289306117865576,
                 0.213029325911995,
+                0.0268688756457586,
             ],
-            "amplitude_cutoff": [0.5, 0.5, 0.0464355489869127],
-            "_nwb_path": [PUBLIC_SESSION_SOURCE] * 3,
-            "_table_path": ["/units"] * 3,
-            "_table_index": [0, 1, 2],
+            "amplitude_cutoff": [0.5, 0.5, 0.0464355489869127, 0.0049734098824021],
+            "quality": ["noise", "noise", "noise", "good"],
+            "_nwb_path": [PUBLIC_SESSION_SOURCE] * 4,
+            "_table_path": ["/units"] * 4,
+            "_table_index": [0, 1, 2, 5],
         }
     )
 
@@ -84,7 +87,7 @@ def test_scan_units_pushes_isolation_filter_before_selection(monkeypatch) -> Non
         well_isolated=True,
     ).collect()
 
-    assert result.get_column("id").to_list() == [219489]
+    assert result.get_column("id").to_list() == [219492]
     assert result.columns == [
         "id",
         "_nwb_path",

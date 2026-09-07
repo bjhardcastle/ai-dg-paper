@@ -156,19 +156,21 @@ def _published_unit_windows() -> pl.DataFrame:
 def test_well_isolated_filter_uses_strict_project_thresholds() -> None:
     units = pl.DataFrame(
         {
-            "id": [219487, 219488, 219489],
+            "id": [219487, 219488, 219489, 219492],
             "isi_violations": [
                 4.042293115676158,
                 0.5289306117865576,
                 0.213029325911995,
+                0.0268688756457586,
             ],
-            "amplitude_cutoff": [0.5, 0.5, 0.0464355489869127],
+            "amplitude_cutoff": [0.5, 0.5, 0.0464355489869127, 0.0049734098824021],
+            "quality": ["noise", "noise", "noise", "good"],
         }
     )
 
     filtered = dg.quality.filter_well_isolated_units(units)
 
-    assert filtered.get_column("id").to_list() == [219489]
+    assert filtered.get_column("id").to_list() == [219492]
 
 
 @pytest.mark.parametrize(
@@ -190,8 +192,39 @@ def test_isolation_filter_rejects_invalid_and_equal_threshold_values(
     reason: str,
 ) -> None:
     unit = pl.DataFrame(
-        {"isi_violations": [isi], "amplitude_cutoff": [amplitude]},
-        schema={"isi_violations": pl.Float64, "amplitude_cutoff": pl.Float64},
+        {
+            "isi_violations": [isi],
+            "amplitude_cutoff": [amplitude],
+            "quality": ["good"],
+        },
+        schema={
+            "isi_violations": pl.Float64,
+            "amplitude_cutoff": pl.Float64,
+            "quality": pl.String,
+        },
+    )
+
+    audited = dg.quality.add_well_isolated_unit_flag(unit)
+
+    assert not audited.get_column("well_isolated").item()
+    assert reason in audited.get_column("unit_quality_exclusion_reasons").item()
+
+
+@pytest.mark.parametrize(
+    ("quality", "reason"),
+    [(None, "invalid_quality"), ("noise", "quality_not_good")],
+)
+def test_isolation_filter_requires_author_good_label(
+    quality: str | None,
+    reason: str,
+) -> None:
+    unit = pl.DataFrame(
+        {
+            "isi_violations": [0.0268688756457586],
+            "amplitude_cutoff": [0.0049734098824021],
+            "quality": [quality],
+        },
+        schema_overrides={"quality": pl.String},
     )
 
     audited = dg.quality.add_well_isolated_unit_flag(unit)

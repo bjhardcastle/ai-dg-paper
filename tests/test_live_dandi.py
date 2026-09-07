@@ -47,3 +47,18 @@ def test_exact_dev8_combines_both_published_trial_schemas() -> None:
     assert by_source[EXPLICIT_FLAG_SOURCE]["n_missing_reward_flags"] == 0
     assert by_source[MISSING_FLAG_SOURCE]["n_trials"] == 643
     assert by_source[MISSING_FLAG_SOURCE]["n_missing_reward_flags"] == 643
+
+
+def test_published_unit_filter_includes_author_good_label() -> None:
+    """Check the complete predicate against a pinned published units table."""
+
+    units = dg.data.scan_units(
+        EXPLICIT_FLAG_SOURCE,
+        columns=("id", "isi_violations", "amplitude_cutoff", "quality"),
+        well_isolated=True,
+    ).collect()
+
+    assert units.height > 0
+    assert units.get_column("quality").unique().to_list() == ["good"]
+    assert units.get_column("isi_violations").max() < 0.5
+    assert units.get_column("amplitude_cutoff").max() < 0.1

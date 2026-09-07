@@ -185,9 +185,10 @@ Required session-QC outputs:
 The mandatory primary isolation thresholds are:
 
 - `isi_violations < 0.5`;
-- `amplitude_cutoff < 0.1`.
+- `amplitude_cutoff < 0.1`;
+- `quality == "good"`.
 
-Use strict `<`, not `<=`, unless D04 explicitly changes it. Do not silently add `quality == "good"`, firing-rate, SNR, presence-ratio, receptive-field, or region filters to the primary definition. Such metrics should be reported and may form prespecified sensitivity analyses. The Allen visual-system literature provides context for objective Neuropixels quality filtering ([Siegle et al., 2021](https://doi.org/10.1038/s41586-020-03171-x)).
+Use strict `<`, not `<=`, unless D04 explicitly changes it. Treat a missing quality label as a failure. Do not silently add firing-rate, SNR, presence-ratio, receptive-field, or region filters to the primary definition. Such metrics should be reported and may form prespecified sensitivity analyses. The Allen visual-system literature provides context for objective Neuropixels quality filtering ([Siegle et al., 2021](https://doi.org/10.1038/s41586-020-03171-x)).
 
 ### 5.3 Engaged-block consistency filter
 

@@ -23,7 +23,7 @@ Focus on the following scientific priorities:
 ## Analysis methods
 - Good session filter: only use sessions during which the mouse licked reliably for image changes in both engaged blocks, but stopped licking during the no-reward block.
 
-- Good unit filter: only analyze units that are well-isolated (isi violation ratio < 0.5, amplitude cutoff ratio < 0.1). In addition, create a filter that excludes units for which activity during the two engaged blocks is not consistent. However, allow for the possibility that the mouse disengages from the task in the last 10 minutes.
+- Good unit filter: only analyze units that are well-isolated (isi violation ratio < 0.5, amplitude cutoff ratio < 0.1, quality == "good"). In addition, create a filter that excludes units for which activity during the two engaged blocks is not consistent. However, allow for the possibility that the mouse disengages from the task in the last 10 minutes.
 
 - Always write tables of statistics for every analysis. Where possible aggregate on the mouse level. If not possible, use hierarchical bootstrapping. Cross-validate metrics when possible.
 

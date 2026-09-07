@@ -45,7 +45,7 @@ Recommended values are starting proposals. Approve them using behavior and cover
 
 | Decision | Recommended choice |
 |---|---|
-| Data freeze | DANDI `0.260825.2232`; save asset IDs, checksums, paths, subject/session IDs, and retrieval date |
+| Data freeze | DANDI `0.260825.2232`; save asset IDs, paths, subject/session IDs, and retrieval date |
 | Event semantics | NWB trial flags first; pinned companion fallback with conflict/coverage audit; no nominal-time fallback |
 | Session thresholds | Rules below: engaged hit rate >= 0.5, engaged d-prime >= 1.0, late no-reward hit rate <= 0.2, with locked minimum counts |
 | Unit consistency | Condition-matched equivalence test between engaged blocks, excluding final 10 minutes; coarse rate ratio is diagnostic only |
@@ -80,9 +80,10 @@ Late NR avoids selecting on early extinction speed, which is itself a target phe
 The mandatory isolation filter is exactly:
 
 - `isi_violations < 0.5`;
-- `amplitude_cutoff < 0.1`.
+- `amplitude_cutoff < 0.1`;
+- `quality == "good"`.
 
-Reject null, nonfinite, and negative values. Do not silently add firing rate, SNR, presence ratio, receptive-field, or anatomy requirements to the primary definition.
+Reject null, nonfinite, and negative numeric values and missing quality labels. Do not silently add firing rate, SNR, presence ratio, receptive-field, or anatomy requirements to the primary definition.
 
 The primary unit cohort combines the isolation thresholds with an engaged-block consistency filter. That filter should compare lick-free baseline and responses to shared full-contrast familiar stimuli in E1 versus E2, excluding the final 10 minutes. Estimate split-half noise, cross-validate the consistency score, and use an equivalence margin calibrated from within-block variability. A whole-block firing-rate ratio is retained only as an auditable diagnostic because task events and behavior differ across blocks. Repeat central results with isolation-only units as a sensitivity analysis.
 
